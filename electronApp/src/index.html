@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  </head>
+  <body>
+    <h1>Hola Mundo!</h1>
+    Estamos usando NodeJs <script>document.write(process.versions.node)</script>,
+    Chrome <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>
+    <br />
+    <strong>para el desarrollo de nuestras aplicaciones de escritorio</strong>.
+    <br/>
+    <br/>
+    <br/>
+    <div class="imagenes">
+      <img src="../img/ElectronMainProcess.jpg" width="600px">
+
+    </div>
+    <script src="../js/electronScript.js" charset="utf-8"></script>
+
+  </body>
+</html>

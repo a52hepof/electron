@@ -1,0 +1,23 @@
+{
+  "name": "proyectos_electron",
+  "version": "1.0.0",
+  "description": "primeros pasos en electron",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^7.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a52hepof/electron.git"
+  },
+  "author": "Fernando y Antonio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a52hepof/electron/issues"
+  },
+  "homepage": "https://github.com/a52hepof/electron#readme"
+}
