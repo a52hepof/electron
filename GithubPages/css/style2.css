@@ -1,0 +1,230 @@
+
+body{
+
+  font-family: georgia, times, serif;
+  color:#333;
+  font-size: 1.2rem;
+  line-height: 1.4em;
+  margin:0;
+  font-weight: 100;
+}
+
+
+p{
+  margin-bottom: 1.6em;
+}
+
+h1{
+  font-size: 2rem;
+  line-height: 1.3em;
+  margin-top: 10px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.container{
+  width:  95%;
+  margin-left:10px;
+  margin-right: 10px;
+
+}
+
+
+
+.header{
+  background: #2B2D3A;
+  color:#595959;
+  padding-bottom: 30px;
+  height: 160px;
+  //position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+
+}
+
+  .header #lema{
+      font-style: italic;
+      text-align: left;
+      color:white;
+
+
+  }
+
+  /* Create a column layout with Flexbox */
+  .row {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* Left column (menu) */
+  .left {
+    flex: 15%;
+    padding: 15px 0;
+  }
+
+  .left h2 {
+    padding-left: 8px;
+  }
+
+  /* Right column (page content) */
+  .right {
+    flex: 100%;
+    padding: 15px;
+    background: white;
+  }
+
+  /* Style the search box */
+  #mySearch {
+    width: 100%;
+    font-size: 18px;
+    padding: 11px;
+    border: 1px solid #ddd;
+  }
+
+  /* Style the navigation menu inside the left column */
+  #myMenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: #2B2D3A
+;
+  }
+
+  #myMenu li a {
+    padding: 12px;
+    text-decoration: none;
+    color: white;
+    display: block
+  }
+
+  #myMenu li a:hover {
+    background-color: white;
+    color:#2B2D3A;
+    font-weight: bold;
+
+  }
+
+.footer{
+  background: #2B2D3A;
+  color:#A0ECF4;
+  padding: 2rem 0;
+
+}
+
+  .footer a{
+
+    color: white;
+    text-decoration: none;
+  }
+
+  .footer #RSS{
+
+    display: inline;
+  }
+
+
+
+.menu-icon{
+
+  display: none;
+
+}
+
+.nav-container{
+  display:flex;
+  justify-content:flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  color:white;
+}
+
+.footer .nav-container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.navigation ul{
+  margin:0;
+  padding: 0;
+  list-style: none;
+}
+
+
+  .navigation ul li{
+    display: inline-block;
+
+  }
+
+    .navigation ul li a{
+      display: block;
+      padding: 0.5rem 1rem;
+      transition: all 0.4s linear;
+      border-radius: 7px;
+
+    }
+
+    .navigation ul li a:hover{
+      background: #ccc;
+
+    }
+
+#
+@media only screen and (max-width:733px) {
+  .menu-icon{
+
+    display: block;
+    cursor: pointer;
+
+  }
+  .navigation{
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .navigation ul{
+    display:none;
+  }
+  .navigation ul.show{
+    display:block;
+
+
+  }
+  .navigation ul li{
+    display: block;
+
+  }
+
+  .navigation ul li a{
+    display: block;
+    padding:0.5rem 0;
+    transition:all 0.4s linear;
+    border-radius: 7px;
+
+  }
+
+
+
+
+}
+
+@media only screen and (max-width:1177px) {
+  .header #formularioNav .form-control{
+    width: 200px;
+    height: 50px;
+
+    border-radius: 10px;
+  }
+
+  .header #formularioNav .form-inline .btn2{
+    width: 60px;
+    height: 50px;
+    color:#204061;
+    border-radius: 10px;
+  }
+
+}

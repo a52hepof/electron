@@ -1,0 +1,227 @@
+
+
+/*para las clases .claseimg/ico/iconos2/png/
+
+container es una clase de bootstrap
+
+*/
+
+.contenedor{
+
+
+  justify-content: center;
+  align-items:center;
+
+  background: #faf3f2;
+
+}
+
+.contenedor .container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+  /*grid-template-columns: repeat(4, 1fr);*/
+  /*grid-template-columns: 100px 200px; Declaración expresa de columnas, la primera con 100 px y la segunda con 200px*/
+  /*grid-template-columns: 1fr 1fr; Declaración expresa de columnas, la primera con 1fr y la segunda con 1 fr*/
+  /*grid-template-columns: 1fr minmax(50px, max-content) 1fr;*/
+  /*grid-template-columns: 1fr repeat(2, 50px 75px) 1fr;*/
+  /*grid-template-columns: repeat(auto-fill, 300px);*/
+  /*grid-template-columns:300px;
+  grid-template-rows:300px 150px;le estamos indicando que la primera es de 300 y la segunda es de 150
+
+  grid-auto-rows: 30px 50px;/*le indicamos un patrón
+
+  grid-auto-flow: column;/*donde se añaden nuevos grid
+  grid-gap: 5px 10px;
+
+  margin-top: 1rem;
+  margin-bottom:  1rem;
+  */
+
+
+}
+  .contenedor #contenido1{
+    text-align: justify;
+
+    grid-column: 1/span 6;
+  }
+
+
+  .contenedor #contenido2{
+
+    grid-column: 1/span 2;
+
+  }
+
+    .contenedor #contenido2 .form-inline{
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 50px;
+      position:static;
+
+    }
+
+      .container #contenido2 .form-control{
+
+        width: 400px;
+        height: 40px;
+        margin-left: 5px;
+        margin-right:  5px;
+        margin-bottom: 5px;
+        border-radius: 7px;
+      }
+
+      .container #contenido2 .btn1{
+
+        width: 70px;
+        height: 40px;
+        color:#204061;
+
+
+        border-radius: 7px;
+
+      }
+
+
+
+
+  .contenedor #contenido3{
+
+    grid-column: 3/span 2;
+
+  }
+
+
+
+
+  .contenedor #contenido4{
+
+    grid-column: 5/span 2;
+    display: flex;
+    align-items:center;
+    align-content: center;
+
+
+  }
+  .contenedor #contenido5{
+
+    margin-top: 60px;
+    grid-column: 1/span 2;
+    display: inline;
+    justify-content: center;
+
+
+  }
+
+
+
+
+  .contenedor #contenido6{
+    margin-top: 60px;
+
+    grid-column: 5/span 2;
+
+  }
+
+  .contenedor #contenido7{
+    margin-top: 30px;
+
+    grid-column: 3/span 2;
+    margin-bottom: 30px;
+    align-self: center;
+    align-content: center;
+
+
+  }
+
+
+  .btn-primary {
+  	box-shadow: 0px -1px 0px 0px #9fb4f2;
+
+  	background-color:#7892c2;
+  	border-radius:25px;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-family:Georgia;
+  	font-size:17px;
+  	padding:11px 43px;
+  	text-decoration:none;
+  	text-shadow:20px 0px 50px #b0c1eb;
+  }
+
+  #btn-primary:hover {
+  	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+  	background-color:#b0c1eb;
+  }
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:1284px) {
+
+  .container #contenido2 .form-control{
+
+    width: 300px;
+    height: 40px;
+    border-radius: 7px;
+  }
+
+  .container #contenido2 .btn1{
+
+      width: 70px;
+      height: 40px;
+      color:#204061;
+      border-radius: 7px;
+      margin-left: 10px;
+
+  }
+
+}
+
+@media only screen and (max-width:972px) {
+
+  .container #contenido2 .form-control{
+
+    width: 150px;
+    height: 40px;
+    border-radius: 7px;
+  }
+
+  .container #contenido2 .btn1{
+
+    width: 70px;
+    height: 40px;
+    color:#204061;
+    border-radius: 7px;
+    margin-left: 10px;
+
+
+  }
+}
+
+
+/*
+Control imágenes. Ejemplo de prueba
+
+para que se ajusten a su contenedor
+*/
+
+
+.contenedor .container #contenido4 img{
+  width: 100%;
+  height: auto;
+  border-radius: 400px;
+}
+@supports(object-fit: cover){
+    .contenedor .container #contenido4 img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+}
