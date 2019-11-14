@@ -53,26 +53,77 @@
 
       <div class="container2">
         <div class="row">
-          <div class="left" style="background-color:#2B2D3A;color:white">
+          <div class="left" >
             <h2>Menu</h2>
             <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
             <ul id="myMenu">
-              <li><a href="../../index.html">Introducción</a></li>
-              <li class="dropdown-btn"><a>Instalación de electron</a></li>
-
+              <li class="dropdown-btn">
+                <div  >
+                  <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                </div>
+                <a href="index.html">Introducción</a>
+              </li>
               <div class="dropdown-container">
-                <li ><a href="instalacion.html">Linux</a></li>
-                <li ><a href="instalacion.html">Windows</a></li>
+                <li ><a href="#referencias">Referencias</a></li>
+              </div>
+
+              <li class="dropdown-btn" >
+                <div  >
+                  <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                </div>
+                <a href="instalacion.html">Instalación de electron</a>
+              </li>
+              <div class="dropdown-container">
+                <li ><a href="#">Linux</a></li>
+                <li ><a href="#">Windows</a></li>
               </div>
             </ul>
           </div>
 
           <div class="right" style="background-color:white;">
+            <div id="contenido1">
+
+              <div id="introInstalacion">
+                <h1>Instalación electron</h1>
+                <p>Ahora nos vamos a ocupar de instalar <strong>electron</strong> en nuestro sistema. Tanto si tienes instalado Windows como Linux, te ofrecemos las principales claves
+                    para dejar electron instalado y listo para crear fabulosas aplicaciones de escritorio multiplataforma utilizando tecnología Html, CSS y javascript.
+                </p>
+
+              </div>
+              <div id="windowsInstalacion">
+                <h3>Instalación en Windows</h3>
+              </div>
+              <div id="LinuxInstalacion">
+                <h3>Instalación en Linux</h3>
+                <img src="" alt="">
+
+              </div>
+
+            </div>
 
 
 
+            <div class="referencias" id="referencias">
+              <h5><br>Referencias</h5>
+                <ul>
+
+                  <li><a href="https://electronjs.org/docs"><cite>Documentación de ElectronJS</cite></a></li>
+                  <li><a href="https://electronjs.org/docs/api"><cite>Api electron</cite></a></li>
+                  <li><a href="https://www.youtube.com/watch?v=iyjM39a0MWE"><cite>ElectronJS: Beginner To Pro</cite></a></li>
+                  <li><a href="https://coursetro.com/posts/code/119/Working-with-Electron-Menus---Tutorial"><cite>Manual básico ElectronJS  </cite></a></li>
+                  <li><a href="https://electronjs.org/docs/tutorial/native-file-drag-drop"><cite>Electronjs.org</cite></a></li>
+                  <li><a href="https://www.youtube.com/watch?v=Y8c9b8nZxp8&list=PLkOqyUCsoGE2KwOmt698IxAerJbLLws1a"><cite>Devoloping with Electronjs</cite></a></li>
+                  <li><a href="https://www.youtube.com/watch?v=8YP_nOCO-4Q"><cite>What is Electron: The Hard Parts Made Easy</cite></a></li>
+                  <li><a href="https://www.youtube.com/watch?v=tqBi_Tou6wQ&list=PLC3y8-rFHvwiCJD3WrAFUrIMkGVDE0uqW"><cite>Electron js Tutorials</cite></a></li>
+                  <li><a href="https://www.youtube.com/watch?v=c76FTxLRwAw"><cite>Developing ElectronJS applications with SQLite3</cite></a></li>
+                  <li><a href="https://www.youtube.com/watch?v=mr9Mtm_TRpw"><cite>An Intro To Electron - Desktop Apps with JavaScript // System Information</cite></a></li>
+                  <li><a href="https://www.youtube.com/watch?v=ZHeP0ugMoqo"><cite>First Steps with Electron // Person list sql DB</cite></a></li>
+                  <li><a href="https://www.youtube.com/watch?v=b-p3MDXJkrw"><cite>Electron Tutorial - Connect to MySQL Database</cite></a></li>
+                  <li><a href="https://www.youtube.com/watch?v=hOU9wNw9rTs&t=437s"><cite>Electron | Aplicaciones de Escritorio en Javascript, Curso Rápido de 30 min // editor código</cite></a></li>
 
 
+                </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -86,14 +137,16 @@
 
         <nav class="navigation">
           <ul>
-            <li><a href="#contacto"><i class="fa fa-phone"></i> Sobre Nosotros</a></li>
+            <li><a href="#contacto"><i class="fa fa-user-circle"></i> Sobre Nosotros</a></li>
           </ul>
         </nav>
+
 
         <div id="RSS">
 
           <div class="boxRSS">
-            <img src="../img/iconsRSS/git.svg" width="60px">
+            <i class="fa fa-github fa-3x" aria-hidden="true"></i>
+            <!--<img src="./GithubPages/img/iconsRSS/git.svg" width="60px">-->
           </div>
 
         </div>
