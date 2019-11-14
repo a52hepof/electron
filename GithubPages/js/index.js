@@ -30,7 +30,8 @@ for (i = 0; i < dropdown.length; i++) {
     dropdownContent.style.display = "none";
   } else {
     dropdownContent.style.display = "block";
-    dropdownContent.style.background = "#262626";
+    
+    dropdownContent.style.color = "#5DBCD2";
   }
   });
 }

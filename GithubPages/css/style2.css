@@ -22,9 +22,7 @@ h1{
   margin-top: 10px;
 }
 
-a{
-  text-decoration: none;
-}
+
 
 .container{
   width:  95%;
@@ -66,6 +64,8 @@ a{
   .left {
     flex: 15%;
     padding: 15px 0;
+    background-color:#2B2D3A;
+    color:white;
   }
 
   .left h2 {
@@ -92,7 +92,8 @@ a{
     list-style-type: none;
     padding: 0;
     margin: 0;
-    background: #2B2D3A
+    -background: white;
+    background: #2B2D3A;
 ;
   }
 
@@ -105,15 +106,20 @@ a{
 
   #myMenu li a:hover {
     background-color: white;
-    color:#2B2D3A;
+    color:#5DBCD2;
     font-weight: bold;
 
   }
+
+  #flecha{
+    padding-top:10px;
+    padding-right: 5px;
+  }
   /* Style the sidenav links and the dropdown button */
-  .row a, .dropdown-btn {
+  .row .left a, .dropdown-btn {
     text-decoration: none;
     font-size: 20px;
-    color: #818181;
+    color: white;
     display: block;
     border: none;
     background: none;
@@ -123,10 +129,51 @@ a{
     outline: none;
   }
 
+
+
   /* On mouse-over */
   .row a:hover, .dropdown-btn:hover {
     color: #f1f1f1;
+    }
+
+  .row h1, h5{
+
+    margin-left: 2rem;
+    color:#404040;
+
   }
+
+  .row .right p{
+
+    text-align: justify;
+    margin-right: 7rem;
+    margin-left: 3rem;
+    color:#4e4e4e;
+  }
+
+  .row .right .codigo{
+
+    margin-left: 4rem;
+    background:   #d9d9d9;
+    width: 20%;
+    overflow: auto;
+    text-align: justify;
+    border-radius: 5px;
+  }
+
+    .codigo code{
+      padding-left:20px;
+      padding-top:20px;
+    }
+
+  .row .right a, li{
+      margin-left: 0.5  rem;
+      cursor: pointer;
+      color:grey;
+      text-decoration: none;
+      padding: 5px;
+    }
+
 
   /* Main content */
   .main {
@@ -137,7 +184,8 @@ a{
 
   /* Add an active class to the active dropdown button */
   .active {
-    background-color:  grey;
+    background-color: #5DBCD2;
+    color: white;
 
 
   }
@@ -145,14 +193,20 @@ a{
   /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
   .dropdown-container {
     display: none;
-    background-color: #262626;
+    --background-color: #5DBCD2;
+    background:    #808080;
+    color: white;
     padding-left: 8px;
+
   }
+
 
   /* Optional: Style the caret down icon */
   .fa-caret-down {
     float: right;
-    padding-right: 8px;
+    margin-top: -4px;
+    margin-right:  6px;
+
   }
 
   /* Some media queries for responsiveness */
@@ -176,6 +230,7 @@ a{
   .footer #RSS{
 
     display: inline;
+    margin-right: -15rem;
   }
 
 
