@@ -45,11 +45,11 @@ h1{
 }
 
   .header #lema{
-      font-style: italic;
+      font-family:'Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI","Oxygen","Ubuntu","Cantarell","Open Sans",sans-serif';
       text-align: left;
-      color:white;
-
-
+      color:#9feaf9;
+      line-height:1.5;
+      letter-spacing: 1pt;
   }
 
   /* Create a column layout with Flexbox */
