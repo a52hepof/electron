@@ -66,8 +66,10 @@
               <div class="dropdown-container">
                 <li ><a href="introduccion.html#queEsElecton">¿Qué es ElectronJs?</a></li>
                 <li ><a href="introduccion.html#fundamentosElecton">Fundamentos de ElectronJS</a></li>
-                <li ><a href="introduccion.html#comparativas">Comparativa</a></li>
-                <li ><a href="introduccion.html#referencias">Referencias</a></li>
+                <li ><a href="introduccion.html#comparativas">Alternativas a ElectronJS</a></li>
+                <li ><a href="introduccion.html#">Ventajas e inconvenientes ElectronJS</a></li>
+                <li ><a href="introduccion.html#">Ejemplos de aplicaciones ElectronJS</a></li>
+                <li ><a href="introduccion.html#referencias">Referencias utilizadas</a></li>
               </div>
 
               <li class=" dropdown-btn" >
@@ -96,19 +98,24 @@
             <hr/>
             <div id="queEsElecton">
               <p><br/><h3>¿Qué es electron?</h5></p>
-              <p>Electron es un framework de código abierto creado por Cheng Zhao, y ahora desarrollado por GitHub (<a href="https://es.wikipedia.org/wiki/Electron_(software)"><cite>wikipedia</cite></a>),
+              <p>Electron es una librería/framework de código abierto creado por Cheng Zhao, y ahora desarrollada por GitHub (<a href="https://es.wikipedia.org/wiki/Electron_(software)"><cite>wikipedia</cite></a>),
                 que permite el desarrollo de aplicaciones gráficas de escritorio multiplataforma usando tecnología html, CSS y JavaScript.</p>
               <p>El eslógan que encontramos en la pagina web de ElectronJs (<a href="https://electronjs.org/"><cite>electronjs.org</cite></a>) da una idea de la facilidad de uso que
                 promete este framework “Crea aplicaciones multiplataforma de escritorio con JavaScript, HTML y CSS”. El conocimiento de html, css y JavaScript garantiza, a menos, a priori que Electron
                 será una buena herramienta para el desarrollo de este tipo de aplicaciones.</p>
-              <p>Pero, por qué usar tecnología JavaScript para crear aplicaciones multiplataforma si existen otras alternativas como c++, java, phyton... El uso de la tecnoloǵia web para desarrollar nuestras aplicaciones de
-                escritorio, permite que éstas sean multiplataforma, pudiendo lanzar la misma, en distintos sistemas operativos: Linux, Windows, MacOs...Además cualquier aplicación web podemos pasarla a aplicación de escritorio con la ayuda de ElectronJS.
-                (<a href="https://www.youtube.com/watch?v=hOU9wNw9rTs/"><cite>Características ElectronJs</cite></a>). Además, la aplicación de CSS y JavaScript, permite crear aplicaciones muy ricas en diseño y animaciones.
-                A continuación explicaremos los fundamentos básicos de ElectronJS y realizaremos una compartiva con frameworks basados en html para el desarrollo de aplicaciones de escritorio.</p>
+              <p>Pero, por qué usar tecnología JavaScript para crear aplicaciones multiplataforma si existen otras alternativas como c++, java, phyton...
+                De forma general desarrollar una aplicación nativa implica crear una versión por cada sistema operativo. El uso de la tecnología web permite a Electron escribir tu aplicación una sola vez,
+                y hacerla compatible con Windows, Linux y Mac con cambios mínimos al código fuente  (<a href="https://medium.com/@BlackHarpy/construyendo-aplicaciones-web-de-escritorio-con-electron-974c3e2174b"><cite>medium.com</cite></a>).
+                Además, cualquier aplicación web podemos pasarla a aplicación de escritorio con la ayuda de ElectronJS (<a href="https://www.youtube.com/watch?v=hOU9wNw9rTs/"><cite>Características ElectronJs</cite></a>).
+                Junto con la aplicación de CSS y JavaScript podemos crear aplicaciones muy ricas en diseño y animaciones.</p>
+                <p>Como resumen decir que ElectronJS es un framework para el creación de aplicaciones de escritorio desarrollado por <strong>GitHub</strong>, de código abierto, con fuerte apoyo de la comunidad, basado en tecnología web
+                y multiplataforma <br/><br/ >
+                <div class="imagen">
+                <center><img src="../img/Electron-Apps-para-Windows-Linux-y-Mac.jpg" width="50%"></center>
 
-              <p>Como resumen decir que ElectronJS es un framework para el creación de aplicaciones de escritorio desarrollado por <strong>GitHub</strong>, de código abierto, con fuerte apoyo de la comunidad, basado en tecnología web
-                y multiplataforma </p>
-
+                </div>
+              </p>
+                <p>A continuación explicaremos los fundamentos básicos de ElectronJS y realizaremos una compartiva con frameworks basados en html para el desarrollo de aplicaciones de escritorio.</p>
 
             </div>
             <hr/>
@@ -117,8 +124,19 @@
               <p><br/><h3>Fundamentos de ElectronJs</h5></p>
               <p>ElectronJS usa Chomium y NodeJs para poder construir aplicaciones de escritorio con HTML, CSS y JavaScript (<a href="https://electronjs.org/"><cite>electronjs.org</cite></a>)</p>
 
-https://medium.com/@BlackHarpy/construyendo-aplicaciones-web-de-escritorio-con-electron-974c3e2174b
+              <p>Entre las funcionalidades que ofrece ElectronJs tenemos:
+                <ul>
+                  <li>Implementaciones de funciones nativas como configuraciones de menús, notificaciones, acceso al sistema de archivos</li>
+                  <li>Herramientas de debugging a través de la consola de desarrollador de Chrome y enviar manejar reportes de errores.</li>
+                  <li>Herramientas para generar ejecutablesde nuestra aplicación y administración de actualizaciones automáticas.</li>
+                </ul>
 
+              </p>
+
+
+              <p>(<a href="https://medium.com/@BlackHarpy/construyendo-aplicaciones-web-de-escritorio-con-electron-974c3e2174b"><cite>medium.com</cite></a>)
+
+              </p>
             </div>
             <hr/>
 
@@ -129,6 +147,24 @@ https://medium.com/@BlackHarpy/construyendo-aplicaciones-web-de-escritorio-con-e
             </div>
             <hr/>
 
+            <div id="VentajasInvenientes">
+              <p><br/><h3>Ventajas e inconvenientes de ElectronJs</h5></p>
+              <p>Existen otras alternativas a ElectronJS basadas también en tecnología html y que pasamos a comparara a continuación.</p>
+              <p>Electron de la mano de la comunidad open-source, github y gracias a su uso por Microsoft está en continua evolución y mejora. </p>
+            </div>
+            <hr/>
+
+            <div id="Ejemplos">
+              <p><br/><h3>Ejemplos de aplicaciones desarrolladas con ElectronJs</h5></p>
+              <p>Son cientos las aplicaciones desarrolladas usando el framework de ElectronJs. En la web de electronjs.org podemos encontrar un amplio listado de las mismas
+                <a href="https://electronjs.org/apps"><cite>Aplicaciones electron</cite></a>. La temática es muy diversa, software para mejorar la producción, videojuegos, softwares de mensajería o
+                 reproductores de audio y vídeo son algunos de las aplicaciones más usuales.</p>
+
+              <p>Caben resaltar algunas tan conocidas como MS Visual Studio Code, Google Play Music Desktop Player, WebTorrent Desktop, WhatsApp Desktop, Skype, Slack, Discord, Basecamp, Ghost, aplicación de escritorio de Wordpress...
+
+              </p>
+            </div>
+            <hr/>
 
             <div >
               <p><br/><h5>Ejemplo de código</h5></p>
