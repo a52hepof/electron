@@ -12,7 +12,7 @@ body{
 
 p{
   margin-bottom: 1.6em;
-  font-family: sans-serif;
+  font-family: "Helvetica Neue","Segoe UI","Oxygen","Ubuntu","Cantarell","Open Sans";
   font-size: medium;
 }
 
@@ -21,7 +21,6 @@ h1{
   line-height: 1.3em;
   margin-top: 10px;
 }
-
 
 
 .container{
@@ -137,11 +136,16 @@ h1{
     color: #f1f1f1;
     }
 
-  .row h1, h4,h3,h5{
+  .row h1, h4,h5{
 
     margin-left: 2rem;
     color:#404040;
 
+  }
+  .row h3{
+    color: #4078c0;
+  text-decoration: none;
+  margin-left: 2rem;
   }
 
   .row .right p{
