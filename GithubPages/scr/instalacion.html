@@ -124,34 +124,43 @@
               <div id="LinuxInstalacion">
                 <h3>Instalación en Linux</h3>
                 <h4><strong>Pasos:</strong></h4>
-                <p><strong>1. NodeJs:$ sudo apt install nodejs </strong></p>
+                <p><strong>1. Instalación de NodeJs:</strong> Para instalar electron en primer lugar hay que instalar nodeJs<div class="codigo"><code>  $ sudo apt install nodejs</code></div></p>
                 <center><img src="../img/linux/node2.png" width="600px" height="250px"></center>
                 <br>
-                <p><strong>2. Npm: </strong>Instalamos npm que es el gestor de paquetes de nodejs.
-                Y comprobamos la versión de NodeJs instalada.<strong>$ nodejs -v</strong></p>
+                <p><strong>2. Instalación de npm: </strong>Instalamos npm que es el gestor de paquetes de nodejs y comprobamos la versión de NodeJs instalada.
+                <div class="codigo"><code> $ sudo apt-get install npm</code></div>
+                <br>
+                <div class="codigo"><code> $ nodejs -v</code></div>
+                <br>
                 <center><img src="../img/linux/node3.png" width="600px" height="250px"></center>
                 <br>
-                <p><strong>Nota: </strong>Para instalar electron en primer lugar hay que instalar nodeJs, incluido en npm 
-                  # Install the `electron` command globally in your $PATH     
-                 <strong>$ npm install electron -g</strong></p>
-                 <p>- Nos da un error indicándonos que la versión requerida para electron de nodeJs es la v.10.0 </p>
-                 <center><img src="../img/linux/node34png.png" width="600px" height="250px"></center>
-                 <br>
-                 <p>- Para la instalación de la versión de nodeJs requerida seguimos los siguientes comandos: 
-                 <br>
-                  - Primero, descarga NVM usando wget. Si no estás seguro de tener wget, ejecuta este comando.<br> 
-                  <strong>$ sudo apt install wget</strong><br> 
-                  - El siguiente paso es permitir que NVM se use desde el perfil de bash de tu usuario ejecutando este comando:<br> 
-                <strong>$ wget -qO- <a href ="https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh" ><u>https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh</u></a> | bash</strong><br>
-                  - El siguiente paso es permitir que NVM se use desde el perfil de bash de tu usuario ejecutando este comando:<br> 
-                <strong>$ source ~/.profile</strong><br>   
-                  - Ahora, puedes usar NVM para mostrar todas las versiones de Node.js disponibles para instalar.<br>   
-                  <strong>$  nvm ls-remote </strong></p>
-                  <center><img src="../img/linux/node3.4.png" width="500px" height="450px"></center>
-                  <p>- Elegimos la versión a instalar en nuestro caso, la v.10.15 <br>
-                  <strong>$ nvm install 10.15.1</strong><br> 
-                  - Y procedemos de nuevo a la instalación de electron, esta vez sin incidencias.</p>
-                <p><strong>3. Instalar electron: $ sudo npm install electron -g </strong></p>
+                <p><strong>3. Instalación de electronJs: </strong>
+                <div class="codigo"><code>$ npm install electron -g</code></div>
+                <br>
+                <p>  Nos da un error indicándonos que la versión requerida para electron de nodeJs es la v.10.0 </p>
+                <center><img src="../img/linux/node34png.png" width="600px" height="250px"></center>
+                <br>
+                <p>- Para la instalación de la versión de nodeJs requerida seguimos los siguientes comandos:</p>
+
+                <p>a. Primero, descarga NVM usando wget. Si no estás seguro de tener wget, antes de descargar nvm.<br>
+                <div class="codigo"><code>$ sudo apt install wget</code></div>
+                <br>
+                <div class="codigo"><code>$ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash</code></div>
+                <p>b. El siguiente paso es permitir que NVM se use desde el perfil de bash de tu usuario ejecutando este comando:<br>
+
+                <div class="codigo"><code>$ source ~/.profile</code></div>
+                <p>c. Ahora, puedes usar NVM para mostrar todas las versiones de Node.js disponibles para instalar.<br>
+
+                <div class="codigo"><code>$  nvm ls-remote </code></div>
+                <center><img src="../img/linux/node3.4.png" width="500px" height="450px"></center>
+                <br>
+                <p>d. Elegimos la versión a instalar en nuestro caso, la v.10.15 <br>
+
+                <div class="codigo"><code>$ nvm install 10.15.1</code></div>
+                <br>
+                <p>e.Y procedemos de nuevo a la instalación de electron, esta vez sin incidencias.</p>
+                <div class="codigo"><code>$ sudo npm install electron -g</code></div>
+                <br>
                 <center><img src="../img/linux/electron.png" width="600px" height="250px"></center>
 
               </div>
