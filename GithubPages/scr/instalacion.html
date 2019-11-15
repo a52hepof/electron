@@ -88,15 +88,18 @@
               <div id="introInstalacion">
                 <h1>Instalación electron</h1>
                 <p>Ahora nos vamos a ocupar de instalar <strong>electron</strong> en nuestro sistema. Tanto si tienes instalado Windows como Linux, te ofrecemos las principales claves
-                    para dejar electron instalado y listo para crear fabulosas aplicaciones de escritorio multiplataforma utilizando tecnología Html, CSS y javascript.
+                    para dejar electron instalado y listo para crear fabulosas aplicaciones de escritorio multiplataforma utilizando tecnología <strong>Html, Css y Javascript.</strong>
                 </p>
 
               </div>
+              <div id="dependencias">
+                <h3>Dependencias</h3>
+                <p>Tanto para Windows como Linux, es necesario las instalaciones de <strong>nodejs y npm</strong>. La instalación de ambas irán explicadas las secciones de cada SO.</p>
+              </div>
               <div id="windowsInstalacion">
                 <h3>Instalación en Windows</h3>
-                <h4><strong>Pasos:</strong></h2>
+                <h4><strong>Pasos:</strong></h4>
                 <p><strong>1. </strong>Descargar la última versión disponible recomendada para todos los usuarios de nodeJS <a href ="https://nodejs.org/en/" ><u>https://nodejs.org/en/</u></a>. Comprobar primero el tipo de sistema operativo de tu ordenador, es decir, si es de 32 o 64 bits y escoger la opción en función a eso.</p>
-          
                 <center><img src="../img/windows/1.png" width="800px" height="450px"></center>
                 <br>
                 <p><strong>2. </strong>Una vez lo hayamos descargado, instalamos el paquete y como la mayoría de instalaciones, no hay que tocar nada y sólo darle al botón de siguiente. Una vez finalizada la instalación, comprobaremos que ha sido instalado correctamente mediante la terminal.</p>
@@ -120,7 +123,36 @@
 
               <div id="LinuxInstalacion">
                 <h3>Instalación en Linux</h3>
-                <img src="" alt="">
+                <h4><strong>Pasos:</strong></h4>
+                <p><strong>1. NodeJs:$ sudo apt install nodejs </strong></p>
+                <center><img src="../img/linux/node2.png" width="600px" height="250px"></center>
+                <br>
+                <p><strong>2. Npm: </strong>Instalamos npm que es el gestor de paquetes de nodejs.
+                Y comprobamos la versión de NodeJs instalada.<strong>$ nodejs -v</strong></p>
+                <center><img src="../img/linux/node3.png" width="600px" height="250px"></center>
+                <br>
+                <p><strong>Nota: </strong>Para instalar electron en primer lugar hay que instalar nodeJs, incluido en npm 
+                  # Install the `electron` command globally in your $PATH     
+                 <strong>$ npm install electron -g</strong></p>
+                 <p>- Nos da un error indicándonos que la versión requerida para electron de nodeJs es la v.10.0 </p>
+                 <center><img src="../img/linux/node34png.png" width="600px" height="250px"></center>
+                 <br>
+                 <p>- Para la instalación de la versión de nodeJs requerida seguimos los siguientes comandos: 
+                 <br>
+                  - Primero, descarga NVM usando wget. Si no estás seguro de tener wget, ejecuta este comando.<br> 
+                  <strong>$ sudo apt install wget</strong><br> 
+                  - El siguiente paso es permitir que NVM se use desde el perfil de bash de tu usuario ejecutando este comando:<br> 
+                <strong>$ wget -qO- <a href ="https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh" ><u>https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh</u></a> | bash</strong><br>
+                  - El siguiente paso es permitir que NVM se use desde el perfil de bash de tu usuario ejecutando este comando:<br> 
+                <strong>$ source ~/.profile</strong><br>   
+                  - Ahora, puedes usar NVM para mostrar todas las versiones de Node.js disponibles para instalar.<br>   
+                  <strong>$  nvm ls-remote </strong></p>
+                  <center><img src="../img/linux/node3.4.png" width="500px" height="450px"></center>
+                  <p>- Elegimos la versión a instalar en nuestro caso, la v.10.15 <br>
+                  <strong>$ nvm install 10.15.1</strong><br> 
+                  - Y procedemos de nuevo a la instalación de electron, esta vez sin incidencias.</p>
+                <p><strong>3. Instalar electron: $ sudo npm install electron -g </strong></p>
+                <center><img src="../img/linux/electron.png" width="600px" height="250px"></center>
 
               </div>
 

@@ -136,16 +136,19 @@ h1{
     color: #f1f1f1;
     }
 
-  .row h1, h4,h5{
-
+  .row h1{
     margin-left: 2rem;
-    color:#404040;
+    color:#3C4146;
 
   }
   .row h3{
     color: #4078c0;
   text-decoration: none;
   margin-left: 2rem;
+  }
+  .row h4{
+    color:#20515B;
+    margin-left: 2rem;
   }
 
   .row .right p{
