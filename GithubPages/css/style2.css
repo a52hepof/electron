@@ -179,11 +179,14 @@ h1{
       padding-top:20px;
     }
 
-  .row .right a, li{
+  .row .right a{
       cursor: pointer;
       color:grey;
       text-decoration: none;
-      padding: 5px;
+    }
+
+    .row .right li{
+      color: #4e4e4e;
     }
 
 
