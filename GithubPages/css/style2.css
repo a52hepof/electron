@@ -118,7 +118,7 @@ h1{
   /* Style the sidenav links and the dropdown button */
   .row .left a, .dropdown-btn {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     color: white;
     display: block;
     border: none;
@@ -127,6 +127,7 @@ h1{
     text-align: left;
     cursor: pointer;
     outline: none;
+    margin-left:-5px;
   }
 
 
@@ -136,7 +137,7 @@ h1{
     color: #f1f1f1;
     }
 
-  .row h1, h3,h5{
+  .row h1, h4,h3,h5{
 
     margin-left: 2rem;
     color:#404040;
