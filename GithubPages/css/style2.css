@@ -279,7 +279,35 @@ h1{
 
     }
 
-#
+
+
+    .landIngPage{
+
+      display:flex;
+      align-items:stretch;
+      justify-content: center;
+      text-align: center;
+      background: red;
+    }
+
+    .boton_personalizado{
+
+        text-decoration: none;
+        padding: 10px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        background-color: #1883ba;
+        border-radius: 6px;
+        border: 0px solid #0016b0;
+        width: 150px;
+        justify-content:space-between;
+        margin-left: 350px;
+        margin-right: 350px;
+
+      }
+
+
 @media only screen and (max-width:733px) {
   .menu-icon{
 
