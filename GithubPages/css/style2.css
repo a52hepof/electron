@@ -78,6 +78,11 @@ h1{
     background: white;
   }
 
+    .right img{
+      width: 60%;
+      height: 400px;
+    }
+
   /* Style the search box */
   #mySearch {
     width: 100%;
@@ -143,8 +148,8 @@ h1{
   }
   .row h3{
     color: #4078c0;
-  text-decoration: none;
-  margin-left: 2rem;
+    text-decoration: none;
+    margin-left: 2rem;
   }
   .row h4{
     color:#20515B;
@@ -191,16 +196,13 @@ h1{
 
   /* Add an active class to the active dropdown button */
   .active {
-    background-color: #5DBCD2;
+    background-color: #4078c0;
     color: white;
-
-
   }
 
   /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
   .dropdown-container {
     display: none;
-    --background-color: #5DBCD2;
     background:    #808080;
     color: white;
     padding-left: 8px;
