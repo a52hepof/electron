@@ -22,18 +22,7 @@ h1{
   margin-top: 10px;
 }
 
-.imagen{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: ". im .";
-}
 
-img{
-  grid-area: im;
-  width: 100%;
-
-
-}
 
 .container{
   width:  95%;
