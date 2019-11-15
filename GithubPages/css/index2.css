@@ -1,10 +1,12 @@
+
+
 .landIngPage{
 
   display:flex;
   align-items:stretch;
   justify-content: center;
   text-align: center;
-
+  background: red;
 }
 
 .boton_personalizado{
