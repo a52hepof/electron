@@ -13,6 +13,13 @@
   width: 40%;
   height: 250px;
 }
+.row .right #primerosPasos #img9{
+  margin: -25px;
+  width: 50%;
+  border-style: groove;
+  border-width: thin;
+  border-color: grey;
+}
 
 
 /* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+clike+javascript */
