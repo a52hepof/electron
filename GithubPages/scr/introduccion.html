@@ -65,11 +65,14 @@
               </li>
               <div class="dropdown-container">
                 <li ><a href="introduccion.html#queEsElecton">¿Qué es ElectronJs?</a></li>
+                <li ><a href="introduccion.html#requisitos">Requisitos ElectronJS</a></li>
                 <li ><a href="introduccion.html#fundamentosElecton">Fundamentos de ElectronJS</a></li>
+                <li ><a href="introduccion.html#herramientas">Ecosistema ElectronJs</a></li>
                 <li ><a href="introduccion.html#comparativas">Alternativas a ElectronJS</a></li>
                 <li ><a href="introduccion.html#VentajasInconvenientes">Ventajas e inconvenientes ElectronJS</a></li>
+                <li ><a href="introduccion.html#targetApps">Aplicaciones objectivo de ElectronJs</a></li>
                 <li ><a href="introduccion.html#Ejemplos">Ejemplos de aplicaciones ElectronJS</a></li>
-                <li ><a href="introduccion.html#referencias">Referencias utilizadas</a></li>
+                <li ><a href="introduccion.html#referencias">Referencias</a></li>
               </div>
 
               <li class=" dropdown-btn" >
@@ -79,9 +82,29 @@
                 <a href="instalacion.html">Instalación de electron</a>
               </li>
               <div class="dropdown-container">
-                <li ><a href="#">Linux</a></li>
-                <li ><a href="#">Windows</a></li>
+                <li ><a href="instalacion.html#windowsInstalacion">Windows</a></li>
+                <li ><a href="instalacion.html#LinuxInstalacion">Linux</a></li>
+                <li ><a href="instalacion.html#referencias">Referencias</a></li>
               </div>
+
+
+              <li class=" dropdown-btn" >
+                <div  >
+                  <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                </div>
+                <a href="primerosPasos.html">Primeros Pasos</a>
+              </li>
+              <div class="dropdown-container">
+                <li ><a href="#">-</a></li>
+
+              </div>
+
+
+
+
+
+
+
             </ul>
           </div>
 
@@ -104,8 +127,9 @@
                 promete este framework “Crea aplicaciones multiplataforma de escritorio con JavaScript, HTML y CSS”. El conocimiento de html, css y JavaScript garantiza, a menos, a priori que Electron
                 será una buena herramienta para el desarrollo de este tipo de aplicaciones.</p>
               <p>Pero, por qué usar tecnología JavaScript para crear aplicaciones multiplataforma si existen otras alternativas como c++, java, phyton...
-                De forma general desarrollar una aplicación nativa implica crear una versión por cada sistema operativo. El uso de la tecnología web permite a Electron escribir tu aplicación una sola vez,
-                y hacerla compatible con Windows, Linux y Mac con cambios mínimos al código fuente  (<a href="https://medium.com/@BlackHarpy/construyendo-aplicaciones-web-de-escritorio-con-electron-974c3e2174b"><cite>medium.com</cite></a>).
+                De forma general desarrollar una aplicación nativa implica crear una versión por cada sistema operativo, lo cual significa tener al menos tres equipos desarrollo trabajando para, al menos tres versiones
+                de la aplicación. El uso de la tecnología web permite a Electron escribir tu aplicación una sola vez,
+                y hacerla compatible con Windows, Linux y Mac con cambios mínimos al código fuente  (<a href="https://medium.com/@BlackHarpy/construyendo-aplicaciones-web-de-escritorio-con-electron-974c3e2174b"><cite>medium.com</cite></a>)
                 Además, cualquier aplicación web podemos pasarla a aplicación de escritorio con la ayuda de ElectronJS (<a href="https://www.youtube.com/watch?v=hOU9wNw9rTs/"><cite>Características ElectronJs</cite></a>).
                 Junto con la aplicación de CSS y JavaScript podemos crear aplicaciones muy ricas en diseño y animaciones.</p>
                 <p>Como resumen decir que ElectronJS es un framework para el creación de <strong>aplicaciones de escritorio</strong> desarrollado por <strong>GitHub</strong>, de <strong>código abierto</strong>, con fuerte apoyo de la comunidad, basado en <strong>tecnología web</strong>
@@ -119,58 +143,211 @@
 
             </div>
             <hr/>
+            <div id="requisitos">
+              <p><br/><h3>Requisitos  ElectronJs</h5></p>
+              <p>Dado que ElectronJs se fundamente en tecnología web es impresdindible tener conocimientos previos en Html, CSS y JavaScript tanto en el lado del cliente como en el del servidor con NodeJs</p>
+            </div>
+            <hr/>
 
             <div id="fundamentosElecton">
               <p><br/><h3>Fundamentos de ElectronJs</h5></p>
+              <p>
+                (<a href="https://jlord.us/essential-electron/"><cite>jlord.us - essential-electron</cite></a>,
+                <a href="http://www.tss.com.pe/blog/electron-un-framework-para-desarrollo-de-aplicaciones-de-escritorio-multiplataforma-primera-parte"><cite>tss.com - electron</cite></a>,
+                <a href="https://electronjs.org/docs/tutorial/application-architecture"><cite>electronjs.org - arquitectura</cite></a>)
+              </p>
               <p>ElectronJS usa Chomium y NodeJs para poder construir aplicaciones de escritorio con HTML, CSS y JavaScript (<a href="https://electronjs.org/"><cite>electronjs.org</cite></a>)</p>
 
-              <p>Podríamos decir que ElectronJs es la suma de nodejs que nos proporciona acceso al sistema operativo, de Chromium que randeriza la aplicación creada con html, css y JavaScript y de C++ que es usado por muchos usuarios
-                para incrementar el rendimiento de nodejs al estar ejecutándose en un navegador. Por ejemplo, los editores de texto, como Atom o visual Studio acceden a numerosos recursos del sistema operativo y utilizan estas tres tecnologías.
+              <center><img src="../img/electronArchitecture.png"></center>
+                <br><br>
+              <p>Podríamos decir que ElectronJs es la suma de Nodejs que nos proporciona acceso al sistema operativo, de Chromium que randeriza la aplicación creada con html, css y JavaScript y de C++ que es usado por muchos usuarios
+                para incrementar el rendimiento de nodejs al estar ejecutándose en un navegador. Por ejemplo, los editores de texto, como Atom o visual Studio acceden a numerosos recursos del sistema operativo y utilizan estas tres tecnologías.</p>
 
               <p>También cuenta con elementos nativos, como menús y notificaciones, así como herramientas de desarrollo útiles para la depuración y el informe de errores. </p>
 
-              <p>Podemos clasificar las funcionalidades que ofrece ElectronJs en las siguientes (<a href="https://medium.com/@BlackHarpy/construyendo-aplicaciones-web-de-escritorio-con-electron-974c3e2174b"><cite>medium.com</cite></a>)>:
+              <p>Podemos clasificar las funcionalidades que ofrece ElectronJs en las siguientes (<a href="https://medium.com/@BlackHarpy/construyendo-aplicaciones-web-de-escritorio-con-electron-974c3e2174b"><cite>medium.com</cite></a>):
                 <ul>
                   <li>Implementaciones de funciones nativas como configuraciones ventanas, menús, notificaciones, acceso al sistema de archivos, sistemas de comunicaciones...</li>
                   <li>Herramientas de debugging a través de la consola de desarrollador de Chrome y enviar manejar reportes de errores.</li>
                   <li>Herramientas para generar ejecutablesde nuestra aplicación y administración de actualizaciones automáticas.</li>
                 </ul>
-                <center><img src="../img/utilidadesElectron.png" alt="">
-                </center>
-
+                <center><img src="../img/utilidadesElectron.png"></center>
               </p>
 
               <p>Un resumen de las principales características y funciones que ofrece ElectonJs la podemos encontrar en la documentación de la API de electronJs  que se encuentra en el siguiente
-              enlace: <a href="https://electronjs.org/docs/api">Documentación API electronJs</a> </p>
+                enlace: <a href="https://electronjs.org/docs/api">Documentación API electronJs</a> </p>
 
               <p>Pero antes de pasar a explicar las principales funciones y características para empezar a manejar electronJs,  es necesario explicar los dos tipos de procesos disponibles en Electron
-                (<a href="https://electronjs.org/docs/tutorial/application-architecture"><cite>electronJs application architecture</cite></a>).
+                  (<a href="https://electronjs.org/docs/tutorial/application-architecture"><cite>electronJs application architecture</cite></a>).
+                  <br><br>
+                  <strong>Proceso Principal (Main process) y proceso Randerizador (Renderer Process)</strong>
+                  <br><br>
+
+                  En Electron, el proceso que ejecuta el script main del archivo package.json es llamado el proceso principal, normalmente es el archivo main.js. Este proceso es el punto de entrada a la aplicación y controla desde su inicio hasta su cierre.
+                  El script que corre en el proceso principal puede mostrar una GUI (Interfaz Gráfica de Usuario) creando las distintas páginas web o vistas de la aplicación (html+css+js).
+                  <br>
+                  Debido a que Electron usa Chromium para mostrar páginas web,también es utilizada su arquitectura, es decir, cada página en Electron se ejecuta en su propio proceso Chromium, el cual es denominado el proceso renderizador.
+                  Este proceso Randerizador necesita tener Node.js incorporado para acceder a todos sus módulos, haciéndolo genérico en su uso y utilidad utilizando npm (esto nos permitiría usar React.js, Angular.js, Polymer, Express,  Socket.io, etc.),
+                  por lo que desde nuestro renderer podemos usar módulos de comportamientos de ventanas, módulos para leer y escribir en el disco, o hacer peticiones a una base de datos directamente. De una forma más sencilla,
+                  en los navegadores normales, las páginas web generalmente se ejecutan en espacio aislado y no se les permite el acceso a recursos nativos. Los usuarios de la Electron, sin embargo,
+                  tienen el poder de utilizar Node.js APIs en las páginas web permitiendo interacciones inferiores de nivel de sistema operativo.
+
+                  Una aplicación Electron siempre tiene un proceso principal, pero nunca más de uno.
+                  <center><img src="../img/main&rendererProcess.png" alt="" id="img4"></center>
+                </p>
+
                 <br><br>
-                <strong>Proceso Principal (main process) y proceso Randerizador (renderer process)</strong>
+                <p>
+                  <strong>Diferencias entre el proceso Principal y el Randerizador</strong>
+                  <br><br>
+
+                  El Proceso Principal es el encargado de <strong>crear Procesos de Randerizado (páginas web)</strong> creando instancias de BrowserWindow, <strong>llamar a elementos nativos </strong>(ciertas llamadas al sistema consumen muchos recursos y
+                  se realizan a nivel de proceso principal para dejar a los procesos Randerizados más libres) y controlar el  <strong>ciclo de vida</strong> de la aplicación.
+
+                  Es el encargado de administrar todas las páginas web y sus correspondientes procesos de Randerizado. Cada proceso de Randerizado esta aislado y sólo se preocupa por la página web que se ejecuta en el.
+                  <br>
+                  <br>
+                  El Proceso Principal utiliza la Api de NodeJs y módulos de la Api de ElectonJs.
+                  <br>
+                  <br>
+                  El proceso de Randerizado se ocupa del <strong>diseño</strong> de la vista o página web (Html y Css) y de las distintas <strong>interacciones</strong> (JavaScript). Sin embargo, en páginas web, llamar APIs nativas relacionadas a GUI
+                  no está permitido porque manejar recursos nativos de GUI en páginas web es bastante peligroso y es fácil que ocurran fugas de recursos.
+                  Si se desean realizar operaciones de GUI en una página web, el proceso renderizador de la página web debe <strong>comunicarse</strong> con el proceso principal para pedirle que realice esas operaciones.
+                  <br>
+                  <br>
+                  Cada Proceso de Randerizado utiliza la Api de NodeJs, la Api de Dom y módulos de randerizado la Api de ElectonJs.
+                  <br>
+                  <br>
+
+                  <br/>
+                  <br/>
+                  <center><img src="../img/electronArchitecture2.png" alt="" id="img5"></center>
+                </p>
+
+
                 <br><br>
-                En Electron, el proceso que ejecuta el script main del archivo package.json es llamado el proceso principal. El script que corre en el proceso principal puede mostrar una GUI (Interfaz Gráfica de Usuario) creando páginas web. Una aplicación Electron siempre tiene un proceso principal, pero nunca más de uno.
 
-                Debido a que Electron usa Chromium para mostrar páginas web, la arquitectura multi-proceso de Chromium es también usada. Cada página web en Electron corre en su propio proceso, el cual es llamado el proceso renderizador.
-
-                En los navegadores normales, las páginas web generalmente se ejecutan en espacio aislado y no se les permite el acceso a recursos nativos. Los usuarios de la Electron, sin embargo, tienen el poder de utilizar Node.js APIs en las páginas web permitiendo interacciones inferiores de nivel de sistema operativo.
                 <br><br>
+                <p>
+                <strong>Acceso a la Api de ElectronJs</strong>
+                </p>
 
-                <strong>Diferencias entre el proceso Principal y el Randerizador</strong>
-                <br><br>
-                El proceso principal crea páginas web creando instancias de BrowserWindow. Cada instancia de BrowserWindow ejecuta la página web en su propio proceso renderizador. Cuando una instancia de BrowserWindow es destruida, el proceso renderizador correspondiente es también terminado.
+                <p>Una de las principales ventajas de Electron, es el gran soporte de su comunidad. En su página web encontramos una aplicación demo de cómo usar las API’s de Electron con ejemplos interesantes para iniciarnos en el desarrollo de aplicaciones
+                   sobre framework y hoy tiene un amplio ecosistema de utilidades como aplicaciones complementarias para su uso.
+                   Esta demo la podemos encontrar en el siguiente enlace:    <a href="https://electron.atom.io/userland/" >https://electron.atom.io/userland/</a></p>
+                <p>La documentación que ofrece ElectronJs acerca de su Api, instalación , posibles problemas es muy completa y sencilla
+                    Es accesible a través del siguiente enlace:  <a href="https://electronjs.org/docs/api" >Documentación de ElectronJs</a></p>
+                </p>
+                <p>
 
-                El proceso principal administra todas las páginas web y sus correspondientes procesos visualizador. Cada proceso visualizador esta aislado y sólo se preocupa por la página web que se ejecuta en el.
+                  ElectronJs ofrece una serie de funcionalidades que apoyan el desarrollo de una aplicación de escritorio tanto en el proceso Principal como en el proceso de Randerazación.
+                  En ambos procesos, accede a las APIs de Electron haciendo un require del módulo:
+                  <div class="codigo">
+                    <code>const electron = require('electron')</code>
+                  </div>
+                  <p>
+                  Las APIs de Electron son asignadas a un tipo de proceso. Muchas de ellas solo pueden ser utilizadas desde el proceso principal, algunas sólo desde el proceso visualizador, y algunas desde ambos. La documentación de cada API va a indicar desde que proceso puede ser utilizada.
+                  <br><br>
+                  Recogemos a continuación las principales funcionalidades de la Api para cada uno de los procesos, Principal y de Randerizado que podemos encontrar en aplicaciones ElectronJs</p>
+                  </p>
+                <p>
+                  <center>
+                  <table>
+                    <thead>
+                        <tr>
+                          <th>Proceso Principal</th>
+                          <th>Proceso de Randerizado</th>
+                          <th>Ambos procesos</th>
 
-                En páginas web, llamar APIs nativas relacionadas a GUI no está permitido porque manejar recursos nativos de GUI en páginas web es bastante peligroso y es fácil que ocurran fugas de recursos. Si quieres realizar operaciones de GUI en una página web, el proceso renderizador de la página web debe comunicarse con el proceso principal para pedirle que realice esas operaciones.
-                <br><br>
-                (<a href="https://jlord.us/essential-electron/"><cite>essential-electron</cite></a>).
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>
+                            <ul>
+                              <li>app</li>
+                              <li>autoUpdater</li>
+                              <li>BrowserWindow</li>
+                              <li>ContentTracing</li>
+                              <li>Dialog</li>
+                              <li>ipcMain</li>
+                              <li>net</li>
+                              <li>powerSaverBlocker</li>
+                              <li>systemPreferences</li>
+                              <li>webContents</li>
+                              <li>Try</li>
+                            </ul>
+                          </td>
+                          <td>
+
+                            <ul>
+                              <li>desktopCapturer</li>
+                              <li>File object</li>
+                              <li>ipcRenderer</li>
+                              <li>remote</li>
+                              <li>webFrame</li>
+                            </ul>
+
+                          </td>
+                          <td>
+                            <ul>
+                              <li>clipboard</li>
+                              <li>crashReporter</li>
+                              <li>Process</li>
+                              <li>shell</li>
+                            </ul>
+
+                          </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+              </center>
+              <br>
+              <p>
+                Es objetivo de este tutorial presentar alguna de las funcionalidades más importantes que ofrece ElectronJS para iniciarse en el desarrollo de aplicaciones de escritorio
+                multiplataforma.
+
+              </p>
 
 
+
+                </p>
               </p>
 
 
             </div>
             <hr/>
+
+            <div id="herramientas">
+              <p><br/><h3>Herramientas y Ecosistema de ElectronJs</h5></p>
+              <p>
+                <ul>
+                  <li>Electrón Fiddle</li>
+                  <li>electron-compile.</li>
+                  <li>electron-packager, que permite desplegar y empaquetar aplicaciones electron. https://github.com/electron/electron-packager</li>
+                  <li>electron-builder, herramienta para crear instaladores multiplataforma.</li>
+                  <li>electron-debug</li>
+                  <li>electron-reload.</li>
+                  <li>electron-updater</li>
+                  <li>electron-mocha</li>
+                  <li>Devtron, extensión oficial de DevTools.</li>
+                  <li>Spectron, herramienta para test de aplicaciones Electron usando ChromeDriver.</li>
+                  <li>electron-updater</li>
+                </ul>
+
+                <p>
+                  La lista completa de recursos desarrollado por  la comunidad y que alimenta el ecosistema de Electron, como Tools, BoilerPlates, componentes, videos, etc, se pueden
+                 encontrar en https://electron.atom.io/community/   y todos los recursos open-source de aplicaciones y dependencias para electron en
+                  https://electron.atom.io/userland/.
+                </p>
+                <center><img src="../img/ecosistemaElectron.jpg" alt="" id="img5"></center>
+
+
+              </p>
+            </div>
+            <hr/>
+
 
             <div id="comparativas">
               <p><br/><h3>Alternativas a ElectronJs</h5></p>
@@ -185,6 +362,56 @@
               <p>Electron de la mano de la comunidad open-source, github y gracias a su uso por Microsoft está en continua evolución y mejora. </p>
             </div>
             <hr/>
+
+            <div id="targetApps">
+              <p><br/><h3>Aplicaciones objetivo ElectronJs</h5></p>
+                <p><span>A continuación se recogen algunas de los negocios que requieren de este tipo de aplicaciones de escritorio: </span></p>
+
+                <ul>
+                	<li>Aplicaciones que requieran ser Offline y Online solo para ciertas tareas.</li>
+                	<li>Printers, Devices y otros tipos de hardware</li>
+                	<li>On-Premises</span></li>
+                	<li>Negocios relacionados a Logistics y Transportation</li>
+                	<li>Gestión de Multi-Media Datatypes or Internal LOB (Large Objects)</li>
+                	<li>Empresas de aplicaciones que se venden desde un App Store</li>
+                	<li>Desktop apps de Intranet</li>
+                	<li>Streaming data y video</li>
+                	<li>Aplicaciones que requieran implementar funcionalidad de Store&amp;Forward</span></li>
+                	<li>Negocios que requieran una aplicación que justifique no estar en línea.</span></li>
+                </ul>
+
+                <p><span style="color: #000000;"></span></p>
+
+                <p><span>Y en la siguente listsa un conjunto posible de ideas de aplicaciones de escritorio: </span></p>
+
+                <ul>
+                	<li>Aplicaciones desconectadas para data entry</span></li>
+                	<li>Editores de texto</span></li>
+                	<li>Time management</span></li>
+                	<li>Media players</span></li>
+                	<li>Email clients</span></li>
+                	<li>Messaging y E-collaboration</span></li>
+                	<li>Kioskos</span></li>
+                	<li>Mapping y route planner</span></li>
+                	<li>Video Streaming</span></li>
+                	<li>Dashboards</span></li>
+                	<li>Social media clients</span></li>
+                	<li>Calendarios o Agendas</span></li>
+                	<li>Bulk media editors</span></li>
+                	<li>File management o backup</span></li>
+                	<li>Generación y procesamiento de Documentos</span></li>
+                	<li>Audio/video conferencia</span></li>
+                	<li>Juegos o plataformas de multiplayers</span></li>
+                	<li>Asistentes Personales</span></li>
+                	<li>Clientes de motores de base de datos, etc.</span></li>
+                </ul>
+
+
+
+
+            </div>
+            <hr/>
+
 
             <div id="Ejemplos">
               <p><br/><h3>Ejemplos de aplicaciones desarrolladas con ElectronJs</h5></p>
@@ -207,6 +434,10 @@
                 <ul>
                   <li><a href="https://electronjs.org/docs"><cite>Documentación de ElectronJS</cite></a></li>
                   <li><a href="https://electronjs.org/docs/api"><cite>Api electron</cite></a></li>
+                  <li><a href="https://jlord.us/essential-electron/"><cite>jlord.us - essential-electron</cite></a></li>
+                  <li><a href="http://www.tss.com.pe/blog/electron-un-framework-para-desarrollo-de-aplicaciones-de-escritorio-multiplataforma-primera-parte"><cite>tss.com - electron</cite></a></li>
+
+                  <!--
                   <li><a href="https://electronjs.org/blog/simple-samples"><cite>Ejemplos ElectronJs</cite></a></li>
 
                   <li><a href="https://www.youtube.com/watch?v=iyjM39a0MWE"><cite>ElectronJS: Beginner To Pro</cite></a></li>
@@ -220,7 +451,7 @@
                   <li><a href="https://www.youtube.com/watch?v=ZHeP0ugMoqo"><cite>First Steps with Electron // Person list sql DB</cite></a></li>
                   <li><a href="https://www.youtube.com/watch?v=b-p3MDXJkrw"><cite>Electron Tutorial - Connect to MySQL Database</cite></a></li>
                   <li><a href="https://www.youtube.com/watch?v=hOU9wNw9rTs&t=437s"><cite>Electron | Aplicaciones de Escritorio en Javascript, Curso Rápido de 30 min // editor código</cite></a></li>
-
+                -->
 
                 </ul>
             </div>

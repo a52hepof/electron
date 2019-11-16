@@ -164,6 +164,47 @@ h1{
     color:#4e4e4e;
   }
 
+  .row .right table{
+
+    text-align: justify;
+    margin-right: 7rem;
+    margin-left: 3rem;
+    color:#4e4e4e;
+    width: 50%;
+    font-family: 'trebuchet MS' , 'Lucida sans' , Arial;
+    font-size: 13px;
+
+    border: solid #ccc 1px;
+    border-collapse: separate;
+    border-spacing: 0;
+      border-radius: 6px;
+  }
+
+
+  table > tbody > tr > td, table > thead > tr > th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+
+  table > thead > tr > th, table > thead > tr > td {
+    background-color: #4078c0;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#4078c0), to(#dce9f9));
+     background-image: -webkit-linear-gradient(top, #ebf3fc, #dce9f9);
+     background-image: -moz-linear-gradient(top, #ebf3fc, #dce9f9);
+     background-image: -ms-linear-gradient(top, #ebf3fc, #dce9f9);
+     background-image: -o-linear-gradient(top, #ebf3fc, #dce9f9);
+     background-image: linear-gradient(to bottom, #ebf3fc, #dce9f9);
+     -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+     -moz-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+     box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+     border-top: none;
+     text-shadow: 0 1px 0 rgba(255,255,255,.5);
+
+  }
+
+
   .row .right .codigo{
 
     margin-left: 4rem;
@@ -183,11 +224,27 @@ h1{
       cursor: pointer;
       color:grey;
       text-decoration: none;
+      color: #ff6600;
+      target=_blank;
     }
 
     .row .right li{
       color: #4e4e4e;
     }
+
+  .row .right #fundamentosElecton img{
+    margin: -25px;
+    width: 50%;
+  }
+  .row .right #fundamentosElecton #img4{
+    margin: -25px;
+    width: 400px;
+    height: 300px;
+  }
+  .row .right #fundamentosElecton #img5{
+    margin: -25px;
+    width: 30%;
+  }
 
 
   /* Main content */
