@@ -67,6 +67,7 @@
                 <li ><a href="introduccion.html#queEsElecton">¿Qué es ElectronJs?</a></li>
                 <li ><a href="introduccion.html#requisitos">Requisitos ElectronJS</a></li>
                 <li ><a href="introduccion.html#fundamentosElecton">Fundamentos de ElectronJS</a></li>
+                <li ><a href="introduccion.html#Api">Acceso a la Api de ElectronJS</a></li>
                 <li ><a href="introduccion.html#herramientas">Ecosistema ElectronJs</a></li>
                 <li ><a href="introduccion.html#comparativas">Alternativas a ElectronJS</a></li>
                 <li ><a href="introduccion.html#VentajasInconvenientes">Ventajas e inconvenientes ElectronJS</a></li>
@@ -120,7 +121,7 @@
 
             <hr/>
             <div id="queEsElecton">
-              <p><br/><h3>¿Qué es electron?</h5></p>
+              <p><br/><h3>¿Qué es electron?</h3></p>
               <p>Electron es una librería/framework de código abierto creado por Cheng Zhao, y ahora desarrollada por GitHub (<a href="https://es.wikipedia.org/wiki/Electron_(software)"><cite>wikipedia</cite></a>),
                 que permite el desarrollo de aplicaciones gráficas de escritorio multiplataforma usando tecnología html, CSS y JavaScript.</p>
               <p>El eslógan que encontramos en la pagina web de ElectronJs (<a href="https://electronjs.org/"><cite>electronjs.org</cite></a>) da una idea de la facilidad de uso que
@@ -144,13 +145,13 @@
             </div>
             <hr/>
             <div id="requisitos">
-              <p><br/><h3>Requisitos  ElectronJs</h5></p>
+              <p><br/><h3>Requisitos  ElectronJs</h3></p>
               <p>Dado que ElectronJs se fundamente en tecnología web es impresdindible tener conocimientos previos en Html, CSS y JavaScript tanto en el lado del cliente como en el del servidor con NodeJs</p>
             </div>
             <hr/>
 
             <div id="fundamentosElecton">
-              <p><br/><h3>Fundamentos de ElectronJs</h5></p>
+              <p><br/><h3>Fundamentos de ElectronJs</h3></p>
               <p>
                 (<a href="https://jlord.us/essential-electron/"><cite>jlord.us - essential-electron</cite></a>,
                 <a href="http://www.tss.com.pe/blog/electron-un-framework-para-desarrollo-de-aplicaciones-de-escritorio-multiplataforma-primera-parte"><cite>tss.com - electron</cite></a>,
@@ -227,96 +228,107 @@
 
                 <br><br>
 
-                <br><br>
-                <p>
-                <strong>Acceso a la Api de ElectronJs</strong>
-                </p>
 
-                <p>Una de las principales ventajas de Electron, es el gran soporte de su comunidad. En su página web encontramos una aplicación demo de cómo usar las API’s de Electron con ejemplos interesantes para iniciarnos en el desarrollo de aplicaciones
-                   sobre framework y hoy tiene un amplio ecosistema de utilidades como aplicaciones complementarias para su uso.
-                   Esta demo la podemos encontrar en el siguiente enlace:    <a href="https://electron.atom.io/userland/" >https://electron.atom.io/userland/</a></p>
-                <p>La documentación que ofrece ElectronJs acerca de su Api, instalación , posibles problemas es muy completa y sencilla
-                    Es accesible a través del siguiente enlace:  <a href="https://electronjs.org/docs/api" >Documentación de ElectronJs</a></p>
-                </p>
-                <p>
-
-                  ElectronJs ofrece una serie de funcionalidades que apoyan el desarrollo de una aplicación de escritorio tanto en el proceso Principal como en el proceso de Randerazación.
-                  En ambos procesos, accede a las APIs de Electron haciendo un require del módulo:
-                  <div class="codigo">
-                    <code>const electron = require('electron')</code>
-                  </div>
-                  <p>
-                  Las APIs de Electron son asignadas a un tipo de proceso. Muchas de ellas solo pueden ser utilizadas desde el proceso principal, algunas sólo desde el proceso visualizador, y algunas desde ambos. La documentación de cada API va a indicar desde que proceso puede ser utilizada.
-                  <br><br>
-                  Recogemos a continuación las principales funcionalidades de la Api para cada uno de los procesos, Principal y de Randerizado que podemos encontrar en aplicaciones ElectronJs</p>
-                  </p>
-                <p>
-                  <center>
-                  <table>
-                    <thead>
-                        <tr>
-                          <th>Proceso Principal</th>
-                          <th>Proceso de Randerizado</th>
-                          <th>Ambos procesos</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                          <td>
-                            <ul>
-                              <li>app</li>
-                              <li>autoUpdater</li>
-                              <li>BrowserWindow</li>
-                              <li>ContentTracing</li>
-                              <li>Dialog</li>
-                              <li>ipcMain</li>
-                              <li>net</li>
-                              <li>powerSaverBlocker</li>
-                              <li>systemPreferences</li>
-                              <li>webContents</li>
-                              <li>Try</li>
-                            </ul>
-                          </td>
-                          <td>
-
-                            <ul>
-                              <li>desktopCapturer</li>
-                              <li>File object</li>
-                              <li>ipcRenderer</li>
-                              <li>remote</li>
-                              <li>webFrame</li>
-                            </ul>
-
-                          </td>
-                          <td>
-                            <ul>
-                              <li>clipboard</li>
-                              <li>crashReporter</li>
-                              <li>Process</li>
-                              <li>shell</li>
-                            </ul>
-
-                          </td>
-
-                        </tr>
-                    </tbody>
-                </table>
-              </center>
-              <br>
-              <p>
-                Es objetivo de este tutorial presentar alguna de las funcionalidades más importantes que ofrece ElectronJS para iniciarse en el desarrollo de aplicaciones de escritorio
-                multiplataforma.
-
-              </p>
-
-
-
-                </p>
               </p>
 
 
             </div>
+            <hr/>
+
+            <div id="Api">
+              <p><br/><h3>Acceso a la Api de ElectronJs</h3></p>
+
+
+              </p>
+
+              <p>Una de las principales ventajas de Electron, es el gran soporte de su comunidad. En su página web encontramos una aplicación demo de cómo usar las API’s de Electron con ejemplos interesantes para iniciarnos en el desarrollo de aplicaciones
+                 sobre framework y hoy tiene un amplio ecosistema de utilidades como aplicaciones complementarias para su uso.
+                 Esta demo la podemos encontrar en el siguiente enlace:    <a href="https://electron.atom.io/userland/" >https://electron.atom.io/userland/</a></p>
+              <p>La documentación que ofrece ElectronJs acerca de su Api, instalación , posibles problemas es muy completa y sencilla
+                  Es accesible a través del siguiente enlace:  <a href="https://electronjs.org/docs/api" >Documentación de ElectronJs</a></p>
+              </p>
+              <p>
+
+                ElectronJs ofrece una serie de funcionalidades que apoyan el desarrollo de una aplicación de escritorio tanto en el proceso Principal como en el proceso de Randerazación.
+                En ambos procesos, accede a las APIs de Electron haciendo un require del módulo:
+                <div class="codigo">
+                  <code>const electron = require('electron')</code>
+                </div>
+                <p>
+                Las APIs de Electron son asignadas a un tipo de proceso. Muchas de ellas solo pueden ser utilizadas desde el proceso principal, algunas sólo desde el proceso visualizador, y algunas desde ambos. La documentación de cada API va a indicar desde que proceso puede ser utilizada.
+                <br><br>
+                Recogemos a continuación las principales funcionalidades de la Api para cada uno de los procesos, Principal y de Randerizado que podemos encontrar en aplicaciones ElectronJs</p>
+                </p>
+              <p>
+                <center>
+                <table>
+                  <thead>
+                      <tr>
+                        <th>Proceso Principal</th>
+                        <th>Proceso de Randerizado</th>
+                        <th>Ambos procesos</th>
+
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                        <td>
+                          <ul>
+                            <li>app</li>
+                            <li>autoUpdater</li>
+                            <li>BrowserWindow</li>
+                            <li>ContentTracing</li>
+                            <li>Dialog</li>
+                            <li>ipcMain</li>
+                            <li>net</li>
+                            <li>powerSaverBlocker</li>
+                            <li>systemPreferences</li>
+                            <li>webContents</li>
+                            <li>Try</li>
+                          </ul>
+                        </td>
+                        <td>
+
+                          <ul>
+                            <li>desktopCapturer</li>
+                            <li>File object</li>
+                            <li>ipcRenderer</li>
+                            <li>remote</li>
+                            <li>webFrame</li>
+                          </ul>
+
+                        </td>
+                        <td>
+                          <ul>
+                            <li>clipboard</li>
+                            <li>crashReporter</li>
+                            <li>Process</li>
+                            <li>shell</li>
+                          </ul>
+
+                        </td>
+
+                      </tr>
+                  </tbody>
+              </table>
+            </center>
+            <br>
+            <p>
+              Es objetivo de este tutorial presentar alguna de las funcionalidades más importantes que ofrece ElectronJS para iniciarse en el desarrollo de aplicaciones de escritorio
+              multiplataforma.
+
+            </p>
+
+
+
+              </p>
+
+
+
+
+
+            </div>
+
             <hr/>
 
             <div id="herramientas">
