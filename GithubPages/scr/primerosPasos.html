@@ -173,77 +173,58 @@
                       web de nuestra aplicación de escritorio.
                       <br>
                       Para empezar, hemos tomado una plantilla de main.js de la documentación de ElectronJs.org (<a href="https://electronjs.org/docs/tutorial/first-app"><cite>Primera aplicación en ElectronJS</cite></a>)
-                      <div class="codigo">
-                        <code>
-                          <br/>
-                          <code>const { app, BrowserWindow } = require('electron')
-                          <br><br>
-                          <code>function createWindow () {
-                            <br/>
-                            <code>// Crea la ventana del navegador.
-                            <br/>
-                            <code>let win = new BrowserWindow({
-                              <br/>
-                              <code> width: 800,
-                              <br/>
-                              <code> height: 600,
-                              <br/>
-                              <code> webPreferences: {
-                                <br/>
-                                <code> nodeIntegration: true
-                                <br/>
-                              <code>}
-                              <br/>
-                            <code>})
-                            <br/>
 
-                            <br/>
-                            <code>// y carga el  index.html de la aplicación.
-                            <br/>
-                            <code>win.loadFile('index.html')
-                            <br/>
-                          <code>}
-                          <br/>
-
-                          <br/>
-                          <code>app.on('ready', createWindow)
-
-
-                        </code>
-                      </div>
 
                       <pre class="language-javascript"><code>
-                        const { app, BrowserWindow } = require('electron')
+      const { app, BrowserWindow } = require('electron')
 
-                        function createWindow () {
-                          // Crea la ventana del navegador.
-                          let win = new BrowserWindow({
-                            width: 800,
-                            height: 600,
-                            webPreferences: {
-                              nodeIntegration: true
-                            }
-                          })
+      function createWindow () {
+        // Crea la ventana del navegador.
+        let win = new BrowserWindow({
+          width: 800,
+          height: 600,
+          webPreferences: {
+            nodeIntegration: true
+          }
+        })
 
-                          // y carga el  index.html de la aplicación.
-                          win.loadFile('index.html')
-                        }
+        // y carga el  index.html de la aplicación.
+        win.loadFile('index.html')
+      }
 
-                        app.on('ready', createWindow)
+      app.on('ready', createWindow)
 
-        </code></pre>
-
-
-                      <p>Lo que hace nuestro main.js es invocar a electronjs, crear una instancia de página web o Proceso de Randerizado index.html y abrirla en una nueva ventana.
-                        <br><br>
-                        En el siguiente apartado del tutorial se analizará más en detalle este main.js e incluiremos algunas funciones más avanzadas en el mismo, como la creación
-                        de un menú o la apertura de nuevas ventanas desde nuestro Proceso de Randerizado.
-                      </p>
-
-                    </p>
-
+                  </code></pre>
                   </p>
-                </p>
+                  <p>Lo que hace nuestro main.js es invocar a electronjs, crear una instancia de página web o Proceso de Randerizado <strong>index.html</strong> y abrirla en una nueva ventana.
+                    <br><br>
+                    En el siguiente apartado del tutorial se analizará más en detalle este main.js e incluiremos algunas funciones más avanzadas en el mismo, como la creación
+                    de un menú o la apertura de nuevas ventanas desde nuestro Proceso de Randerizado.
+                  </p>
+
+                  <p>
+                    <strong>5- </strong>A continuación tenemos que editar nuestra primer vista de la Aplicación de escritorio, es decir el archivo  <strong>index.html</strong> que es el Proceso de Randerizado, que controla nuestra aplicación y crea los distintos Procesos de Randerizado,
+                    y al que podríamos añadir una hoja de estilos CSS y scripts con JavaScript.
+                    <br>
+                    <pre class="language-javascript"><code>
+      &lt!DOCTYPE htm&gt
+      &lthtml lang="en" dir="ltr"&gt
+        &lthead&gt
+          &ltmeta charset="utf-8"&gt
+          &lttitle&gtElectronApp&lt/title&gt
+        &lt/head&gt
+        &ltbody&gt
+          &lth2&gtHola Mundo de la Programación Web.&lt/h2&gt
+          &ltp&gtEsta es mi primera aplicación en ElectronJs&lt/p&gt
+
+        &lt/body&gt
+      &lt/html&gt
+
+
+                </code></pre>
+
+
+
             </div>
 
             <hr>
