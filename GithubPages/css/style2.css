@@ -228,8 +228,8 @@ h1{
     }
 
     .row .right li{
-      font-family: "Helvetica Neue","Segoe UI","Oxygen","Ubuntu","Cantarell","Open Sans";
-      font-size: medium;
+      color: #4e4e4e;
+      margin-left: 3rem;
     }
 
   .row .right #fundamentosElecton img{

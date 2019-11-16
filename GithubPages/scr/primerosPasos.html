@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="../css/index2.css">
     <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="../css/primerosPasos2.css">
 
     <title></title>
 
@@ -57,34 +58,211 @@
             <h2>Menu</h2>
             <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
             <ul id="myMenu">
-              <li class=" dropdown-btn">
-                <div  >
-                  <i class="fa fa-caret-down fa-2x" id="flecha"></i>
-                </div>
-                <a href="introduccion.html">Introducción</a>
-              </li>
-              <div class="dropdown-container">
-                <li ><a href="introduccion.html#referencias">Referencias</a></li>
-              </div>
 
-              <li class="active dropdown-btn" >
-                <div  >
-                  <i class="fa fa-caret-down fa-2x" id="flecha"></i>
-                </div>
-                <a href="instalacion.html">Instalación de electron</a>
-              </li>
-              <div class="dropdown-container">
-                <li ><a href="#">Linux</a></li>
-                <li ><a href="#">Windows</a></li>
-              </div>
+
+                            <li class="dropdown-btn">
+                              <div  >
+                                <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                              </div>
+                              <a href="introduccion.html">Introducción</a>
+                            </li>
+                            <div class="dropdown-container">
+                              <li ><a href="introduccion.html#queEsElecton">¿Qué es ElectronJs?</a></li>
+                              <li ><a href="introduccion.html#requisitos">Requisitos ElectronJS</a></li>
+                              <li ><a href="introduccion.html#fundamentosElecton">Fundamentos de ElectronJS</a></li>
+                              <li ><a href="introduccion.html#Api">Acceso a la Api de ElectronJS</a></li>
+                              <li ><a href="introduccion.html#herramientas">Ecosistema ElectronJs</a></li>
+                              <li ><a href="introduccion.html#comparativas">Alternativas a ElectronJS</a></li>
+                              <li ><a href="introduccion.html#VentajasInconvenientes">Ventajas e inconvenientes ElectronJS</a></li>
+                              <li ><a href="introduccion.html#targetApps">Aplicaciones objectivo de ElectronJs</a></li>
+                              <li ><a href="introduccion.html#Ejemplos">Ejemplos de aplicaciones ElectronJS</a></li>
+                              <li ><a href="introduccion.html#referencias">Referencias</a></li>
+                            </div>
+
+                            <li class=" dropdown-btn" >
+                              <div  >
+                                <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                              </div>
+                              <a href="instalacion.html">Instalación de electron</a>
+                            </li>
+                            <div class="dropdown-container">
+                              <li ><a href="instalacion.html#windowsInstalacion">Windows</a></li>
+                              <li ><a href="instalacion.html#LinuxInstalacion">Linux</a></li>
+                              <li ><a href="instalacion.html#referencias">Referencias</a></li>
+                            </div>
+
+                            <li class="active dropdown-btn" >
+                              <div  >
+                                <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                              </div>
+                              <a href="primerosPasos.html">Primeros Pasos</a>
+                            </li>
+                            <div class="dropdown-container">
+                              <li ><a href="primerosPasos.html#primerosPasos">Nuestra primer aplicación</a></li>
+                              <li ><a href="primerosPasos.html#referencias">Referencias</a></li>
+                              <li ><a href="#">-</a></li>
+
+                            </div>
+
+
+
             </ul>
           </div>
 
           <div class="right" style="background-color:white;">
-            <div id="contenido1">
+            <div id="primerosPasos">
 
-              
+              <h1>Primeros pasos con electron</h1>
+
+              <p><br/><h3>Nuestra primera aplicación</h3></p>
+                <p>
+                  El primer paso que debemos dar al instalar ElectronJs y sus dependencias, principalmente NodeJs, es asegurarnos que el sistema está operativo desarrollando y ejecutando una simple
+                  aplicación. Es típico el ejemplo del <i><strong>"hola mundo"</strong></i>. ESta aplicación nos servirá para implementar todas las funcionalidades que analicemos en el transcurso de
+                  este tutorial.
+                </p>
+                <p>Procedamos con los siguientes pasos:</p>
+
+                <p>
+                  <strong>1- </strong>En primer lugar, iniciamos el repositorio npm en la <strong>carpeta</strong> (en  nuestro caso <i>electronApp</i>) donde vamos a crear nuestra aplicación de escritorio con:
+                  <br>
+                  <div class="codigo">
+                    <code>$ npm init </code>
+                  </div>
+                  <p>Y escribimos los descriptores de nuestro proyecto.
+                    <br><br>
+                    Algunos parámetros a destacar son:
+                    <ol type="a">
+                      <li>"name": Se refiere evidentemente al nombre de nuestra app. El formato debe ser en minúsculas y con un guion medio de separador de palabras. </li>
+                      <li>"version": Representa la versión del código fuente del proyecto.</li>
+                      <li>"description": Breve descripción del cometido de nuestra app.</li>
+                      <li>“git repository”: Repositorio git nuestro proyecto electron. Recordar excluir la carpeta de node para que funcionen los push.</li>
+                      <li>"main": Es donde indicamos a Electron donde está el código del Proceso Principal. Es importante configurar el entry point con el punto de acceso de electron. En nuestro caso será main.js. Si se deja por defecto el valor establecido en el fichero package.json, Electron intentará cargar un fichero index.js.</li>
+                      <li>"scripts": Dice a NPM comandos específicos, como por ejemplo, invocar al comando electron .</li>
+                    </ol>
+                    <br>
+                    </p>
+                    <p>y confirmamos, para crear el archivo de configuración <strong>package.json</strong>, de nuestra aplicación
+                    <br><br>
+                    <center><img src="../img/primerosPasos/init.jpg" id="img6"></center>
+
+                    </p>
+                    <p>
+                      <strong>2- </strong> Seguidamente instalamos electron en la carpeta del proyecto. El modo recomendado es hacerlo como una dependencia de desarrollo de la propia app, lo que te permite trabajar con múltiples  versiones diferentes de Electron.
+                      <br>
+                      <div class="codigo">
+                        <code>$ npm install electron --save-dev  </code>
+                      </div>
+                      <br><br>
+                      <center><img src="../img/primerosPasos/install-electron.jpg" id="img7"></center>
+                      <br>
+                      <p>
+                        Podemos observar como se ha creado la carpeta <i>node-modules</i> dentro de la carpeta de nuestro proyecto.
+                      </p>
+
+                    </p>
+                    <p>
+                      <strong>3- </strong>  Abrimos nuestro proyecto en nuestro editor de código favorito para comenzar a trabajar.
+                      <br>
+                      <br>
+                      <center><img src="../img/primerosPasos/atom-electron.png" id="img8"></center>
+                    </p>
+
+                    <br>
+                    <p>
+                      <strong>4- </strong>Creamos el archivo <strong>main.js</strong> que es el Proceso Principal, que controla nuestra aplicación y crea los distintos Procesos de Randerización o páginas
+                      web de nuestra aplicación de escritorio.
+                      <br>
+                      Para empezar, hemos tomado una plantilla de main.js de la documentación de ElectronJs.org (<a href="https://electronjs.org/docs/tutorial/first-app"><cite>Primera aplicación en ElectronJS</cite></a>)
+                      <div class="codigo">
+                        <code>
+                          <br/>
+                          <code>const { app, BrowserWindow } = require('electron')
+                          <br><br>
+                          <code>function createWindow () {
+                            <br/>
+                            <code>// Crea la ventana del navegador.
+                            <br/>
+                            <code>let win = new BrowserWindow({
+                              <br/>
+                              <code> width: 800,
+                              <br/>
+                              <code> height: 600,
+                              <br/>
+                              <code> webPreferences: {
+                                <br/>
+                                <code> nodeIntegration: true
+                                <br/>
+                              <code>}
+                              <br/>
+                            <code>})
+                            <br/>
+
+                            <br/>
+                            <code>// y carga el  index.html de la aplicación.
+                            <br/>
+                            <code>win.loadFile('index.html')
+                            <br/>
+                          <code>}
+                          <br/>
+
+                          <br/>
+                          <code>app.on('ready', createWindow)
+
+
+                        </code>
+                      </div>
+
+                      <pre class="language-javascript"><code>
+                        const { app, BrowserWindow } = require('electron')
+
+                        function createWindow () {
+                          // Crea la ventana del navegador.
+                          let win = new BrowserWindow({
+                            width: 800,
+                            height: 600,
+                            webPreferences: {
+                              nodeIntegration: true
+                            }
+                          })
+
+                          // y carga el  index.html de la aplicación.
+                          win.loadFile('index.html')
+                        }
+
+                        app.on('ready', createWindow)
+
+        </code></pre>
+
+
+                      <p>Lo que hace nuestro main.js es invocar a electronjs, crear una instancia de página web o Proceso de Randerizado index.html y abrirla en una nueva ventana.
+                        <br><br>
+                        En el siguiente apartado del tutorial se analizará más en detalle este main.js e incluiremos algunas funciones más avanzadas en el mismo, como la creación
+                        de un menú o la apertura de nuevas ventanas desde nuestro Proceso de Randerizado.
+                      </p>
+
+                    </p>
+
+                  </p>
+                </p>
             </div>
+
+            <hr>
+
+            <div class="referencias" id="referencias">
+              <h3><br>Referencias</h3>
+                <ul>
+                  <li><a href="https://electronjs.org/docs/tutorial/first-app"><cite>Primera aplicación en ElectronJS</cite></a></li>
+
+
+
+
+                </ul>
+            </div>
+
+
+
+
+
         </div>
       </div>
 

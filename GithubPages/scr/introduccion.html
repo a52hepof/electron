@@ -55,6 +55,9 @@
             <h2>Menu</h2>
             <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
             <ul id="myMenu">
+
+
+
               <li class="active dropdown-btn">
                 <div  >
                   <i class="fa fa-caret-down fa-2x" id="flecha"></i>
@@ -74,6 +77,10 @@
                 <li ><a href="introduccion.html#referencias">Referencias</a></li>
               </div>
 
+
+
+
+
               <li class=" dropdown-btn" >
                 <div  >
                   <i class="fa fa-caret-down fa-2x" id="flecha"></i>
@@ -85,6 +92,9 @@
                 <li ><a href="instalacion.html#LinuxInstalacion">Linux</a></li>
                 <li ><a href="instalacion.html#referencias">Referencias</a></li>
               </div>
+
+
+
 
 
               <li class=" dropdown-btn" >
@@ -99,9 +109,53 @@
               </div>
 
 
+              <li class=" dropdown-btn" >
+                <div  >
+                  <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                </div>
+                <a href="primerosPasos.html">Funciones principales de la Api Electron</a>
+              </li>
+              <div class="dropdown-container">
+                <li ><a href="#">Administración de ventanas</a></li>
+                <li ><a href="#">Creación de Menús personalizados</a></li>
+                <li ><a href="#">Comunicación entre procesos</a></li>
+
+              </div>
+
+              <li class=" dropdown-btn" >
+                <div  >
+                  <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                </div>
+                <a href="primerosPasos.html">Distribución de las aplicaciones</a>
+              </li>
+              <div class="dropdown-container">
+                <li ><a href="#">-</a></li>
+
+              </div>
 
 
+              <li class=" dropdown-btn" >
+                <div  >
+                  <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                </div>
+                <a href="primerosPasos.html">Tutorial ejemplos Electron</a>
+              </li>
+              <div class="dropdown-container">
+                <li ><a href="#">-</a></li>
 
+              </div>
+
+
+              <li class=" dropdown-btn" >
+                <div  >
+                  <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                </div>
+                <a href="primerosPasos.html">Siguientes Pasos</a>
+              </li>
+              <div class="dropdown-container">
+                <li ><a href="#">-</a></li>
+
+              </div>
 
 
             </ul>
@@ -248,7 +302,7 @@
               <p>
 
                 ElectronJs ofrece una serie de funcionalidades que apoyan el desarrollo de una aplicación de escritorio tanto en el proceso Principal como en el proceso de Randerazación.
-                En ambos procesos, accede a las APIs de Electron haciendo un require del módulo:
+                En ambos procesos, todas los servicios y características que encontramos en Electron son accesibles a través del módulo electron, que puede ser requerido como cualquier otro módulo Node.js:
                 <div class="codigo">
                   <code>const electron = require('electron')</code>
                 </div>
@@ -311,10 +365,29 @@
               </table>
             </center>
             <br>
+
+            <p>
+              <strong>Apis NodeJs</strong>
+              <br><br>
+              Todas las APIs disponibles en Node.js están disponibles en ElectronJs, esto quiere decir que se pueden utilizar los módulos NodeJs en su aplicación a través del módulo npm que deseemos.
+              Por ejemplo, si queremos utilizar el SDK oficial de AWS en su aplicación, primero deberá instalarlo como una dependencia:
+              <div class="codigo">
+                <code>npm install --save aws-sdk</code>
+              </div>
+              <p>Luego en la aplicación electronJs, haremos un require y usaremos el módulo como si estuviésemos construyendo una aplicación NodeJs
+
+                <div class="codigo">
+                  <code>const S3 = require('aws-sdk/clients/s3')</code>
+                </div>
+
+              </p>
+
+            </p>
+
+
             <p>
               Es objetivo de este tutorial presentar alguna de las funcionalidades más importantes que ofrece ElectronJS para iniciarse en el desarrollo de aplicaciones de escritorio
               multiplataforma.
-
             </p>
 
 
@@ -348,8 +421,8 @@
 
                 <p>
                   La lista completa de recursos desarrollado por  la comunidad y que alimenta el ecosistema de Electron, como Tools, BoilerPlates, componentes, videos, etc, se pueden
-                 encontrar en https://electron.atom.io/community/   y todos los recursos open-source de aplicaciones y dependencias para electron en
-                  https://electron.atom.io/userland/.
+                 encontrar en <a href="https://electron.atom.io/community/">Comunidad ElectronJ</a>   y todos los recursos open-source de aplicaciones y dependencias para electron en
+                  <a href="https://electronjs.org/userland/dependencies/">Dependencias ElectronJ</a>.
                 </p>
                 <center><img src="../img/ecosistemaElectron.jpg" alt="" id="img5"></center>
 
@@ -477,12 +550,12 @@
                  reproductores de audio y vídeo son algunos de las aplicaciones más usuales.</p>
 
               <p>Caben resaltar algunas tan conocidas como MS Visual Studio Code, Google Play Music Desktop Player, WebTorrent Desktop, WhatsApp Desktop, Skype, Slack, Discord, Basecamp, Ghost, aplicación de escritorio de Wordpress...
-                 (<a href="https://adictec.com/que-es-electron-aplicaciones-desktop/"><cite>adictec.com</cite>)
+                 (<a href="https://adictec.com/que-es-electron-aplicaciones-desktop/"><cite>adictec.com</cite></a>)
                   <center><img src="../img/appsElectron.png" alt=""></center>
 
               </p>
 
-              <center></center>
+
             </div>
 
 
