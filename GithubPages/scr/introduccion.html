@@ -363,8 +363,55 @@
 
             <div id="comparativas">
               <p><br/><h3>Alternativas a ElectronJs</h5></p>
-              <p>Existen otras alternativas a ElectronJS basadas también en tecnología html y que pasamos a comparara a continuación.</p>
-              <p>Electron de la mano de la comunidad open-source, github y gracias a su uso por Microsoft está en continua evolución y mejora. </p>
+              <p>Existen numerosos frameworks para el desarrollo de aplicaciones de escritorio, pero se reducen bastante si queremos frameworks multiplataforma (Windows,MasOS,Linux). Como consejo y según la información que hemos estado leyendo, diríamos que si desean centrarse en un SO en concreto, escogan el framework adecuado para ese SO. Si de lo contrario, desean que sea multiplataforma, sólo hablaremos de Electron y Swing.</p>
+              <h4><strong>1. Windows Presentation Foundation (WPF)</strong></h4>
+              <p>Este es uno de los marcos más populares para el desarrollo de aplicaciones nativas de Windows. Windows Presentation Foundation (WPF) es un marco dentro del marco .NET que se utiliza principalmente para desarrollar los gráficos de una aplicación de escritorio. Lo usará para crear la interfaz de usuario para el software.<br>
+              WPF ha sido parte de la familia .NET desde 2006 y ha logrado ganarse los corazones de muchos programadores. Las bibliotecas de tiempo de ejecución de WPF generalmente están integradas en el sistema operativo Windows. Una característica clave de WPF es su capacidad para unificar diferentes elementos de la interfaz de usuario. Estos elementos incluyen gráficos vectoriales, documentos adaptativos, objetos multimedia pre-renderizados y renderizado 2D y 3D.</p>
+              <center><img src="../img/alternativas/wpf.png" width="680px" height="450px"></center>
+              <br>
+              <h4><strong>2. Universal Windows Platform (UWP)</strong></h4>
+              <p>UWP es otro marco importante para el desarrollo de aplicaciones de escritorio. También es un marco que es altamente acreditado por la popularidad de la plataforma .NET. Esto se debe a que permite a los desarrolladores crear aplicaciones de escritorio multiplataforma.<br>
+                Básicamente, UWP permite a los desarrolladores crear aplicaciones que pueden ejecutarse en muchas plataformas diferentes propiedad de Microsoft. Esto significa que su software podrá ejecutarse en múltiples dispositivos. Esto es posible gracias a un algoritmo especial para el desarrollo de aplicaciones de Windows.<br>
+                El marco UWP es altamente escalable. Si ha creado una aplicación para escritorio, el marco permitirá escalarla para dispositivos móviles. La aplicación podrá ejecutarse sin problemas en dispositivos móviles, tabletas e incluso en Xbox. Es un marco que ha mejorado enormemente la funcionalidad de Visual Studio.<br>
+              </p>
+              <center><img src="../img/alternativas/uwp.png" width="700px" height="310px"></center>
+              <br>
+              <h4><strong>3. Cocoa</strong></h4>
+              <p>Cocoa es un marco nativo para el desarrollo nativo de MacOs. Es un marco orientado a objetos para construir una interfaz de usuario para MacOS, iOS y tvOS. No solo agrega la funcionalidad de la interfaz de usuario, sino que también hace que la interfaz sea más entretenida.<br>
+                Con Cocoa Framework, puede agregar la función de animación, el elemento de control gráfico y las funciones de reconocimiento de gestos en una aplicación de escritorio. Todas las herramientas de desarrollo para Cocoa son proporcionadas por Apple. Cuando se trata de escribir códigos, el marco puede usarse con los lenguajes Python, Perl y Ruby. Para utilizar estos idiomas, necesitará puentes como PyObjC, PasCocoa y RubyCocoa. El marco de cacao lo ayudará a cumplir con las estrictas pautas de Apple.
+              </p>
+              <center><img src="../img/alternativas/cocoa.png" width="734px" height="523px"></center>
+              <h4><strong>4. ElectronJs vs Java/Swing</strong></h4>
+              <p>Llegamos a la comparativa que realmente nos interesa. A continuación haremos una muy breve descripción de Java/Swing y posteriormente los pros y contras de cada una.</p>
+              <h5><strong>4.1Java/Swing</strong></h5>
+              <p>Swing es un marco basado en Java que puede usar para desarrollar una aplicación de escritorio. Al ser un marco multiplataforma, las aplicaciones creadas por Swing pueden ejecutarse en cualquier plataforma.<br>
+                La función principal de Swing es crear una mejor GUI para aplicaciones de escritorio. Es capaz de emular el diseño, el aspecto y el estilo de muchas aplicaciones de escritorio. El marco viene con varios componentes de la interfaz de usuario, como botones, paneles, paneles de desplazamiento de tablas y casillas de verificación.<br>
+                Como puede ver, algunos marcos son para Windows nativo, otros son MacOs, mientras que otros son marcos de desarrollo multiplataforma. La naturaleza de la aplicación de escritorio que está desarrollando determinará el marco de desarrollo a utilizar.
+              </p>
+              <center><img src="../img/alternativas/java.png" width="644px" height="519px"></center>
+              <br>
+              <br>
+                <div id="pros-contras">
+                  <div id="pros-electron">
+                      <h4><strong>Pros-Electron</strong></h4>
+                          <li type="circle">Electron recibe actualizaciones con frecuencia (varias veces al mes)</li>
+                          <li type="circle">Github está detrás del electrón y hay muchas grandes compañías que lo usan para hacer sus aplicaciones multiplataforma.</li>
+                          <li type="circle">Electron tiene un buen sitio web con excelente documentación.</li>
+                      <h4><strong>Contras-Electron</strong></h4> 
+                        <li type="circle">Ejecuta cromo en segundo plano, que consume muchos recursos.</li>
+                        <li type="circle">Es probable que las aplicaciones hechas con Electron tengan problemas de memoria a menos que diseñe específicamente la aplicación con una codificación eficiente.</li>
+                  </div>
+                  <div id="pros-java">
+                      <h4><strong>Pros-Java/Swing</strong></h4>
+                        <li type="circle">Swing es parte de la API de Java.</li>
+                        <li type="circle">Utilidad de arrastrar y soltar.</li>
+                        <li type="circle">El diseño en Java puro posee menos limitaciones de plataforma.</li>
+                        <li type="circle">Utilidad de arrastrar y soltar.</li>
+                      <h4><strong>Contras-Java/Swing</strong></h4>
+                        <li type="circle">No siempre tienen el mismo aspecto que en el sistema donde fueron diseñados.</li>
+                        <li type="circle">Los componentes swing generalmente son más lentos y presentan más problemas debido a que están hechos en Java puro, y suelen presentar problemas relacionados con vídeo en varias plataformas.</li>
+                  </div>
+                </div>
             </div>
             <hr/>
 
@@ -448,7 +495,8 @@
                   <li><a href="https://electronjs.org/docs/api"><cite>Api electron</cite></a></li>
                   <li><a href="https://jlord.us/essential-electron/"><cite>jlord.us - essential-electron</cite></a></li>
                   <li><a href="http://www.tss.com.pe/blog/electron-un-framework-para-desarrollo-de-aplicaciones-de-escritorio-multiplataforma-primera-parte"><cite>tss.com - electron</cite></a></li>
-
+                  <li><a href="https://www.technotification.com/2019/02/desktop-application-development-frameworks.html"><cite>Top 5 Desktop Application Development Frameworks</cite></a></li>
+                  <li><a href="https://www.slant.co/versus/10828/22778/~electron_vs_java-swing"><cite>Electron vs Swing</cite></a></li>
                   <!--
                   <li><a href="https://electronjs.org/blog/simple-samples"><cite>Ejemplos ElectronJs</cite></a></li>
 
