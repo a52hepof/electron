@@ -1,15 +1,27 @@
+//cargamos la Api de electron.js
 const electron=require ('electron')
-const { app, BrowserWindow, Menu } = electron
+//Cargamos los módulos necesarios de la Api de electron, app, BrowserWindow y Menu
+const app=electron.app
+
+const BrowserWindow=electron.BrowserWindow
+
+
+
+const Menu=electron.Menu
+//const { app, BrowserWindow, Menu } = electron
+
+
+
+
 // Mantén una referencia global del objeto window, si no lo haces, la ventana
 // se cerrará automáticamente cuando el objeto JavaScript sea eliminado por el recolector de basura.
-const path =require('path')
-const url =require('url')
+
 
 const shell =require('electron').shell
 
 
 let win
-let winUsuarios
+
 
 function createWindow () {
   // Crea la ventana del navegador.
@@ -22,8 +34,11 @@ function createWindow () {
   })
 
   // y carga el index.html de la aplicación.
-  win.loadFile('./src/index.html')
+win.loadFile('./src/index2.html')
   /*
+  Se ha encontrado esta forma de cargar los procesos de randerizado pero a nosotros no nos ha funcionado
+  const path =require('path')
+  const url =require('url')
   win.loadUrl(url.format({
     pathname:path.join(__dirname,'index.html'),
     protocol:'file',
@@ -83,7 +98,7 @@ function createWindow () {
     Menu.setApplicationMenu(menu)
 
 }
-
+let winUsuarios
 function openWindowUsers () {
 
   winUsuarios = new BrowserWindow({
