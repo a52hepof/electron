@@ -99,8 +99,8 @@
                             </li>
                             <div class="dropdown-container">
                               <li ><a href="primerosPasos.html#primerosPasos">Nuestra primer aplicación</a></li>
+                              <li ><a href="#DefaultStructure">Estructura de ficheros de ElectronJs</a></li>
                               <li ><a href="primerosPasos.html#referencias">Referencias</a></li>
-                              <li ><a href="#">-</a></li>
 
                             </div>
 
@@ -157,10 +157,12 @@
             </ul>
           </div>
 
+
           <div class="right" style="background-color:white;">
+            <h1>Primeros pasos con electron</h1>
+
             <div id="primerosPasos">
 
-              <h1>Primeros pasos con electron</h1>
 
               <p><br/><h3>Nuestra primera aplicación</h3></p>
                 <p>
@@ -301,11 +303,41 @@
                     <center><img src="../img/primerosPasos/electronApp.jpg" id="img9"></center>
                     <br>
 
-                    <blockquote>
-                      Así, y con 6 sencillos pasos, tenemos lista nuestra primera Aplicación de Escritorio ElectronJs para añadirle nuevas funcionalidades
-                    de la Api y nos servirá de guía para el resto del tutorial.
-                    </blockquote>
+                    <blockquote><i>
+                      Así, y con 6 sencillos pasos, tenemos lista nuestra primera Aplicación de Escritorio ElectronJs, <strong>electronApp</strong> para añadirle nuevas funcionalidades
+                    de la Api. Esta aplicación nos servirá como base para ir incluyendo los distintos ejemplos que veremos en el desarrollo de este tutorial.
+                    </i></blockquote>
                   </p>
+            </div>
+            <hr>
+
+            <div id="DefaultStructure">
+                <p><br/><h3>Estructura de ficheros de ElectronJs</h3></p>
+                <p>En este punto, es importante conocer la estructura de ficheros de nuestra aplicación ElectronJs. En la siguiente imagen, podemos encontrar
+                cómo se ha estructurado la aplicación <strong><i>electronApp</i></strong>,</p>
+                <center><img src="../img/primerosPasos/fileStructure.png" id="img9"></center>
+
+                <p>
+                  <ul>
+                    <li>Proceso Principal: <strong>main.js</strong></li>
+                    <li>Procesos de Randerizado: <strong>index.html</strong> en la carpeta <i>src</i> junto a sus scripts, que almacenamos en la carpeta <i>js</i> </li>
+                    <li>Configuración de la aplicación: <strong>package.json</strong>. ElectronJs crea otro archivo que se guarda en la carpeta principal <strong>package-lock.json</strong> que sirve para mantener un detalle específico de las versiones de dependencias instaladas en el proyecto. (<a href="http://vamoacodearlo.com/package-lock-json-quien-te-conoce/"><cite>vamoacodearlo.com - package-lock.json</cite></a>) </li>
+                    <li>Carpeta para las hojas de estilos Css.</li>
+                    <li>Carpeta para las Imágenes de nuestra aplicación</li>
+                    <li>Carpeta para los Scripts de los procesos de randerizado.</li>
+                  </ul>
+
+                  <br>
+                  <blockquote cite="">
+                    <i>Nota: La configuración en carpetas del proyecto es decisión del propio desarrollador</i>
+                  </blockquote>
+
+
+
+                </p>
+
+
+
             </div>
 
             <hr>
@@ -314,6 +346,9 @@
               <h3><br>Referencias</h3>
                 <ul>
                   <li><a href="https://electronjs.org/docs/tutorial/first-app"><cite>Primera aplicación en ElectronJS</cite></a></li>
+                  <li><a href="https://www.youtube.com/watch?v=iyjM39a0MWE"><cite>ElectronJS: Beginner To Pro</cite></a></li>
+                  <li><a href="http://vamoacodearlo.com/package-lock-json-quien-te-conoce/"><cite>vamoacodearlo.com - package-lock.json</cite></a></li>
+
 
 
 
