@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <!--
+      https://developer.mozilla.org/es/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout
+     -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" initial-scale=1 >
+    <meta name="description" content="La web para los investigadores 101">
+    <meta name="keywords" content="comunidad investigadores, informática, articulos investigación, blockchain">
+    <meta name="author" content="Equipo III Programación Web 2019-2020 UCO">
+
+    <link rel="stylesheet" href="../css/index2.css">
+    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="../css/electronApi2.css">
+
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link rel="stylesheet" href="../img/font-awesome-4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+
+
+    <header class="header">
+
+      <div class="container nav-container">
+
+        <a href="../../index.html">  <img src="../img/electron.png" alt="" width="320px"></a>
+
+        <span class="menu-icon">Ver menú</span>
+
+        <div id="lema">
+          <h1>Aplicaciones de escritorio multiplataforma con Electron</h1>
+        </div>
+        <!--
+        <nav class="navigation">
+          <ul class="">
+            <li id="text2"><a href="registro.html"><i class="fa fa-user-plus" aria-hidden="true"></i>Registro</a></li>
+            <li id="text1" onmouseover="colorElementRed(id)" onmouseout="undoColorElement(id)" ><a href="inicioSesion.html"><i class="fa fa-sign-in "></i> Iniciar Sesión</a></li>
+          </ul>
+        </nav>
+      -->
+      </div>
+
+    </header>
+
+      <div class="container2">
+        <div class="row">
+          <div class="left" >
+            <h2>Menu</h2>
+            <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+            <ul id="myMenu">
+
+
+
+              <li class=" dropdown-btn">
+                <div  >
+                  <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                </div>
+                <a href="introduccion.html">Introducción</a>
+              </li>
+              <div class="dropdown-container">
+                <li ><a href="introduccion.html#queEsElecton">¿Qué es ElectronJs?</a></li>
+                <li ><a href="introduccion.html#requisitos">Requisitos ElectronJS</a></li>
+                <li ><a href="introduccion.html#fundamentosElecton">Fundamentos de ElectronJS</a></li>
+                <li ><a href="introduccion.html#Api">Acceso a la Api de ElectronJS</a></li>
+                <li ><a href="introduccion.html#herramientas">Ecosistema ElectronJs</a></li>
+                <li ><a href="introduccion.html#comparativas">Alternativas a ElectronJS</a></li>
+                <li ><a href="introduccion.html#VentajasInconvenientes">Ventajas e inconvenientes ElectronJS</a></li>
+                <li ><a href="introduccion.html#targetApps">Aplicaciones objectivo de ElectronJs</a></li>
+                <li ><a href="introduccion.html#Ejemplos">Ejemplos de aplicaciones ElectronJS</a></li>
+                <li ><a href="introduccion.html#referencias">Referencias</a></li>
+              </div>
+
+
+
+
+
+              <li class=" dropdown-btn" >
+                <div  >
+                  <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                </div>
+                <a href="instalacion.html">Instalación de electron</a>
+              </li>
+              <div class="dropdown-container">
+                <li ><a href="instalacion.html#windowsInstalacion">Windows</a></li>
+                <li ><a href="instalacion.html#LinuxInstalacion">Linux</a></li>
+                <li ><a href="instalacion.html#referencias">Referencias</a></li>
+              </div>
+
+
+
+
+
+              <li class="dropdown-btn" >
+                <div  >
+                  <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                </div>
+                <a href="primerosPasos.html">Primeros Pasos</a>
+              </li>
+              <div class="dropdown-container">
+                <li ><a href="primerosPasos.html#primerosPasos">Nuestra primer aplicación</a></li>
+                <li ><a href="primerosPasos.html#referencias">Referencias</a></li>
+                <li ><a href="#">-</a></li>
+
+              </div>
+
+
+              <li class=" active dropdown-btn" >
+                <div  >
+                  <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                </div>
+                <a href="electronApi.html">Api Electron</a>
+              </li>
+              <div class="dropdown-container">
+                <li ><a href="winAdmin.html">Administración de ventanas</a></li>
+                <li ><a href="menuApp.html">Creación de Menús personalizados</a></li>
+                <li ><a href="comApp.html">Comunicación entre procesos</a></li>
+                <li ><a href="dialogos.html#">Diálogos nativos</a></li>
+                <li ><a href="notification.html">Notificaciones</a></li>
+
+              </div>
+
+              <li class="  dropdown-btn" >
+                <div  >
+                  <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                </div>
+                <a href="distribucion.html">Distribución de las aplicaciones</a>
+              </li>
+              <div class="dropdown-container">
+                <li ><a href="distribucion.html#introduccion">Introducción</a></li>
+                <li ><a href="distribucion.html#instalacion">Instalación electon-packager</a></li>
+                <li ><a href="distribucion.html#lineacomandos">Linea de comandos</a></li>
+                <li ><a href="distribucion.html#packagejson">Configuración package.json</a></li>
+
+              </div>
+
+
+              <li class=" dropdown-btn" >
+                <div  >
+                  <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                </div>
+                <a href="primerosPasos.html">Tutorial ejemplos Electron</a>
+              </li>
+              <div class="dropdown-container">
+                <li ><a href="#">-</a></li>
+
+              </div>
+
+
+              <li class=" dropdown-btn" >
+                <div  >
+                  <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                </div>
+                <a href="primerosPasos.html">Siguientes Pasos</a>
+              </li>
+              <div class="dropdown-container">
+                <li ><a href="#">-</a></li>
+
+              </div>
+
+
+            </ul>
+          </div>
+
+          <div class="right" style="background-color:white;">
+            <h1>Funciones principales de la Api Electron</h1>
+
+            <div>
+              <p>Cabe recordar en este punto las algunas de las funcionalidades que afectan al Proceso Principal, a los Procesos de Randerizado o a ambos.</p>
+
+                <center>
+                  <table>
+                    <thead>
+                        <tr>
+                          <th>Proceso Principal</th>
+                          <th>Proceso de Randerizado</th>
+                          <th>Ambos procesos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>
+                            <ul>
+                              <li><strong>app</strong></li>
+                              <li>autoUpdater</li>
+                              <li><strong> BrowserWindow</strong></li>
+                              <li>ContentTracing</li>
+                              <li><strong>Dialog</strong></li>
+                              <li><strong> ipcMain</strong></li>
+                              <li>net</li>
+                              <li>powerSaverBlocker</li>
+                              <li>systemPreferences</li>
+                              <li>webContents</li>
+                              <li>Try</li>
+                            </ul>
+                          </td>
+                          <td>
+                            <ul>
+                              <li>desktopCapturer</li>
+                              <li>File object</li>
+                              <li><strong>ipcRenderer</strong></li>
+                              <li><strong>remote</strong> </li>
+                              <li><strong>webFrame</strong></li>
+                            </ul>
+
+                          </td>
+                          <td>
+                            <ul>
+                              <li>clipboard</li>
+                              <li>crashReporter</li>
+                              <li><strong>Process</strong></li>
+                              <li><strong>shell</strong></li>
+                            </ul>
+
+                          </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+              </center>
+
+              <p>Aquellas indicadas en negrita van a formar parte del contenido de este tutorial <br>
+              <p>Sin embargo, vamos a prestar especial atención a las funcionalidades que nos van a permitir empezar a utilizar la Api de ElectronJs a un
+              nivel suficiente que nos permita seguir investivando para desarrollar aplicaciones más complejas.</p>
+            </div>
+
+
+            <div class="iconos">
+              <div >
+                <p> <a href="notification.html"> <i class=" fa fa-window-restore fa-5x" ></i></a></p>
+                <p><b>Ventanas</b></p>
+
+              </div>
+              <div >
+                <p> <a href="notification.html"> <i class=" fa fa-navicon fa-5x" ></i></a></p>
+                <p><b>Menús</b></p>
+
+              </div>
+              <div >
+                <p> <a href="notification.html"> <i class=" fa fa-exclamation-triangle fa-5x" ></i></a></p>
+                <p><b>Dialogue</b></p>
+
+              </div>
+              <div >
+                <p> <a href="notification.html"> <i class=" fa fa-exchange fa-5x" ></i></a></p>
+
+                <p><b>IPC</b></p>
+
+
+              </div>
+              <div class="icons">
+                <div>
+                  hola
+                </div>
+
+                <p> <a href="notification.html"> <i class="desvanecer fa fa-flag fa-5x" ></i></a></p>
+                <p><b>Notificaciones</b></p>
+
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+    <footer class="footer">
+      <div class="container nav-container">
+        <div id="company">
+          <p>Am - Fhp &copy, 2019</p>
+        </div>
+
+        <nav class="navigation">
+          <ul>
+            <li><a href="#contacto"><i class="fa fa-user-circle"></i> Sobre Nosotros</a></li>
+          </ul>
+        </nav>
+
+
+        <div id="RSS">
+
+          <div class="boxRSS">
+            <i class="fa fa-github fa-3x" aria-hidden="true"></i>
+            <!--<img src="./GithubPages/img/iconsRSS/git.svg" width="60px">-->
+          </div>
+
+        </div>
+      </div>
+
+      <script scr="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="../js/index.js"> </script>
+
+    </footer>
+
+
+
+  </body>
+</html>
