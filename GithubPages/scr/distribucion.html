@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" href="../css/index2.css">
     <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="../css/distribucion2.css">
 
     <title></title>
 
@@ -132,6 +133,7 @@
               </li>
               <div class="dropdown-container">
                 <li ><a href="distribucion.html#introduccion">Introducción</a></li>
+                <li ><a href="distribucion.html#instalacion">Instalación electon-packager</a></li>
                 <li ><a href="distribucion.html#lineacomandos">Linea de comandos</a></li>
                 <li ><a href="distribucion.html#packagejson">Configuración package.json</a></li>
 
@@ -169,7 +171,34 @@
             <h1>Distribución de nuestra Aplicación de escritorio</h1>
             <div id="introduccion">
               <h3><br>Introducción</h3>
+              <p>Una vez tenemos lista la aplicación, es necesario empaquetarla para crear los ejecutables para los distintos sistemas operativos, MacOs, Windows y LinuxInstalacion
+                Aunque el proceso de distibución se puede realizar de forma manual, el ecosistema de aplicaciones de ElectronJs provee varias alternativas para ello (electron-forge, electron-builder o electron-packager).
+                <br><br>En el presente tutorial describimos el proceso que provee <strong>electron-packager</strong>. (<a href="https://electronjs.org/docs/tutorial/application-distribution"><cite>electronjs.org - electron-packager</cite></a>)
+                <br><br>Una vez instalada la aplicación, podemos empaquetar nuestra aplicación, bien desde la <strong> línea de comandos</strong> o creando un script que incluiremos en el archivo de configuración de nuestra aplicación
+                <strong>package.json </strong>. Podemos consultar la documentación y el funcionamiento de la misma en su repositorio de github:<a href="https://github.com/electron/electron-packager"><cite>electron-packager</cite></a>
+              </p>
 
+            </div>
+            <hr/>
+
+            <div id="instalacion">
+              <h3><br>Instalación electon-packager</h3>
+              <p>Este módulo requiere Node.js 8.0 o superior para ejecutarse. En macOS/Linux, es necesario tener instalado unzip y en Windows, se requiere tanto .NET Framework 4.5 o superior como Powershell 3 o superior.</p>
+              <p>Se ejecuta uno de los siguientes códigos  desde el terminal abierto en la carpeta de la aplicación</p>
+
+              <pre class="language-javascript"><code>
+    # For use in npm scripts (recommended)
+    $ npm install electron-packager --save-dev
+
+    # For use from the CLI
+    $ npm install electron-packager -g
+            </code></pre>
+
+            <p> <center> <img src="../img/distribucion/installElectronPackager.png" width="50%" height="250px"></center></p>
+
+            <p>Antes de empaquetar nuestra instalación, debemos revisar nuestro archivo <strong>package.json</strong> para configurar alguno de los parámetros de nuestra aplicación </p>
+            <p> <center>
+               <img src="../img/distribucion/configuracionPreviaJson.png" width="40%" height="420px"></center></p>
 
             </div>
             <hr/>
@@ -178,11 +207,87 @@
               <h3><br>Creación de instaladores con linea de comandos</h3>
 
 
+              <p>Empaquetar nuestra aplicación con el uso de electron-packager es tan fácil como ejectuar en la línea de comandos el siguiente código</p>
+              <div class="codigo">
+                <code>
+                  electron-packager &ltsourcedir&gt &ltappname&gt --platform=&ltplatform&gt --arch=&ltarch&gt [optional flags...]</code>
+                    <br>
+              </div>
+              <p>
+                donde,<br><br>
+                <i class="fa fa-envira" aria-hidden="true"></i> <strong>&ltsource&gt</strong> es el directorio donde se encuentra la aplicación <br>
+                <i class="fa fa-envira" aria-hidden="true"></i> <strong>&ltappname&gt</strong> es el nombre que tendrá el ejecutable de la aplicación<br>
+                <i class="fa fa-envira" aria-hidden="true"></i> <strong>--platform</strong> indicamos el sistema operativo (darwin- MacOs, win32-Windows, Linux)<br>
+                <i class="fa fa-envira" aria-hidden="true"></i> <strong>--overwrite</strong> Reemplaza cualquier directorio de empaquetamiento anterior<br>
+                <i class="fa fa-envira" aria-hidden="true"></i> <strong>--arch</strong> Aquitectura del sistema operativo<br>
+                <i class="fa fa-envira" aria-hidden="true"></i> <strong>--icon</strong> Icono de la aplicación<br>
+                <i class="fa fa-envira" aria-hidden="true"></i> <strong>--prune</strong> Elmina paquetes innecesarios<br>
+                <i class="fa fa-envira" aria-hidden="true"></i> <strong>--out</strong> Directorio donde se almacenará el paquete de la instalación<br>
+                <i class="fa fa-envira" aria-hidden="true"></i> <strong>--asar</strong> Crea un paquete asar para no mostrar el código fuente de nuestra aplicación<br>
+
+                <p> <center> <img src="../img/distribucion/asar.png" width="50%" height="400px"></center></p>
+
+
+              </p>
+              <p>
+              <br><strong>Creación Paquete Linux</strong>
+              <br><br>
+              <div class="codigo">
+                <code>
+                  $ electron-packager . primerosPasosElectron-app --overwrite --asar=true --platform=linux --arch=x64 --icon=ico.png --prune=true --out=release-builds</code>
+                    <br>
+              </div>
+              </p>
+
+              <p>
+              <br><strong>Creación Paquete Windows</strong>
+              <br><br>
+              <div class="codigo">
+                <code>
+                  $ electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=ico.png --prune=true --out=release-builds</code>
+                    <br>
+              </div>
+              </p>
+              <p>
+              <br><strong>Creación Paquete MacOs</strong>
+              <br><br>
+              <div class="codigo">
+                <code>
+                  $ electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=release-builds</code>
+                    <br>
+              </div>
+              </p>
+              <p>En la creación del paquete de MacOs, el parámetro --icon=ico.png da un error, por lo que se omite este parámetro</p>
+
+              </p>
+
+              <p>Tenemos también la opción de crear todas las posibles distribuciones de una vez con el siguente comando:</p>
+              <div class="codigo">
+                <code>
+                  $ electron-packager . --all --out=release-builds</code>
+                    <br>
+              </div>
+
+              <p> <center> <img src="../img/distribucion/packageallrelease.png" width="50%" height="500px"></center></p>
+
             </div>
             <hr/>
 
             <div id="packagejson">
               <h3><br>Configuración package.json</h3>
+              <p>Para no tener que estar recordando continuamente los parámetros y realizar siempre el empaquetamiento de la misma forma, se pueden configurar distintos scripts en el
+              archivo de configuración de la aplicación package.json</p><br>
+
+              <p> <center> <img src="../img/distribucion/packagejson.png" width="80%" height="500px"></center></p>
+
+              <p>y ejecutamos cada uno de los scripts que nos interese con el comando</p>
+
+              <div class="codigo">
+                <code>
+                  $ npm run package-mac</code>
+                    <br>
+              </div>
+              <br>
 
 
             </div>
@@ -196,6 +301,7 @@
                   <li><a href="https://github.com/electron/electron-packager"><cite>electron-packager</cite></a></li>
                   <li><a href="https://www.christianengvall.se/electron-packager-tutorial/"><cite>christianengvall.se - electron-packager</cite></a></li>
                   <li><a href="https://www.youtube.com/watch?v=rP7j_hDL40Y/"><cite>redStapler - electron-packager</cite></a></li>
+                  <li><a href="https://electronjs.org/docs/tutorial/application-distribution"><cite>electronjs.org - electron-packager</cite></a></li>
 
 
 
