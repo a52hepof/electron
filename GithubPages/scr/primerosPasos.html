@@ -232,10 +232,11 @@
 
 
                       <pre class="language-javascript"><code>
+      //invoca la api de electron y carga el módulo app y BrowserWindow
       const { app, BrowserWindow } = require('electron')
 
+      // Crea la ventana del navegador.
       function createWindow () {
-        // Crea la ventana del navegador.
         let win = new BrowserWindow({
           width: 800,
           height: 600,
@@ -248,14 +249,15 @@
         win.loadFile('index.html')
       }
 
+      //abre la venta correspondiente al proceso de Randerizado una vez está lista la app
       app.on('ready', createWindow)
 
                   </code></pre>
                   </p>
                   <p>Lo que hace nuestro main.js es invocar a electronjs, crear una instancia de página web o Proceso de Randerizado <strong>index.html</strong> y abrirla en una nueva ventana.
                     <br><br>
-                    En el siguiente apartado del tutorial se analizará más en detalle este main.js e incluiremos algunas funciones más avanzadas en el mismo, como la creación
-                    de un menú o la apertura de nuevas ventanas desde nuestro Proceso de Randerizado.
+                    En el siguiente apartado del tutorial se analizará más en detalle este main.js conforme se vayan añadiendo más funcionalidades de la Api de ElectronJs, como la creación
+                    de un menú, la apertura de nuevas ventanas desde nuestro Proceso de Randerizado o procesos de intercomunicación entre el Proceso Principal y los Procesos de Randerizado.
                   </p>
 
                   <p>
