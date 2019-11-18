@@ -1,0 +1,413 @@
+
+body{
+
+  font-family: georgia, times, serif;
+  color:#333;
+  font-size: 1.2rem;
+  line-height: 1.4em;
+  margin:0;
+  font-weight: 100;
+}
+
+
+p{
+  margin-bottom: 1.6em;
+  font-family: "Helvetica Neue","Segoe UI","Oxygen","Ubuntu","Cantarell","Open Sans";
+  font-size: medium;
+}
+
+h1{
+  font-size: 2rem;
+  line-height: 1.3em;
+  margin-top: 10px;
+}
+
+
+.container{
+  width:  95%;
+  margin-left:10px;
+  margin-right: 10px;
+
+}
+
+
+
+.header{
+  background: #2B2D3A;
+  color:#595959;
+  padding-bottom: 30px;
+  height: 160px;
+  //position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+
+}
+
+  .header #lema{
+      font-family:'Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI","Oxygen","Ubuntu","Cantarell","Open Sans",sans-serif';
+      text-align: left;
+      color:#9feaf9;
+      line-height:1.5;
+      letter-spacing: 1pt;
+  }
+
+  /* Create a column layout with Flexbox */
+  .row {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* Left column (menu) */
+  .left {
+    flex: 15%;
+    padding: 15px 0;
+    background-color:#2B2D3A;
+    color:white;
+  }
+
+  .left h2 {
+    padding-left: 8px;
+  }
+
+  /* Right column (page content) */
+  .right {
+    flex: 100%;
+    padding: 15px;
+    background: white;
+  }
+
+  /* Style the search box */
+  #mySearch {
+    width: 100%;
+    font-size: 18px;
+    padding: 11px;
+    border: 1px solid #ddd;
+  }
+
+  /* Style the navigation menu inside the left column */
+  #myMenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    -background: white;
+    background: #2B2D3A;
+;
+  }
+
+  #myMenu li a {
+    padding: 12px;
+    text-decoration: none;
+    color: white;
+    display: block
+  }
+
+  #myMenu li a:hover {
+    background-color: white;
+    color:#5DBCD2;
+    font-weight: bold;
+
+  }
+
+  #flecha{
+    padding-top:10px;
+    padding-right: 5px;
+  }
+  /* Style the sidenav links and the dropdown button */
+  .row .left a, .dropdown-btn {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    margin-left:-5px;
+  }
+
+
+
+  /* On mouse-over */
+  .row a:hover, .dropdown-btn:hover {
+    color: #f1f1f1;
+    }
+
+  .row h1{
+    margin-left: 2rem;
+    color:#3C4146;
+
+  }
+  .row h3{
+    color: #4078c0;
+    text-decoration: none;
+    margin-left: 2rem;
+  }
+  .row h4{
+    color:#20515B;
+    margin-left: 2rem;
+  }
+  .row h5{
+    color:#74b1be;
+    margin-left: 2rem;
+  }
+
+  .row .right p{
+
+    text-align: justify;
+    margin-right: 7rem;
+    margin-left: 3rem;
+    color:#4e4e4e;
+  }
+
+  .row .right table{
+
+    text-align: justify;
+    margin-right: 7rem;
+    margin-left: 3rem;
+    color:#4e4e4e;
+    width: 50%;
+    font-family: 'trebuchet MS' , 'Lucida sans' , Arial;
+    font-size: 13px;
+
+    border: solid #ccc 1px;
+    border-collapse: separate;
+    border-spacing: 0;
+      border-radius: 6px;
+  }
+
+
+  table > tbody > tr > td, table > thead > tr > th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+
+  table > thead > tr > th, table > thead > tr > td {
+    background-color: #4078c0;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#4078c0), to(#dce9f9));
+     background-image: -webkit-linear-gradient(top, #ebf3fc, #dce9f9);
+     background-image: -moz-linear-gradient(top, #ebf3fc, #dce9f9);
+     background-image: -ms-linear-gradient(top, #ebf3fc, #dce9f9);
+     background-image: -o-linear-gradient(top, #ebf3fc, #dce9f9);
+     background-image: linear-gradient(to bottom, #ebf3fc, #dce9f9);
+     -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+     -moz-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+     box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+     border-top: none;
+     text-shadow: 0 1px 0 rgba(255,255,255,.5);
+
+  }
+
+
+  .row .right .codigo{
+
+    margin-left: 4rem;
+    background:   #d9d9d9;
+    width: 60%;
+    overflow: auto;
+    text-align: justify;
+    border-radius: 5px;
+  }
+
+    .codigo code{
+      padding-left:20px;
+      padding-top:20px;
+    }
+
+  .row .right a{
+      cursor: pointer;
+      color:grey;
+      text-decoration: none;
+      color: #ff6600;
+      target=_blank;
+    }
+
+    .row .right li{
+      color: #4e4e4e;
+      margin-left: 3rem;
+    }
+
+  .row .right #fundamentosElecton img{
+    margin: -25px;
+    width: 50%;
+  }
+  .row .right #fundamentosElecton #img4{
+    margin: -25px;
+    width: 400px;
+    height: 300px;
+  }
+  .row .right #fundamentosElecton #img5{
+    margin: -25px;
+    width: 30%;
+  }
+
+  .row .right #comparativas #pros-contras{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left:4rem;
+    margin-right: 4rem;
+  }
+
+  /* Main content */
+  .main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+
+  /* Add an active class to the active dropdown button */
+  .active {
+    background-color: #4078c0;
+    color: white;
+  }
+
+  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+  .dropdown-container {
+    display: none;
+    background:    #808080;
+    color: white;
+    padding-left: 8px;
+
+  }
+
+
+  /* Optional: Style the caret down icon */
+  .fa-caret-down {
+    float: right;
+    margin-top: -4px;
+    margin-right:  6px;
+
+  }
+
+  /* Some media queries for responsiveness */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+.footer{
+  background: #2B2D3A;
+  color:#A0ECF4;
+  padding: 2rem 0;
+}
+
+  .footer a{
+
+    color: white;
+    text-decoration: none;
+  }
+
+  .footer #RSS{
+
+    display: inline;
+    margin-right: -15rem;
+  }
+
+.menu-icon{
+
+  display: none;
+
+}
+
+.nav-container{
+  display:flex;
+  justify-content:flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  color:white;
+}
+
+.footer .nav-container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.navigation ul{
+  margin:0;
+  padding: 0;
+  list-style: none;
+}
+
+
+  .navigation ul li{
+    display: inline-block;
+
+  }
+
+    .navigation ul li a{
+      display: block;
+      padding: 0.5rem 1rem;
+      transition: all 0.4s linear;
+      border-radius: 7px;
+
+    }
+
+    .navigation ul li a:hover{
+      background: #ccc;
+
+    }
+
+
+
+
+
+
+@media only screen and (max-width:733px) {
+  .menu-icon{
+
+    display: block;
+    cursor: pointer;
+
+  }
+  .navigation{
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .navigation ul{
+    display:none;
+  }
+  .navigation ul.show{
+    display:block;
+
+
+  }
+  .navigation ul li{
+    display: block;
+
+  }
+
+  .navigation ul li a{
+    display: block;
+    padding:0.5rem 0;
+    transition:all 0.4s linear;
+    border-radius: 7px;
+
+  }
+
+
+
+
+}
+
+@media only screen and (max-width:1177px) {
+  .header #formularioNav .form-control{
+    width: 200px;
+    height: 50px;
+
+    border-radius: 10px;
+  }
+
+  .header #formularioNav .form-inline .btn2{
+    width: 60px;
+    height: 50px;
+    color:#204061;
+    border-radius: 10px;
+  }
+
+}

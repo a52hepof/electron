@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <!-
+
+    https://developer.mozilla.org/es/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout
+
+  -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" initial-scale=1 >
+    <meta name="description" content="La web para los investigadores 101">
+    <meta name="keywords" content="comunidad investigadores, informática, articulos investigación, blockchain">
+    <meta name="author" content="Equipo III Programación Web 2019-2020 UCO">
+
+    <link rel="stylesheet" href="../css/index2.css">
+    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="../css/electronApi2.css">
+
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link rel="stylesheet" href="../img/font-awesome-4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+
+
+    <header class="header">
+
+      <div class="container nav-container">
+
+        <a href="../../index.html">  <img src="../img/electron.png" alt="" width="320px"></a>
+
+        <span class="menu-icon">Ver menú</span>
+
+        <div id="lema">
+          <h1>Aplicaciones de escritorio multiplataforma con Electron</h1>
+        </div>
+        <!--
+        <nav class="navigation">
+          <ul class="">
+            <li id="text2"><a href="registro.html"><i class="fa fa-user-plus" aria-hidden="true"></i>Registro</a></li>
+            <li id="text1" onmouseover="colorElementRed(id)" onmouseout="undoColorElement(id)" ><a href="inicioSesion.html"><i class="fa fa-sign-in "></i> Iniciar Sesión</a></li>
+          </ul>
+        </nav>
+      -->
+      </div>
+
+    </header>
+
+      <div class="container2">
+        <div class="row">
+          <div class="left" >
+            <h2>Menu</h2>
+            <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+            <ul id="myMenu">
+                <li class="dropdown-btn">
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="introduccion.html">Introducción</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="introduccion.html#queEsElecton">¿Qué es ElectronJs?</a></li>
+                  <li ><a href="introduccion.html#requisitos">Requisitos ElectronJS</a></li>
+                  <li ><a href="introduccion.html#fundamentosElecton">Fundamentos de ElectronJS</a></li>
+                  <li ><a href="introduccion.html#Api">Acceso a la Api de ElectronJS</a></li>
+                  <li ><a href="introduccion.html#herramientas">Ecosistema ElectronJs</a></li>
+                  <li ><a href="introduccion.html#comparativas">Alternativas a ElectronJS</a></li>
+                  <li ><a href="introduccion.html#VentajasInconvenientes">Ventajas e inconvenientes ElectronJS</a></li>
+                  <li ><a href="introduccion.html#targetApps">Aplicaciones objectivo de ElectronJs</a></li>
+                  <li ><a href="introduccion.html#Ejemplos">Ejemplos de aplicaciones ElectronJS</a></li>
+                  <li ><a href="introduccion.html#referencias">Referencias</a></li>
+                </div>
+
+                <li class=" dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="instalacion.html">Instalación de electron</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="instalacion.html#windowsInstalacion">Windows</a></li>
+                  <li ><a href="instalacion.html#LinuxInstalacion">Linux</a></li>
+                  <li ><a href="instalacion.html#referencias">Referencias</a></li>
+                </div>
+
+                <li class=" dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="primerosPasos.html">Primeros Pasos</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="primerosPasos.html#primerosPasos">Nuestra primer aplicación</a></li>
+                  <li ><a href="#DefaultStructure">Estructura de ficheros de ElectronJs</a></li>
+                  <li ><a href="primerosPasos.html#referencias">Referencias</a></li>
+
+                </div>
+
+                <li class="active  dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="electronApi.html">Api Electron</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="winAdminApp.html">Administración de ventanas</a></li>
+                  <li ><a href="menuApp.html">Creación de Menús personalizados</a></li>
+                  <li ><a href="ipcApp.html">Comunicación entre procesos</a></li>
+                  <li ><a href="dialogueApp.html#">Diálogos nativos</a></li>
+                  <li ><a href="notificationApp.html">Notificaciones</a></li>
+
+                </div>
+
+                <li class=" dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="distribucion.html">Distribución de las aplicaciones</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="distribucion.html#introduccion">Introducción</a></li>
+                  <li ><a href="distribucion.html#instalacion">Instalación electon-packager</a></li>
+                  <li ><a href="distribucion.html#lineacomandos">Linea de comandos</a></li>
+                  <li ><a href="distribucion.html#packagejson">Configuración package.json</a></li>
+
+                </div>
+
+
+
+                <li class=" dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="primerosPasos.html">Tutorial ejemplos Electron</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="#">-</a></li>
+
+                </div>
+
+
+                <li class=" dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="primerosPasos.html">Siguientes Pasos</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="#">-</a></li>
+
+                </div>
+
+            </ul>
+          </div>
+
+
+          <div class="right" style="background-color:white;">
+            <h1>Comunicación entre Proceso Principal y Procesos de Randerizado</h1>
+            <div >
+              <p>En Electron hay varias formas de establecer una comunicación entre el proceso principal y el proceso renderizador, como los módulos ipcRenderer y ipcMain para enviar mensajes, y el módulo remote para una comunicación de tipo RPC.
+              <br><br>En este apartado veremos algunos ejemplos de comunicación entre procesos utilizando ambos métodos. </p>
+
+              <p></p>
+            </div>
+            <div class="indiceContenido">
+
+              <ul>
+                <li><a href="menuApp.html#rpc">Remote RPC</a></li>
+                <li><a href="menuApp.html#ipc">IPC Comunicación</a></li>
+                <li> <a href="menuApp.html#jugando">Ejercicio</a></li>
+                <li><a href="menuApp.html#referencias">Referencias</a></li>
+              </ul>
+
+            </div>
+            <hr>
+
+            <div id="rpc">
+              <h3><br>Remote RPC</h3>
+
+              <p>Para la comunicación entre el Principal y el de Randerizado de tipo RCP ( Remote Procedure Call ), ElectronJs provee una funcionalidad definida en el módulo  <strong>remote</strong>, <a href="https://electronjs.org/docs/api/remote">Módulo remote</a>
+              <br><br>En electron, los módulos relacionados con GUI (como dialog, menu etc.) están solamente disponibles en el proceso principal, no en el proceso de renderizado.
+              Para usarlos en el proceso de renderizado se puede utilizar el módulo remote, con el que se pueden invocar métodos del objeto del proceso principal sin enviar explícitamente mensajes entre procesos. Con este método también podemos
+              usar funciones específicas creadas en el Proceso Principal.
+              <br><br>La llamada a remote se hace con el siguiente código en nuestro Proceso de Randerizado:
+
+              <div class="codigo">
+                <code>const remote = require('electron').remote</code>
+              </div>
+              <br>
+              <p>También se puede instanciar, invocando al método de ElectronJs que necesitemos, de la siguiente manera:</p>
+
+              <div class="codigo">
+                <code>const { BrowserWindow } = require('electron').remote</code>
+              </div>
+
+              <p>
+                Como hemos indicado, otra de los métodos que podemos invocar desde nuestros Procesos de Randerizado es el método Menu. Podemos utilizar <strong>remote</strong>
+                para la creación de Menús Contextuales en nuestro proceso de randerizado.
+                <br><br>Veamos la siguiente propuesta:
+
+                <pre class="language-javascript"><code>
+      //invocamos a la Api de electron y a los métodos requeridos
+      const {remote} = require('electron')
+      const { Menu, MenuItem } = remote
+
+      //creamos una nueva instancia de menu y la añadimos nuevos elementos, uno a uno
+      const menu = new Menu()
+      menu.append(new MenuItem({ label: 'El Tiempo', click() { console.log('item 1 clicked') } }))
+      menu.append(new MenuItem({ type: 'separator' }))
+      menu.append(new MenuItem({ label: 'Avisos metereológicos', type: 'checkbox', checked: false }))
+
+      //prevenimos el comportamiento por defecto del clic derecho del ratón.
+      window.addEventListener('contextmenu', (e) => {
+        e.preventDefault()
+        menu.popup({ window: remote.getCurrentWindow() })
+      }, false)
+
+                </code></pre>
+              </p>
+
+              <br><br>Las funciones específicas creadas en el Proceso Principal que se quieran ejecutar desde algún Proceso de Randerizado se han de instanciar con <i>exports</i>, indicando de esta forma
+              que son funciones exportables.
+
+              <pre class="language-javascript"><code>
+
+      exports.openWindow=()=>{
+      let newWin =new BrowserWindow({
+      width: 400,
+      height: 200,
+      webPreferences: {
+      nodeIntegration: true
+      }
+
+      })
+
+      newWin.loadFile('./src/iss.html')
+
+      newWin.on('closed', () => {
+      // Elimina la referencia al objeto window, normalmente  guardarías las ventanas
+      // en un vector si tu aplicación soporta múltiples ventanas, este es el momento
+      // en el que deberías borrar el elemento correspondiente.
+      win = null
+      })
+
+      }
+              </code></pre>
+
+              <p>
+                Así las podemos usar en nuestro Proceso de randerizado
+
+                <pre class="language-javascript"><code>
+
+      const remote = require('electron').remote
+      //creamos esta variable para comunicarnos con el Proceso Principal
+      const main = remote.require('./main.js')
+
+      let button = document.createElement('button')
+
+      button.textContent='Abrir Ventana'
+      document.body.appendChild(button)
+
+      button.addEventListener('click', ()=>{main.openWindow()})
+
+                </code></pre>
+
+              </p>
+            </div>
+            <hr>
+
+            <div id="ipc">
+              <h3><br>IPC Comunication</h3>
+
+
+
+
+
+
+              
+            </div>
+            <hr>
+
+
+
+
+
+
+
+            <div  id="jugando">
+                <h3><br>Ejercicio</h3>
+                <p>
+                  El ejercicio consiste en implementar otro botón para llamar a otra ventana en la que añadimos información acerca de nosotros mismos o de lo que queramos.
+                  <blockquote><i>Nota: con el procedimiento <strong>remote</strong> podemos invocar funciones propias de main en nuestro propio Proceso de Randerizado como el método <strong>BrowserWindow </strong></i></blockquote>
+                </p>
+                <p>
+                  <br>La solución en nuestro en <a href="https://github.com/a52hepof/electron">Github Tutorial Electron</a>
+                </p>
+            </div>
+              <hr>
+
+            <div class="referencias" id="referencias">
+              <h3><br>Referencias</h3>
+                <ul>
+                  <li> <a href="https://electronjs.org/docs/api/remote">Módulo remote</a></li>
+                  <li> <a href="https://electronjs.org/docs/api/remote">Módulo ipc</a></li>
+                  <li> <a href="https://www.tutorialspoint.com/electron/electron_menus.htm">tutorialspoint.com - menus</a></li>
+                </ul>
+            </div>
+
+        </div>
+      </div>
+
+
+    <footer class="footer">
+      <div class="container nav-container">
+        <div id="company">
+          <p>Am - Fhp &copy, 2019</p>
+        </div>
+
+        <nav class="navigation">
+          <ul>
+            <li><a href="#contacto"><i class="fa fa-user-circle"></i> Sobre Nosotros</a></li>
+          </ul>
+        </nav>
+
+
+        <div id="RSS">
+
+          <div class="boxRSS">
+            <i class="fa fa-github fa-3x" aria-hidden="true"></i>
+            <!--<img src="./GithubPages/img/iconsRSS/git.svg" width="60px">-->
+          </div>
+
+        </div>
+      </div>
+
+      <script scr="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="../js/index.js"> </script>
+
+    </footer>
+
+
+
+  </body>
+</html>
