@@ -2,7 +2,7 @@
 const electron = require('electron')
 const Menu=electron.Menu
 const app = electron.app
-const main = remote.require('./main.js')
+//const main = remote.require('./main.js')
 
 var menu =Menu.buildFromTemplate([
   {
