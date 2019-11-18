@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <!-
+
+    https://developer.mozilla.org/es/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout
+
+  -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" initial-scale=1 >
+    <meta name="description" content="La web para los investigadores 101">
+    <meta name="keywords" content="comunidad investigadores, informática, articulos investigación, blockchain">
+    <meta name="author" content="Equipo III Programación Web 2019-2020 UCO">
+
+    <link rel="stylesheet" href="../css/index2.css">
+    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="../css/electronApi2.css">
+
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link rel="stylesheet" href="../img/font-awesome-4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+
+
+    <header class="header">
+
+      <div class="container nav-container">
+
+        <a href="../../index.html">  <img src="../img/electron.png" alt="" width="320px"></a>
+
+        <span class="menu-icon">Ver menú</span>
+
+        <div id="lema">
+          <h1>Aplicaciones de escritorio multiplataforma con Electron</h1>
+        </div>
+        <!--
+        <nav class="navigation">
+          <ul class="">
+            <li id="text2"><a href="registro.html"><i class="fa fa-user-plus" aria-hidden="true"></i>Registro</a></li>
+            <li id="text1" onmouseover="colorElementRed(id)" onmouseout="undoColorElement(id)" ><a href="inicioSesion.html"><i class="fa fa-sign-in "></i> Iniciar Sesión</a></li>
+          </ul>
+        </nav>
+      -->
+      </div>
+
+    </header>
+
+      <div class="container2">
+        <div class="row">
+          <div class="left" >
+            <h2>Menu</h2>
+            <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+            <ul id="myMenu">
+                <li class="dropdown-btn">
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="introduccion.html">Introducción</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="introduccion.html#queEsElecton">¿Qué es ElectronJs?</a></li>
+                  <li ><a href="introduccion.html#requisitos">Requisitos ElectronJS</a></li>
+                  <li ><a href="introduccion.html#fundamentosElecton">Fundamentos de ElectronJS</a></li>
+                  <li ><a href="introduccion.html#Api">Acceso a la Api de ElectronJS</a></li>
+                  <li ><a href="introduccion.html#herramientas">Ecosistema ElectronJs</a></li>
+                  <li ><a href="introduccion.html#comparativas">Alternativas a ElectronJS</a></li>
+                  <li ><a href="introduccion.html#VentajasInconvenientes">Ventajas e inconvenientes ElectronJS</a></li>
+                  <li ><a href="introduccion.html#targetApps">Aplicaciones objectivo de ElectronJs</a></li>
+                  <li ><a href="introduccion.html#Ejemplos">Ejemplos de aplicaciones ElectronJS</a></li>
+                  <li ><a href="introduccion.html#referencias">Referencias</a></li>
+                </div>
+
+                <li class=" dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="instalacion.html">Instalación de electron</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="instalacion.html#windowsInstalacion">Windows</a></li>
+                  <li ><a href="instalacion.html#LinuxInstalacion">Linux</a></li>
+                  <li ><a href="instalacion.html#referencias">Referencias</a></li>
+                </div>
+
+                <li class=" dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="primerosPasos.html">Primeros Pasos</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="primerosPasos.html#primerosPasos">Nuestra primer aplicación</a></li>
+                  <li ><a href="#DefaultStructure">Estructura de ficheros de ElectronJs</a></li>
+                  <li ><a href="primerosPasos.html#referencias">Referencias</a></li>
+
+                </div>
+
+                <li class="active  dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="electronApi.html">Api Electron</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="winAdminApp.html">Administración de ventanas</a></li>
+                  <li ><a href="menuApp.html">Creación de Menús personalizados</a></li>
+                  <li ><a href="ipcApp.html">Comunicación entre procesos</a></li>
+                  <li ><a href="dialogueApp.html#">Diálogos nativos</a></li>
+                  <li ><a href="notificationApp.html">Notificaciones</a></li>
+
+                </div>
+
+                <li class=" dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="distribucion.html">Distribución de las aplicaciones</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="distribucion.html#introduccion">Introducción</a></li>
+                  <li ><a href="distribucion.html#instalacion">Instalación electon-packager</a></li>
+                  <li ><a href="distribucion.html#lineacomandos">Linea de comandos</a></li>
+                  <li ><a href="distribucion.html#packagejson">Configuración package.json</a></li>
+
+                </div>
+
+
+
+                <li class=" dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="primerosPasos.html">Tutorial ejemplos Electron</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="#">-</a></li>
+
+                </div>
+
+
+                <li class=" dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="primerosPasos.html">Siguientes Pasos</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="#">-</a></li>
+
+                </div>
+
+            </ul>
+          </div>
+
+
+          <div class="right" style="background-color:white;">
+            <h1>Administración de ventanas</h1>
+            <div >
+              <p>Una de las tareas encomendadas al Proceso Principal es la creación de instancias de Procesos de Randerizado o de ventanas. Ampliaríamos esta funcionalidad
+              a la gestión de estos procesos a lo largo de su ciclo de vida. En este apartado veremos los distintos métodos que facilita la Api de ElectronJs al Proceso principal
+              para gestionar los Procesos de Randerizado que crea</p>
+            </div>
+            <div class="indiceContenido">
+
+              <ul>
+                <li><a href="winAdminApp.html#creacion">Creación de Ventanas</a></li>
+                <li><a href="winAdminApp.html#cierreWin">Cierre de Ventanas</a></li>
+                <li> <a href="winAdminApp.html#jugando">Ejercicio</a></li>
+                <li><a href="winAdminApp.html#referencias">Referencias</a></li>
+              </ul>
+
+            </div>
+            <hr>
+
+            <div id="creacion">
+              <p><br/><h3>Creación de Ventanas</h3></p>
+
+              <p>El módulo <strong>BrowserWindow</strong> permite gestionar ventanas dentro de una aplicación Electron. Aquí, es importante recordar, que tanto los Procesos de Randerizado como el propio Proceso
+                Principal tienen acceso a las APIs de Node.js.
+                <br><br>
+
+                <div class="codigo">
+                  <code>let win = new BrowserWindow({ propiedades })</code>
+                </div>
+
+                <p>Tanto las propiedades como los métodos de BrowserWindow están recogidas en la documentación de electron. En las propiedades encontramos características de las Ventanas
+                como el tamaño, el color del fondo, si es transparente, el nivel de opacidad, si se puede cambiar su tamaño o moverse, ... <a href="https://electronjs.org/docs/api/browser-window#clase-browserwindow">Propiedades BrowserWindow</a>
+                <br><br>Una de las propiedades que no debemos incluir es <code>nodeIntegration: true</code> que habilita la integración de NodeJs en nuestra aplicación.
+                <br><br>Después de definidas las propiedades de la nueva instancia de ventana, debemos indicarle qué página web es la que cargaremos en ella, <code>win.loadFile('index.html')</code>, y este html, junto con su Css y JavaScript,
+                <br><br>Esta instancia de ventana, <code>let win</code>, la incluimos en una función  <code> function createWindow()</code> para llamarla cuando la aplicación ElectronJs ha terminado de iniciarse.
+                definirán nuestro primer Proceso de Randerizado. Más adelante veremos cómo se comunica con el Proceso Principal.<br><br>
+                Después de crear la instancia de BrowserWindow, debemos indicarle a nuestra aplicación que la cargue una vez esté lista. Para ello, debemos haber cargado el módulo <strong>app</strong> y usar su método
+                <code>app.on('ready', createWindow)</code>. Más información sobre este módulo la encontramos en    <a href="https://electronjs.org/docs/api/app">Módulo app</a>
+
+                <pre class="language-javascript"><code>
+
+        //cargamos la Api de electron.js
+        const electron=require ('electron')
+        //invoca la api de electron y carga el módulo app y BrowserWindow
+        const { app, BrowserWindow } = require('electron')
+
+        // Crea la ventana del navegador.
+        function createWindow () {
+        let win = new BrowserWindow({
+        width: 800,
+        height: 600,
+        webPreferences: {
+        nodeIntegration: true
+        }
+        })
+
+        // y carga el  index.html de la aplicación.
+        win.loadFile('index.html')
+        }
+
+        //abre la venta correspondiente al proceso de Randerizado una vez está lista la app
+        app.on('ready', createWindow)
+
+              </code></pre>
+
+              <p>Podemos habilitar el modo de desarrollador para nuestra aplicación añadiendo a nuestra instancia BrowserWindow <code>win.webContents.openDevTools()</code>
+              Es importante comentar este línea de código cuando vayamos a distribuir nuestra aplicación. </p>
+
+              <p>
+                <br><br>El sistema operativo <strong>MacOs</strong> requiere ciertas configuraciones especiales para su correcto funcionamiento.Es común volver a crear una ventana en la aplicación cuando el
+                icono del dock es clicado y no hay otras ventanas abiertas. Para ello añadimos el siguiente código después de <code>app.on('ready', createWindow)</code>
+
+                <pre class="language-javascript"><code>
+        app.on('activate', () => {
+
+          if (win === null) {
+            createWindow()
+          }
+        })
+              </code></pre>
+              </p>
+
+              <p>
+
+                <br>
+                <blockquote><i>Consejos: Utiliza una ventana invisible para ejecutar tareas de fondo. Esto se realiza con la propiedad show:false.</i></blockquote>
+
+
+
+              </p>
+            </div>
+            <hr>
+          <div id="cierreWin">
+            <p><br/><h3>Cierre de Ventanas</h3></p>
+            <p>Es fundamental admninistrar correctamente el cierre de las ventanas, tanto de la que se crea como el cierre global de la aplicación.
+              Para controlar qué hacer cuando se cierra una ventana usamos el evento <i>closed</i> de la instancia creada <strong>BrowserWindow</strong> e incluimos el siguiente código en la función <code>createWindow()</code>
+              de nuestro Proceso de Randerizado. Con ello buscamos eliminar cualquier referencia al objeto. </p>
+
+              <pre class="language-javascript"><code>
+        win.on('closed', () => {
+
+          win = null
+
+        })
+            </code></pre>
+            </p>
+            <p>
+              Para que la aplicación salga, después de cerradas todas las ventanas es preciso usar el evento <i>window-all-closed</i> de la instancia de la aplicación creada con el método <strong>app</strong>
+              Si no se subscribe a este evento y todas las ventanas están cerradas, el comportamiento por defecto es salir de la aplicación. Sin embargo, en <strong>MacOS</strong> es común para las aplicaciones y sus barras de menú
+              que estén activas hasta que el usuario salga explicitamente con Cmd + Q. Para ello incluimos este evento con el siguiente código:
+            </p>
+              <br>
+            <pre class="language-javascript"><code>
+        app.on('window-all-closed', () => {
+
+          if (process.platform !== 'darwin') {
+            app.quit()
+          }
+        })
+          </code></pre>
+          <br><br>
+          <p>Después de añadidas las distintos eventos que nos permiten un manejo básico de las ventanas, nuestro código inicial para el Proceso Principal contenido en el archivo <strong>main.js</strong> quedaría de la siguiente forma
+            <br>
+            <pre class="language-javascript"><code>
+        //cargamos la Api de electron.js
+        const electron=require ('electron')
+        //Cargamos los módulos necesarios de la Api de electron, app, BrowserWindow y Menu
+        const { app, BrowserWindow, Menu } = electron
+
+        // Mantén una referencia global del objeto window, si no lo haces, la ventana
+        // se cerrará automáticamente cuando el objeto JavaScript sea eliminado por el recolector de basura.
+        let win
+
+        function createWindow () {
+          // Crea la ventana del navegador.
+          win = new BrowserWindow({
+            width: 1200,
+            height: 800,
+            webPreferences: {
+              nodeIntegration: true
+            }
+          })
+
+          // y carga el index.html de la aplicación.
+        win.loadFile('./src/index2.html')
+          /*
+          Se ha encontrado esta forma de cargar los procesos de randerizado pero a nosotros no nos ha funcionado
+          const path =require('path')
+          const url =require('url')
+          win.loadUrl(url.format({
+            pathname:path.join(__dirname,'index.html'),
+            protocol:'file',
+            slashes:true
+          }))
+          */
+          // Abre las herramientas de desarrollo (DevTools).
+          win.webContents.openDevTools()
+
+          // Emitido cuando la ventana es cerrada.
+          win.on('closed', () => {
+            // Elimina la referencia al objeto window, normalmente  guardarías las ventanas
+            // en un vector si tu aplicación soporta múltiples ventanas, este es el momento
+            // en el que deberías borrar el elemento correspondiente.
+            win = null
+          })
+
+        // Este método será llamado cuando Electron haya terminado
+        // la inicialización y esté listo para crear ventanas del navegador.
+        // Algunas APIs pueden usarse sólo después de que este evento ocurra.
+        app.on('ready', createWindow)
+
+        app.on('activate', () => {
+          // En macOS es común volver a crear una ventana en la aplicación cuando el
+          // icono del dock es clicado y no hay otras ventanas abiertas.
+          if (win === null) {
+            createWindow()
+          }
+        })
+
+        // Sal cuando todas las ventanas hayan sido cerradas.
+        app.on('window-all-closed', () => {
+          // En macOS es común para las aplicaciones y sus barras de menú
+          // que estén activas hasta que el usuario salga explicitamente con Cmd + Q
+          if (process.platform !== 'darwin') {
+            app.quit()
+          }
+        })
+
+          </code></pre>
+
+
+
+          </p>
+          </div>
+
+            <hr>
+
+            <div  id="jugando">
+              <h3><br>Ejercicio</h3>
+              <p>
+                Os proponemos el siguiente ejercicio para ver si sois capaces de crear vuestra propia aplicación de Escritorio, saludar al mundo  y añadirle alguna funcionalidad más de la Api de ElectronJs.
+                Necesitamos mostrar si la web que estamos mostrando es un Proceso de Randerizado como debería de ser, así como el sistema operativo en el que está corriendo la aplicación.
+                <blockquote><i>Nota: debes usar el método <strong>process</strong>, válido para el Proceso Principal y los Procesos de Randerizado</i></blockquote>
+              </p>
+              <p>
+                <br>La solución en nuestro en <a href="https://github.com/a52hepof/electron">Github Tutorial Electron</a>
+
+
+
+
+
+
+              </p>
+
+
+            </div>
+            <hr>
+
+
+
+            <div  id="referencias">
+              <h3><br>Referencias</h3>
+                <ul>
+                  <li><a href="https://electronjs.org/docs/api/browser-window#clase-browserwindow">electonjs.org - Propiedades BrowserWindow</a></li>
+                  <li> <a href="https://electronjs.org/docs/api/app">electonjs.org - Módulo app</a></li>
+                  <li><a href="https://electronjs.org/docs/tutorial/first-app"><cite>electonjs.org - Primera aplicación en ElectronJS</cite></a></li>
+                  <li><a href="https://www.youtube.com/watch?v=iyjM39a0MWE"><cite>ElectronJS: Beginner To Pro</cite></a></li>
+                </ul>
+            </div>
+
+
+
+
+
+        </div>
+      </div>
+
+
+    <footer class="footer">
+      <div class="container nav-container">
+        <div id="company">
+          <p>Am - Fhp &copy, 2019</p>
+        </div>
+
+        <nav class="navigation">
+          <ul>
+            <li><a href="#contacto"><i class="fa fa-user-circle"></i> Sobre Nosotros</a></li>
+          </ul>
+        </nav>
+
+
+        <div id="RSS">
+
+          <div class="boxRSS">
+            <i class="fa fa-github fa-3x" aria-hidden="true"></i>
+            <!--<img src="./GithubPages/img/iconsRSS/git.svg" width="60px">-->
+          </div>
+
+        </div>
+      </div>
+
+      <script scr="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="../js/index.js"> </script>
+
+    </footer>
+
+
+
+  </body>
+</html>

@@ -8,7 +8,7 @@ const Menu=electron.Menu
 const shell =require('electron').shell
 
 */
-const { app, BrowserWindow, Menu } = electron
+const { app, BrowserWindow, Menu, shell } = electron
 
 // Mantén una referencia global del objeto window, si no lo haces, la ventana
 // se cerrará automáticamente cuando el objeto JavaScript sea eliminado por el recolector de basura.
@@ -48,7 +48,46 @@ win.loadFile('./src/index2.html')
     win = null
   })
 
+  var menu =Menu.buildFromTemplate([
+    {
+      label:'Menu',
+      submenu:[
+        {label:'Usuarios',
+          click(){
+            openWindowUsers()
+          },
+          accelerator: 'CmdOrCtrl+Shift+U'
 
+        },
+        {label:'Universidad de Córdoba',
+          click(){
+            shell.openExternal('https://www.uco.es')
+
+          },
+          accelerator: 'CmdOrCtrl+Shift+O'
+
+        },
+        {type:'separator'},
+        {label:'Exit',
+          click(){
+            app.quit();
+          },
+          accelerator: 'CmdOrCtrl+Shift+C'
+        }
+      ]
+    },
+    {
+      label:'info',
+      submenu:[
+        {label:'Autores'}
+      ]
+    }
+
+
+
+  ])
+
+  Menu.setApplicationMenu(menu)
 
 }
 
@@ -103,50 +142,7 @@ exports.openWindow=()=>{
 // Este método será llamado cuando Electron haya terminado
 // la inicialización y esté listo para crear ventanas del navegador.
 // Algunas APIs pueden usarse sólo después de que este evento ocurra.
-app.on('ready', function(){
-  createWindow()
-
-    const template=[
-      {
-        label:'Menu',
-        submenu:[
-          {label:'Usuarios',
-            click(){
-              openWindowUsers()
-            },
-            accelerator: 'CmdOrCtrl+Shift+U'
-
-          },
-          {label:'Universidad de Córdoba',
-            click(){
-              shell.openExternal('https://www.uco.es')
-
-            },
-            accelerator: 'CmdOrCtrl+Shift+O'
-          },
-          {type:'separator'},
-          {label:'Exit',
-            click(){
-              app.quit();
-            },
-            accelerator: 'CmdOrCtrl+Shift+C'
-          }
-        ]
-      },
-      //Añadimos un nuevo item con un submenú
-      {
-        label:'info',
-        submenu:[
-          {label:'Autores'}
-        ]
-      }
-
-    ]
-
-  var menu =Menu.buildFromTemplate(template)
-  Menu.setApplicationMenu(menu)
-
-})
+app.on('ready', createWindow)
 
 app.on('activate', () => {
   // En macOS es común volver a crear una ventana en la aplicación cuando el

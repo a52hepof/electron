@@ -111,11 +111,11 @@
                               <a href="electronApi.html">Api Electron</a>
                             </li>
                             <div class="dropdown-container">
-                              <li ><a href="winAdmin.html">Administración de ventanas</a></li>
+                              <li ><a href="winAdminApp.html">Administración de ventanas</a></li>
                               <li ><a href="menuApp.html">Creación de Menús personalizados</a></li>
-                              <li ><a href="ComApp.html">Comunicación entre procesos</a></li>
-                              <li ><a href="Dialogos.html#">Diálogos nativos</a></li>
-                              <li ><a href="notification.html">Notificaciones</a></li>
+                              <li ><a href="ipcApp.html">Comunicación entre procesos</a></li>
+                              <li ><a href="dialogueApp.html#">Diálogos nativos</a></li>
+                              <li ><a href="notificationApp.html">Notificaciones</a></li>
 
                             </div>
 
@@ -232,6 +232,9 @@
 
 
                       <pre class="language-javascript"><code>
+
+      //cargamos la Api de electron.js
+      const electron=require ('electron')
       //invoca la api de electron y carga el módulo app y BrowserWindow
       const { app, BrowserWindow } = require('electron')
 
