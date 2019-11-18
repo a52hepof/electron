@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <!-
+
+    https://developer.mozilla.org/es/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout
+
+  -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" initial-scale=1 >
+    <meta name="description" content="La web para los investigadores 101">
+    <meta name="keywords" content="comunidad investigadores, informática, articulos investigación, blockchain">
+    <meta name="author" content="Equipo III Programación Web 2019-2020 UCO">
+
+    <link rel="stylesheet" href="../css/index2.css">
+    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="../css/electronApi2.css">
+
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link rel="stylesheet" href="../img/font-awesome-4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+
+
+    <header class="header">
+
+      <div class="container nav-container">
+
+        <a href="../../index.html">  <img src="../img/electron.png" alt="" width="320px"></a>
+
+        <span class="menu-icon">Ver menú</span>
+
+        <div id="lema">
+          <h1>Aplicaciones de escritorio multiplataforma con Electron</h1>
+        </div>
+        <!--
+        <nav class="navigation">
+          <ul class="">
+            <li id="text2"><a href="registro.html"><i class="fa fa-user-plus" aria-hidden="true"></i>Registro</a></li>
+            <li id="text1" onmouseover="colorElementRed(id)" onmouseout="undoColorElement(id)" ><a href="inicioSesion.html"><i class="fa fa-sign-in "></i> Iniciar Sesión</a></li>
+          </ul>
+        </nav>
+      -->
+      </div>
+
+    </header>
+
+      <div class="container2">
+        <div class="row">
+          <div class="left" >
+            <h2>Menu</h2>
+            <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+            <ul id="myMenu">
+                <li class="dropdown-btn">
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="introduccion.html">Introducción</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="introduccion.html#queEsElecton">¿Qué es ElectronJs?</a></li>
+                  <li ><a href="introduccion.html#requisitos">Requisitos ElectronJS</a></li>
+                  <li ><a href="introduccion.html#fundamentosElecton">Fundamentos de ElectronJS</a></li>
+                  <li ><a href="introduccion.html#Api">Acceso a la Api de ElectronJS</a></li>
+                  <li ><a href="introduccion.html#herramientas">Ecosistema ElectronJs</a></li>
+                  <li ><a href="introduccion.html#comparativas">Alternativas a ElectronJS</a></li>
+                  <li ><a href="introduccion.html#VentajasInconvenientes">Ventajas e inconvenientes ElectronJS</a></li>
+                  <li ><a href="introduccion.html#targetApps">Aplicaciones objectivo de ElectronJs</a></li>
+                  <li ><a href="introduccion.html#Ejemplos">Ejemplos de aplicaciones ElectronJS</a></li>
+                  <li ><a href="introduccion.html#referencias">Referencias</a></li>
+                </div>
+
+                <li class=" dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="instalacion.html">Instalación de electron</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="instalacion.html#windowsInstalacion">Windows</a></li>
+                  <li ><a href="instalacion.html#LinuxInstalacion">Linux</a></li>
+                  <li ><a href="instalacion.html#referencias">Referencias</a></li>
+                </div>
+
+                <li class=" dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="primerosPasos.html">Primeros Pasos</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="primerosPasos.html#primerosPasos">Nuestra primer aplicación</a></li>
+                  <li ><a href="#DefaultStructure">Estructura de ficheros de ElectronJs</a></li>
+                  <li ><a href="primerosPasos.html#referencias">Referencias</a></li>
+
+                </div>
+
+                <li class="active  dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="electronApi.html">Api Electron</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="winAdminApp.html">Administración de ventanas</a></li>
+                  <li ><a href="menuApp.html">Creación de Menús personalizados</a></li>
+                  <li ><a href="ipcApp.html">Comunicación entre procesos</a></li>
+                  <li ><a href="dialogueApp.html#">Diálogos nativos</a></li>
+                  <li ><a href="notificationApp.html">Notificaciones</a></li>
+
+                </div>
+
+                <li class=" dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="distribucion.html">Distribución de las aplicaciones</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="distribucion.html#introduccion">Introducción</a></li>
+                  <li ><a href="distribucion.html#instalacion">Instalación electon-packager</a></li>
+                  <li ><a href="distribucion.html#lineacomandos">Linea de comandos</a></li>
+                  <li ><a href="distribucion.html#packagejson">Configuración package.json</a></li>
+
+                </div>
+
+
+
+                <li class=" dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="primerosPasos.html">Tutorial ejemplos Electron</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="#">-</a></li>
+
+                </div>
+
+
+                <li class=" dropdown-btn" >
+                  <div  >
+                    <i class="fa fa-caret-down fa-2x" id="flecha"></i>
+                  </div>
+                  <a href="primerosPasos.html">Siguientes Pasos</a>
+                </li>
+                <div class="dropdown-container">
+                  <li ><a href="#">-</a></li>
+
+                </div>
+
+            </ul>
+          </div>
+
+
+          <div class="right" style="background-color:white;">
+            <h1>Creación de menús personalizados</h1>
+            <div >
+              <p>Por defecto, nuestro Proceso Principal crea un menú básico como el que se recoge en la siguiente imagen:</p>
+
+              <center><img src="../img/apiElectron/defaultMenu.png"></center>
+              <p>En este apartado veremos cómo crear un Menú personalizado. En el apartado de Comunicación entre procesos veremos cómo crear Menús de Contexto para cada uno de
+              nuestros procesos de Randerizado</p>
+            </div>
+            <div class="indiceContenido">
+
+              <ul>
+                <li><a href="menuApp.html#menu">Menús personalizados</a></li>
+                <li><a href="menuApp.html#roleshor">Roles</a></li>
+                <li> <a href="menuApp.html#jugando">Ejercicio</a></li>
+                <li><a href="menuApp.html#referencias">Referencias</a></li>
+              </ul>
+
+            </div>
+            <hr>
+
+            <div id="menu">
+              <p>Para la creación de Menús personalizados ElectronJs provee una funcionalidad definida en la clase Menu <a href="https://electronjs.org/docs/api/menu">Módulo Menu</a>
+              <br><br>Con el método <i>Menu.buildFromTemplate(template)</i> podremos crear nuestro menú personalizado.
+              <div class="codigo">
+                <code>var menu = new Menu.buildFromTemplate(template)</code>
+              </div>
+              </p>
+              <p>
+              <br>En primer lugar tenemos que crear nuestra plantilla que incluirá los distintos elementos del menú:
+
+              <pre class="language-javascript"><code>
+        const template=[
+          {
+            label:'Menu',
+            submenu:[
+              {label:'Usuarios',
+                click(){
+                  openWindowUsers()
+                },
+                accelerator: 'CmdOrCtrl+Shift+U'
+
+              },
+
+              {type:'separator'},
+              {label:'Exit',
+                click(){
+                  app.quit();
+                },
+                accelerator: 'CmdOrCtrl+Shift+C'
+              }
+            ]
+          },
+          {
+            label:'info',
+            submenu:[
+              {label:'Autores'}
+            ]
+          }
+        ]
+
+
+              </code></pre>
+
+              <p>En la plantilla definimos los siguientes elementos: <br>
+              <br> <strong>label</strong>: nombre del elemento del menú. Observamos que a cada elemento del menú podemos asignarle una funcionalidad. En nuestro caso
+                a Exit, le hemos añadido la función de salir:
+
+                <pre class="language-javascript"><code>
+
+        {label:'Exit',
+          click(){
+            app.quit();
+          },
+          accelerator: 'CmdOrCtrl+Shift+C'
+
+                </code></pre>
+                <p>
+                <br>  <strong>submenu</strong>: Para cada elemento del menú podemos indexar otro menú.
+                  <br><strong>accelerator</strong>: Para añadir teclas de acceso rápido.
+                  <br><strong>type</strong>: Para añadir elementos especiales, como separadores de elementos.
+                </p>
+<br>
+                <p>Seguidamente, instanciamos nuestro objeto Menu
+                  <div class="codigo">
+                   <code>var menu = new Menu.buildFromTemplate(template)</code>
+                  </div>
+                </p>
+
+                <p>y concluimos, indicándole a nuestra Proceso Principal que cargue nuestro menú con el método <i>setApplicationMenu</i> </p>
+
+                <div class="codigo">
+                  <code>  Menu.setApplicationMenu(menu)</code>
+                </div>
+
+                <p>En nuestro <strong>main.js</strong> hemos incluido este código en cuando cargamos la ventana una vez se ha iniciado la Aplicación. El código quedaría de la siguiente manera:
+                  <pre class="language-javascript"><code>
+          app.on('ready', function(){
+            createWindow()
+
+              const template=[
+                {
+                  label:'Menu',
+                  submenu:[
+                    {label:'Usuarios',
+                      click(){
+                        openWindowUsers()
+                      },
+                      accelerator: 'CmdOrCtrl+Shift+U'
+                    },
+                    {type:'separator'},
+                    {label:'Exit',
+                      click(){
+                        app.quit();
+                      },
+                      accelerator: 'CmdOrCtrl+Shift+C'
+                    }
+                  ]
+                },
+                //Añadimos un nuevo item con un submenú
+                {
+                  label:'info',
+                  submenu:[
+                    {label:'Autores'}
+                  ]
+                }
+
+              ]
+
+            var menu =Menu.buildFromTemplate(template)
+            Menu.setApplicationMenu(menu)
+
+          })
+
+
+                </code></pre>
+              </p>
+              <p>
+                Con todo ello, hemos sido capaces de crear un Menú personalizado para nuestra la Aplicición de escritorio ElectronJs.
+                <center><img src="../img/apiElectron/Menu.png"></center>
+
+              </p>
+
+
+
+            </div>
+            <hr>
+            <div id="roleshor">
+
+            </div>
+            <hr>
+
+
+
+            <div  id="jugando">
+                <h3><br>Ejercicio</h3>
+                <p>
+                  En el siguiente ejercicio te proponemos crear tu propio menú personalizado con al menos 3 elementos principales y que alguno de ellos tenga un submenú. También queremos que
+                  en uno de los elementos llame a una paǵina web externa.
+                  <blockquote><i>Nota: investiga acerca del módulo <strong>shell</strong> </i></blockquote>
+                </p>
+                <p>
+                  <br>La solución en nuestro en <a href="https://github.com/a52hepof/electron">Github Tutorial Electron</a>
+                </p>
+            </div>
+              <hr>
+
+            <div class="referencias" id="referencias">
+              <h3><br>Referencias</h3>
+                <ul>
+                  <li> <a href="https://electronjs.org/docs/api/menu">Módulo Menu</a></li>
+                  <li> <a href="  https://www.youtube.com/watch?v=MGC2W-dJtYM">Creación de Menús personalizados</a></li>
+
+                </ul>
+            </div>
+
+        </div>
+      </div>
+
+
+    <footer class="footer">
+      <div class="container nav-container">
+        <div id="company">
+          <p>Am - Fhp &copy, 2019</p>
+        </div>
+
+        <nav class="navigation">
+          <ul>
+            <li><a href="#contacto"><i class="fa fa-user-circle"></i> Sobre Nosotros</a></li>
+          </ul>
+        </nav>
+
+
+        <div id="RSS">
+
+          <div class="boxRSS">
+            <i class="fa fa-github fa-3x" aria-hidden="true"></i>
+            <!--<img src="./GithubPages/img/iconsRSS/git.svg" width="60px">-->
+          </div>
+
+        </div>
+      </div>
+
+      <script scr="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="../js/index.js"> </script>
+
+    </footer>
+
+
+
+  </body>
+</html>

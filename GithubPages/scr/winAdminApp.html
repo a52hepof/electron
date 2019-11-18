@@ -170,7 +170,6 @@
             <div class="indiceContenido">
 
               <ul>
-                <li><a href="winAdminApp.html#referencias">Referencias</a></li>
                 <li><a href="winAdminApp.html#creacion">Creación de Ventanas</a></li>
                 <li><a href="winAdminApp.html#cierreWin">Cierre de Ventanas</a></li>
                 <li> <a href="winAdminApp.html#jugando">Ejercicio</a></li>
@@ -183,9 +182,9 @@
             <div id="creacion">
               <p><br/><h3>Creación de Ventanas</h3></p>
 
-              <p>Este módulo permite gestionar ventanas dentro de una aplicación Electron. Aquí, es importante recordar, que tanto los Procesos de Randerizado como el propio Proceso
+              <p>El módulo <strong>BrowserWindow</strong> permite gestionar ventanas dentro de una aplicación Electron. Aquí, es importante recordar, que tanto los Procesos de Randerizado como el propio Proceso
                 Principal tienen acceso a las APIs de Node.js.
-                <br><br>Para ello usumos el método <strong>BrowserWindow</strong>.
+                <br><br>
 
                 <div class="codigo">
                   <code>let win = new BrowserWindow({ propiedades })</code>
@@ -358,11 +357,11 @@
 
             <hr>
 
-            <div class="referencias" id="jugando">
+            <div  id="jugando">
               <h3><br>Ejercicio</h3>
               <p>
                 Os proponemos el siguiente ejercicio para ver si sois capaces de crear vuestra propia aplicación de Escritorio, saludar al mundo  y añadirle alguna funcionalidad más de la Api de ElectronJs.
-                Necesitamos mostrar si la web que estamos mostrando es un Proceso de Randerizado como debería de ser, muestra la información en negrita
+                Necesitamos mostrar si la web que estamos mostrando es un Proceso de Randerizado como debería de ser, así como el sistema operativo en el que está corriendo la aplicación.
                 <blockquote><i>Nota: debes usar el método <strong>process</strong>, válido para el Proceso Principal y los Procesos de Randerizado</i></blockquote>
               </p>
               <p>
@@ -381,7 +380,7 @@
 
 
 
-            <div class="referencias" id="referencias">
+            <div  id="referencias">
               <h3><br>Referencias</h3>
                 <ul>
                   <li><a href="https://electronjs.org/docs/api/browser-window#clase-browserwindow">electonjs.org - Propiedades BrowserWindow</a></li>
