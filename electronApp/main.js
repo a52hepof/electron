@@ -1,27 +1,19 @@
 //cargamos la Api de electron.js
 const electron=require ('electron')
 //Cargamos los módulos necesarios de la Api de electron, app, BrowserWindow y Menu
+/*
 const app=electron.app
-
 const BrowserWindow=electron.BrowserWindow
-
-
-
 const Menu=electron.Menu
-//const { app, BrowserWindow, Menu } = electron
+const shell =require('electron').shell
 
-
-
+*/
+const { app, BrowserWindow, Menu } = electron
 
 // Mantén una referencia global del objeto window, si no lo haces, la ventana
 // se cerrará automáticamente cuando el objeto JavaScript sea eliminado por el recolector de basura.
 
-
-const shell =require('electron').shell
-
-
 let win
-
 
 function createWindow () {
   // Crea la ventana del navegador.
@@ -56,48 +48,50 @@ win.loadFile('./src/index2.html')
     win = null
   })
 
-    var menu =Menu.buildFromTemplate([
-      {
-        label:'Menu',
-        submenu:[
-          {label:'Usuarios',
-            click(){
-              openWindowUsers()
-            },
-            accelerator: 'CmdOrCtrl+Shift+U'
+  var menu =Menu.buildFromTemplate([
+    {
+      label:'Menu',
+      submenu:[
+        {label:'Usuarios',
+          click(){
+            openWindowUsers()
+          },
+          accelerator: 'CmdOrCtrl+Shift+U'
+
+        },
+        {label:'Universidad de Córdoba',
+          click(){
+            shell.openExternal('https://www.uco.es')
 
           },
-          {label:'Universidad de Córdoba',
-            click(){
-              shell.openExternal('https://www.uco.es')
+          accelerator: 'CmdOrCtrl+Shift+O'
 
-            },
-            accelerator: 'CmdOrCtrl+Shift+O'
-
+        },
+        {type:'separator'},
+        {label:'Exit',
+          click(){
+            app.quit();
           },
-          {type:'separator'},
-          {label:'Exit',
-            click(){
-              app.quit();
-            },
-            accelerator: 'CmdOrCtrl+Shift+C'
-          }
-        ]
-      },
-      {
-        label:'info',
-        submenu:[
-          {label:'Autores'}
-        ]
-      }
+          accelerator: 'CmdOrCtrl+Shift+C'
+        }
+      ]
+    },
+    {
+      label:'info',
+      submenu:[
+        {label:'Autores'}
+      ]
+    }
 
 
 
-    ])
+  ])
 
-    Menu.setApplicationMenu(menu)
+  Menu.setApplicationMenu(menu)
 
 }
+
+//creamos una nueva instanacia de ventana para abrirla desde nuestro menú de la aplicación
 let winUsuarios
 function openWindowUsers () {
 
@@ -117,7 +111,7 @@ function openWindowUsers () {
 
 }
 
-
+//creamos otra instancia de ventana para abrirla desde el proceso de randerizado
 exports.openWindow=()=>{
   let newWin =new BrowserWindow({
     width: 400,
@@ -150,6 +144,14 @@ exports.openWindow=()=>{
 // Algunas APIs pueden usarse sólo después de que este evento ocurra.
 app.on('ready', createWindow)
 
+app.on('activate', () => {
+  // En macOS es común volver a crear una ventana en la aplicación cuando el
+  // icono del dock es clicado y no hay otras ventanas abiertas.
+  if (win === null) {
+    createWindow()
+  }
+})
+
 // Sal cuando todas las ventanas hayan sido cerradas.
 app.on('window-all-closed', () => {
   // En macOS es común para las aplicaciones y sus barras de menú
@@ -159,13 +161,7 @@ app.on('window-all-closed', () => {
   }
 })
 
-app.on('activate', () => {
-  // En macOS es común volver a crear una ventana en la aplicación cuando el
-  // icono del dock es clicado y no hay otras ventanas abiertas.
-  if (win === null) {
-    createWindow()
-  }
-})
+
 
 // En este archivo puedes incluir el resto del código del proceso principal de
 // tu aplicación. También puedes ponerlos en archivos separados y requerirlos aquí.

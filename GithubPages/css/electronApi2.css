@@ -6,13 +6,19 @@
 
 
 }
+.row .right .indiceContenido a{
+  color: #4078c0;
 
+  cursor: pointer;
+  text-decoration: none;
+}
 .row .right .iconos a{
   color: #4078c0;
 
   cursor: pointer;
   text-decoration: none;
 }
+
 
 
 .icons {
@@ -37,4 +43,136 @@
   -o-transition: opacity 500ms;
   -ms-transition: opacity 500ms;
   transition: opacity 500ms;
+}
+
+
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #333;
+	background: none;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 3;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+  width: 60%;
+  margin-left: 2rem;
+
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1rem;
+	margin-left: 4rem;
+	/* overflow: auto; */
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #d9d9d9;
+	padding:0.3rem;
+	/* margin: 30px -36px 40px -36px; */
+	border-radius:0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #64dbb5;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+	color: #00deff;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+@media (max-width: 600px) {
+
+	:not(pre) > code[class*="language-"],
+	pre[class*="language-"] {
+		margin: 30px -16px 40px -16px;
+
+	}
+
 }
