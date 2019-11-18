@@ -57,8 +57,8 @@ let winIss
 function openWindowUsers () {
 
   winIss = new BrowserWindow({
-    width: 600,
-    height: 300,
+    width: 1200,
+    height: 800,
     webPreferences: {
       nodeIntegration: true
     }
