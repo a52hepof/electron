@@ -29,8 +29,13 @@
       velocidad: <span id="velocidad"></span> km/h <br>
       visibilidad: <span id="visibilidad"></span> <br>
     </p>
+    <div id="velocidad2">
+
+    </div>
 
     <div id="EstacionInternacional"></div>
+
+    <button type="button" name="button" onclick="doNotify()">Notifica</button>
 
     <script>
 
@@ -74,16 +79,42 @@
           mymap.setView([latitude, longitude], 2);
           firstTime = false;
         }
-        
+
         document.getElementById('lat').textContent = latitude.toFixed(2);
         document.getElementById('lon').textContent = longitude.toFixed(2);
         document.getElementById('altitude').textContent = altitude.toFixed(2);
         document.getElementById('velocidad').textContent = velocity;
         document.getElementById('visibilidad').textContent = visibility;
+
+        if (velocity> 27557.60) {
+          document.getElementById('velocidad2').textContent=velocity;
+          doNotify();
+        }
       }
 
       getISS();
       setInterval(getISS, 2000);
+
+      function doNotify(){
+
+        Notification.requestPermission().then(function(result){
+          var myNotification=new Notification('electronNotification',{
+            'body':'La velocidad es superior a la indicada'
+          })
+
+
+        })
+
+      }
+
+
+
+
+
+
+
+
+
     </script>
   </body>
 </html>
