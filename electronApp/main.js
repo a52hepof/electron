@@ -217,6 +217,10 @@ exports.openWindow=()=>{
 }
 
 
+
+
+
+
 //IPC paso de variables
 var counter=1;
 var recibido;
@@ -232,5 +236,23 @@ ipcMain.on('ping', (event, arg)=>{ //se recibe en el arg la variable enviada por
 
 ipcMain.on('open-error-dialog', (event)=>{
   dialog.showErrorBox('an error message', 'demo of an error message')
+  event.sender.send('opened-error', 'recibo mensaje y abierto el cuadro de dialogo')
+})
+
+let options  = {
+
+}
+
+ipcMain.on('alertaIss', (event, arg)=>{
+  dialog.showMessageBox({
+
+    title:"información para Alerta",
+    buttons: ["Yes","No","Cancel"],
+
+    message: "Esta es la velocidad" + ": "+arg[0]
+
+
+  })
+  //dialog.showErrorBox('an error message', arg[0])
   event.sender.send('opened-error', 'recibo mensaje y abierto el cuadro de dialogo')
 })

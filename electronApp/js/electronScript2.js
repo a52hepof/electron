@@ -23,15 +23,44 @@ button.addEventListener('click', ()=>{main.openWindow()})
 //Abrir ventana ISS usando método BrowserWindow en Randerizado
 function openISS(){
 
-  let win = new BrowserWindow({ width: 800, height: 600 })
+  let win = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true
+    }
+
+   })
   win.loadFile('./src/iss.html')
   win.on('closed', () => {
     win = null
   })
+  //win.webContents.openDevTools()
+
 }
 
 
+function openTestC(){
 
+  win = new BrowserWindow({
+    width: 1200,
+    height: 800,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
+
+  win.loadFile('./src/testC.html')
+
+  win.on('closed', () => {
+
+      win = null
+  })
+  //win.webContents.openDevTools()
+
+
+
+}
 
 
 
@@ -45,7 +74,7 @@ button.setAttribute("id","b1")
 
 
 
-button.textContent='Abrir Ventana'
+button.textContent='ISS'
 content.appendChild(button)
 
 
@@ -68,7 +97,7 @@ button2.className='boton_personalizado'
 button2.setAttribute("id","b2")
 
 
-button2.textContent='Abrir InformaciónUsuarios'
+button2.textContent='NuestroEquipo'
 content.appendChild(button2)
 
 

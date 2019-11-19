@@ -1,3 +1,5 @@
+const { BrowserWindow } = require('electron').remote
+const {ipcRenderer} =require('electron')
 
 
 //https://leafletjs.com/examples/quick-start/
@@ -60,6 +62,36 @@ function doNotify(v, lon, la){
       'body':v+"  Km/h  'La velocidad es superior a la indicada'         Longitud: ("+lon+') *** Latitud: ('+la+')'
     })
   })
+
+
+}
+
+
+
+
+
+function gestionarAlertas(){
+
+  win = new BrowserWindow({
+    width: 600,
+    height: 300,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
+
+  win.loadFile('./src/alerts.html')
+
+  win.on('closed', () => {
+
+      win = null
+  })
+  win.webContents.openDevTools()
+
+
+
+
+
 
 
 }
