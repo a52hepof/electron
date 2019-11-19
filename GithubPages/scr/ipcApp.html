@@ -286,6 +286,14 @@
              ipcRenderer (<a href="https://electronjs.org/docs/api/ipc-renderer">Módulo ipcRenderer</a>) comunica por defecto de forma asincrona un Proceso de Renderizado con el Proceso Principal. Proporciona también métodos para la comunicación síncrona,
              aunque nosostros, para este tutorial, vamos a desarrollar un ejemplo de comunicación Asíncrona.
              <br><br>
+             <p>Para poder utilizarlo hay que integrarlo en el Proceso</p>
+             <div class="codigo">
+               <code>const {ipcRenderer} =require('electron')</code>
+
+             </div>
+
+
+
              En el ejemplo, vamos a utilizar dos métodos:
              <br><br>
              <div class="codigo">
@@ -314,10 +322,17 @@
              aunque nosostros, para este tutorial, vamos a desarrollar un ejemplo de comunicación Asíncrona. También es posible enviar mensajes desde el proceso principal al proceso de renderizado, a través de distintos métodos <br>
              <li>WebContets. ver <a href="https://electronjs.org/docs/api/web-contents#contentssendchannel-args">Web-contents-sendchannel</a>)) para más información.</li>
              <li>Con el método event.sender.send(...) del propio ipcMain</li>
-
-
-
              <br><br>
+             <p>Para poder utilizarlo hay que integrarlo en el Proceso</p>
+             <div class="codigo">
+               <code>const {ipcMain} =require('electron')</code>
+
+             </div>
+
+
+
+
+
             <p> En el ejemplo, vamos a utilizar dos métodos:</p>
              <br>
              <div class="codigo">

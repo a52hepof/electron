@@ -184,6 +184,41 @@
             <div id="menu">
               <p>Para la creación de Menús personalizados ElectronJs provee una funcionalidad definida en la clase Menu <a href="https://electronjs.org/docs/api/menu">Módulo Menu</a>
               <br><br>Con el método <i>Menu.buildFromTemplate(template)</i> podremos crear nuestro menú personalizado.
+              <br><br>
+
+              <p>Para poder usarlo hay que integrarlo en aquel proceso en el que lo estemos usando
+                <pre class="language-javascript"><code>
+
+        const {remote} = require('electron')
+
+        const {Menu, MenuItem} = remote
+
+        /* otra alternativa para invocarlo desde un Proceso de Renderizado
+        const { Menu, MenuItem } = require('electron').remote
+        */
+                </code></pre>
+
+
+                <br><br>
+                <p>Para usarlo en el proceso principal
+                  <pre class="language-javascript"><code>
+
+        const electron=require ('electron')
+
+        //Cargamos los módulos necesarios de la Api de electron, app, BrowserWindow y Menu
+        /*
+        const app=electron.app
+        const BrowserWindow=electron.BrowserWindow
+        const Menu=electron.Menu
+        const shell =require('electron').shell
+
+        */
+
+        const { app, BrowserWindow, Menu ,menuItem, shell, dialog, ipcMain} = electron
+                  </code></pre>
+
+
+                          
               <div class="codigo">
                 <code>var menu = new Menu.buildFromTemplate(template)</code>
               </div>

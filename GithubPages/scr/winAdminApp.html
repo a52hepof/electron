@@ -185,6 +185,36 @@
               <p>El módulo <strong>BrowserWindow</strong> permite gestionar ventanas dentro de una aplicación Electron. Aquí, es importante recordar, que tanto los Procesos de Randerizado como el propio Proceso
                 Principal tienen acceso a las APIs de Node.js.
                 <br><br>
+                <p>Para poder usarlo hay que integrarlo en aquel proceso en el que lo estemos usando
+                  <pre class="language-javascript"><code>
+
+          const {remote} = require('electron')
+
+          const {BrowserWindow} = remote
+
+          /* otra alternativa para invocarlo desde un Proceso de Renderizado
+          const { BrowserWindow } = require('electron').remote
+          */
+                  </code></pre>
+
+
+                  <br><br>
+                  <p>Para usarlo en el proceso principal
+                    <pre class="language-javascript"><code>
+
+          const electron=require ('electron')
+
+          //Cargamos los módulos necesarios de la Api de electron, app, BrowserWindow y Menu
+          /*
+          const app=electron.app
+          const BrowserWindow=electron.BrowserWindow
+          const Menu=electron.Menu
+          const shell =require('electron').shell
+
+          */
+
+          const { app, BrowserWindow, Menu ,menuItem, shell, dialog, ipcMain} = electron
+                    </code></pre>
 
                 <div class="codigo">
                   <code>let win = new BrowserWindow({ propiedades })</code>
