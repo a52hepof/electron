@@ -30,10 +30,24 @@ function openISS(){
   })
 }
 
+
+
+
+
+
+
+const content=document.getElementById("contenido2");
+
+
 let button = document.createElement('button')
+button.className='boton_personalizado'
+button.setAttribute("id","b1")
+
+
 
 button.textContent='Abrir Ventana'
-document.body.appendChild(button)
+content.appendChild(button)
+
 
 button.addEventListener('click', ()=>{openISS()})
 
@@ -50,9 +64,13 @@ function openInfo(){
 }
 
 let button2 = document.createElement('button')
+button2.className='boton_personalizado'
+button2.setAttribute("id","b2")
+
 
 button2.textContent='Abrir InformaciónUsuarios'
-document.body.appendChild(button2)
+content.appendChild(button2)
+
 
 button2.addEventListener('click', ()=>{openInfo()})
 
@@ -63,8 +81,8 @@ function clickThing(){
   ipcRenderer.send('ping', a); //enviamos por el canal 'ping' la variable a
 }
 
-ipcRenderer.on('count', (event, arg)=>{ //esperamos respuesta y recibimos la variable en arg
-  document.getElementById('numberplace').innerHTML=arg;
+ipcRenderer.on('respuesta', (event, arg)=>{ //esperamos respuesta y recibimos la variable en arg
+  document.getElementById('respuesta').innerHTML=arg;
 
 
 })

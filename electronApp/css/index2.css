@@ -23,4 +23,47 @@
     margin-left: 350px;
     margin-right: 350px;
 
+
   }
+
+
+#contenido2{
+
+
+  -  display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "b1 b2 b3 b4"
+                          ". tex1 text2 . ";
+}
+
+
+#b1{
+    grid-area:b1;
+}
+
+
+#b2{
+    grid-area:b2;
+}
+
+
+#btnEnvio{
+    grid-area:b3;
+
+}
+
+#errorBtn{
+  grid-area:b4;
+
+
+}
+
+#respuesta{
+  grid-area:tex1;
+
+}
+
+#mensajeRecibidoError{
+  grid-area:tex1;
+
+}

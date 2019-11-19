@@ -188,9 +188,6 @@ function openWindowUsers () {
 }
 
 
-
-
-
 //creamos otra instancia de ventana para abrirla desde el proceso de randerizado
 exports.openWindow=()=>{
   let newWin =new BrowserWindow({
@@ -223,11 +220,11 @@ exports.openWindow=()=>{
 //IPC paso de variables
 var counter=1;
 var recibido;
-ipcMain.on('ping', (event, arg)=>{ //se recibe en el arg la variable enviada por el canal ping
+ipcMain.on('ping', (event, arg)=>{ //se recibe en el arg la variable enviada por renderder a través del canal ping
   recibido=arg;
-  event.sender.send('count', arg+counter);
-
-
+  //event.sender.send('count', arg+counter);
+  //event.sender.send('count', ++count);
+  event.sender.send('respuesta', 'Soy el Proceso Principal y como respuesta a tu mensaje, te envío hola');
 })
 
 
