@@ -100,5 +100,4 @@ errorBtn.addEventListener('click', function(){
 ipcRenderer.on('opened-error', (event,arg)=>{
   document.getElementById('mensajeRecibidoError').innerHTML=arg;
   console.log(arg)
-
 })

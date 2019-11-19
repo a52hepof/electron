@@ -43,26 +43,25 @@ async function getISS() {
   document.getElementById('lat').textContent = latitude.toFixed(2);
   document.getElementById('lon').textContent = longitude.toFixed(2);
   document.getElementById('altitude').textContent = altitude.toFixed(2);
-  document.getElementById('velocidad').textContent = velocity;
+  document.getElementById('velocidad').textContent = velocity.toFixed(2);
   document.getElementById('visibilidad').textContent = visibility;
 
   if (velocity> 27557.60) {
-    document.getElementById('velocidad2').textContent=velocity;
-    doNotify();
+    //document.getElementById('velocidad2').textContent=velocity;
+    doNotify(velocity.toFixed(2), longitude.toFixed(2), latitude.toFixed(2));
   }
 }
 
 getISS();
 setInterval(getISS, 2000);
 
-function doNotify(){
+function doNotify(v, lon, la){
 
   Notification.requestPermission().then(function(result){
     var myNotification=new Notification('electronNotification',{
-      'body':'La velocidad es superior a la indicada'
+      'body':v+"  Km/h  'La velocidad es superior a la indicada'         Longitud: ("+lon+') *** Latitud: ('+la+')'
     })
-
-
   })
+
 
 }

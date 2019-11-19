@@ -161,281 +161,112 @@
 
 
           <div class="right" style="background-color:white;">
-            <h1>Comunicación entre Proceso Principal y Procesos de Renderizado</h1>
+            <h1>Native Dialogue</h1>
             <div >
-              <p>En Electron hay varias formas de establecer una comunicación entre el proceso principal y el proceso renderizador, como los módulos ipcRenderer y ipcMain para enviar mensajes, y el módulo remote para una comunicación de tipo RPC.
-              <br><br>En este apartado veremos algunos ejemplos de comunicación entre procesos utilizando ambos métodos. </p>
+              <p>En Electron, a través del proceso principal podemos acceder a los Native Dialogue que ofrece el Sistema Operativo, como mostrar alertas, abrir y guardar ficheros...
+
+              <br><br>En este apartado realizaremos la petición de un Mensaje de alerta a través de un proceso de comunicación IPC. </p>
 
               <p></p>
             </div>
             <div class="indiceContenido">
-
               <ul>
-                <li><a href="ipcApp.html#rpc">Remote RPC</a></li>
-                <li><a href="ipcApp.html#ipc">IPC Comunicación</a></li>
-                <li> <a href="ipcApp.html#jugando">Ejercicio</a></li>
-                <li><a href="ipcApp.html#referencias">Referencias</a></li>
+                <li><a href="dialogueApp.html#native">Native Dialog</a></li>
+                <li><a href="dialogueApp.html#referencias">Referencias</a></li>
               </ul>
-
             </div>
             <hr>
 
-            <div id="rpc">
-              <h3><br>Remote RPC</h3>
-
-              <p>Para la comunicación entre el Principal y el de Renderizado de tipo RCP ( Remote Procedure Call ), ElectronJs provee una funcionalidad definida en el módulo  <strong>remote</strong>, <a href="https://electronjs.org/docs/api/remote">Módulo remote</a>
-              <br><br>En electron, los módulos relacionados con GUI (como dialog, menu etc.) están solamente disponibles en el proceso principal, no en el proceso de renderizado.
-              Para usarlos en el proceso de renderizado se puede utilizar el módulo remote, con el que se pueden invocar métodos del objeto del proceso principal sin enviar explícitamente mensajes entre procesos. Con este método también podemos
-              usar funciones específicas creadas en el Proceso Principal.
-              <br><br>La llamada a remote se hace con el siguiente código en nuestro Proceso de Renderizado:
-
+            <div id="native">
+              <h3><br>Native Dialog</h3>
+              <p>Para el acceso a los Native Dialogue, ElectronJs provee una funcionalidad definida en el módulo  <strong>dialog</strong>, <a href="https://electronjs.org/docs/api/dialog">Módulo dialog</a>
+              <br><br>
+              <p>Para poder utilizarlo hay que integrarlo en el proyecto</p>
               <div class="codigo">
-                <code>const remote = require('electron').remote</code>
-              </div>
-              <br>
-              <p>También se puede instanciar, invocando al método de ElectronJs que necesitemos, de la siguiente manera:</p>
-
-              <div class="codigo">
-                <code>const { BrowserWindow } = require('electron').remote</code>
+                <code>const { dialog } = require('electron')</code>
               </div>
 
               <p>
-                Como hemos indicado, otra de los métodos que podemos invocar desde nuestros Procesos de Renderizado es el método Menu. Podemos utilizar <strong>remote</strong>
-                para la creación de Menús Contextuales en nuestro proceso de Renderizado.
-                <br><br>Veamos la siguiente propuesta:
+              El dialogo es abierto en el proceso principal de Electron. Si quiere usar el objeto diálogo para un proceso renderizado, recuerde accederlo usando el comando remoto:</p>
 
-                <pre class="language-javascript"><code>
-      //invocamos a la Api de electron y a los métodos requeridos
-      const {remote} = require('electron')
-      const { Menu, MenuItem } = remote
+              <div class="codigo">
+                <code>  const { dialog } = require('electron').remote</code>
 
-      //creamos una nueva instancia de menu y la añadimos nuevos elementos, uno a uno
-      const menu = new Menu()
-      menu.append(new MenuItem({ label: 'El Tiempo', click() { console.log('item 1 clicked') } }))
-      menu.append(new MenuItem({ type: 'separator' }))
-      menu.append(new MenuItem({ label: 'Avisos metereológicos', type: 'checkbox', checked: false }))
+              </div>
+              <p>
 
-      //prevenimos el comportamiento por defecto del clic derecho del ratón.
-      window.addEventListener('contextmenu', (e) => {
-        e.preventDefault()
-        menu.popup({ window: remote.getCurrentWindow() })
-      }, false)
+                De todos los métodos que nos ofrece el módulo <strong>dialog</strong> vamos a usar <i>dialo.showErrorBox(title, content)</i>.
 
-                </code></pre>
+                <br><br>
+                donde title el título a mostrar en la caja de error y content el texto  a mostrar en la caja de error.
+
               </p>
+              <p>  <h4>Ejemplo</h4></p>
 
-              <br><br>Las funciones específicas creadas en el Proceso Principal que se quieran ejecutar desde algún Proceso de Renderizado se han de instanciar con <i>exports</i>, indicando de esta forma
-              que son funciones exportables.
+
+              <p>Vamos a realizar llamar a un mensaja de error desde un proceso de Renderizado. A través de un botón, le enviaremos un mensaje al proceso principal para que muestre el mensaje de error</p>
+              <p><strong>Proceso de Renderizado</strong></p>
+
+
 
               <pre class="language-javascript"><code>
 
-      exports.openWindow=()=>{
-      let newWin =new BrowserWindow({
-      width: 400,
-      height: 200,
-      webPreferences: {
-      nodeIntegration: true
-      }
+        //creamos una variable en la que recogemos la id del botón desde el que queremos enviar un mensaje
+        // al Proceso Principal
+        const errorBtn=document.getElementById('errorBtn')
 
-      })
+        //cuando le damos click al botón, enviamos un mensaje al Proceso principal al que no le pasamos argumentos
+        //simplemente abrimos un canal de comunicación
+        errorBtn.addEventListener('click', function(){
+          ipcRenderer.send('open-error-dialog') // Canal de envío 'open-error-dialog'
 
-      newWin.loadFile('./src/iss.html')
+        })
 
-      newWin.on('closed', () => {
-      // Elimina la referencia al objeto window, normalmente  guardarías las ventanas
-      // en un vector si tu aplicación soporta múltiples ventanas, este es el momento
-      // en el que deberías borrar el elemento correspondiente.
-      win = null
-      })
+        /*escuchamos si el Proceso Principal nos responde a nuestro click  (lo hará por el canal
+        y cuando lo haga imprimimos un mensaje
+        en el elemento con id mensajeRecibidoError, mostramos el resultado también por consola*/
+        ipcRenderer.on('opened-error', (event,arg)=>{
+          document.getElementById('mensajeRecibidoError').innerHTML=arg;
+          console.log(arg)
 
-      }
+        })
               </code></pre>
 
               <p>
-                Así las podemos usar en nuestro Proceso de Renderizado
+                <strong>Proceso Principal</strong>
+
 
                 <pre class="language-javascript"><code>
 
-      const remote = require('electron').remote
-      //creamos esta variable para comunicarnos con el Proceso Principal
-      const main = remote.require('./main.js')
+        /*Escuchamos el canal 'open-error-dialog' y cuando recibimos un mensaje mostramos un cuadro de diálogo y
+        enviamos un mensaje por el canal opened-error'
 
-      let button = document.createElement('button')
+        ipcMain.on('open-error-dialog', (event)=>{
+          dialog.showErrorBox('an error message', 'demo of an error message')
+          event.sender.send('opened-error', 'recibo mensaje y abierto el cuadro de dialogo')
+        })
 
-      button.textContent='Abrir Ventana'
-      document.body.appendChild(button)
-
-      button.addEventListener('click', ()=>{main.openWindow()})
 
                 </code></pre>
 
+
+                <p>
+                 El resultado lo vemos en la siguiente imagen:
+
+                 <center><img src="../img/apiElectron/dialog.png"></center>
+
+
               </p>
             </div>
             <hr>
-
-            <div id="ipc">
-              <h3><br>IPC Comunication</h3>
-
-              <p>ElectronJs provee distintas alternativas para la comunicación mediante el pase de mensajes entre el Proceso Principal y los distintos Procesos de Renderizado.
-
-               Fundamentalmente encontramos dos módulos específicos, un módulo para el Proceso Principal <strong>ipcMain</strong> y un módulo para los Procesos de Renderizado
-             <strong>ipcRenderer</strong>. A continuación pasamos a explicar el funcionamiento de cada módulo ilustrándolo con un sencillo ejemplo. </p>
-
-             <h4>ipcRenderer</h4>
-             <p>
-             ipcRenderer (<a href="https://electronjs.org/docs/api/ipc-renderer">Módulo ipcRenderer</a>) comunica por defecto de forma asincrona un Proceso de Renderizado con el Proceso Principal. Proporciona también métodos para la comunicación síncrona,
-             aunque nosostros, para este tutorial, vamos a desarrollar un ejemplo de comunicación Asíncrona.
-             <br><br>
-             En el ejemplo, vamos a utilizar dos métodos:
-             <br><br>
-             <div class="codigo">
-                <code>ipcRenderer.on(channel, listener)</code>
-             </div>
-             <p>
-               Este método sirve para escuchar los mensajes que haya en un determinado canal, <i>chanel</i>
-               <br>
-               donde <i>chanel</i>, es el canal por el cual escuchar los  mensajes y <i>listerner</i> es una función con los siguientes argumentos, <i>event</i> que es el evento del Proceso de Comunicación y args se corresponde con el mensaje recibido
-              , que puede estar serializado en un archivo <strong>json</strong>
-
-              <br><br>
-              Para el envío de mensajes ipcRenderer facilita el siguiente método:
-
-              <div class="codigo">
-                 <code>ipcRenderer.send(channel,args)</code>
-              </div>
-              <p>
-                donde <i>chanel</i>, es el canal por el cual enviar los  mensajes al Proceso Principal  y <i>args</i> es el mensaje enviado, que puede estar serializado en un archivo <strong>json</strong>
-
-             </p>
-             <br>
-             <h4>ipcMain</h4>
-             <p>
-             ipcMain (<a href="https://electronjs.org/docs/api/ipc-main">Módulo ipcMain</a>) se comunica de forma asincrónica desde el proceso principal a los procesos de renderizado. Proporciona también métodos para la comunicación síncrona,
-             aunque nosostros, para este tutorial, vamos a desarrollar un ejemplo de comunicación Asíncrona. También es posible enviar mensajes desde el proceso principal al proceso de renderizado, a través de distintos métodos <br>
-             <li>WebContets. ver <a href="https://electronjs.org/docs/api/web-contents#contentssendchannel-args">Web-contents-sendchannel</a>)) para más información.</li>
-             <li>Con el método event.sender.send(...) del propio ipcMain</li>
-
-
-
-             <br><br>
-            <p> En el ejemplo, vamos a utilizar dos métodos:</p>
-             <br>
-             <div class="codigo">
-                <code>ipcMain.on(channel, listener)</code>
-             </div>
-             <p>
-               Este método sirve para escuchar los mensajes que haya en un determinado canal, <i>chanel</i>
-               <br>
-               donde <i>chanel</i>, es el canal por el cual escuchar los  mensajes y <i>listerner</i> es una función con los siguientes argumentos, <i>event</i> que es el evento del Proceso de Comunicación y args se corresponde con el mensaje recibido
-              , que puede estar serializado en un archivo <strong>json</strong>
-
-              <br><br>
-              Para el envío de mensajes ipcRenderer facilita el siguiente método:
-
-              <div class="codigo">
-                 <code>event.sender.send(channel, args)</code>
-              </div>
-              <p>
-                donde <i>chanel</i>, es el canal por el cual enviar los  mensajes al Proceso Principal  y <i>args</i> es el mensaje enviado, que puede estar serializado en un archivo <strong>json</strong>
-
-             </p>
-
-             <br>
-             <h4>Ejemplo de comunicación entre procesos</h4>
-             <p>
-
-               Vamos a realizar un ejemplo en el que el Proceso de Renderizado, envía un mensaje al Proceso Principal cuando pulsamos un botón y este devuelve un mensaje al Proceso de Renderizado que lo imprimirá
-               en la propio vista de la ventana corresondiente al Proceso de Renderizado.
-               <br><br>
-               <strong>Proceso de Renderizado</strong>
-
-
-               <pre class="language-javascript"><code>
-
-       &ltbutton class="boton_personalizado" id="btnEnvio" onclick='clickThing()'&gtEnvío de mensaje!!!!&lt/button&gt
-
-       &ltdiv id="respuesta"&gt&lt/div&gt
-
-       &ltscript&gt
-
-         function clickThing(){
-           //enviamos por el canal 'ping' un mensaje. También podemos enviar una variable
-           ipcRenderer.send('ping', 'hola Proceso Principal');
-          }
-
-          //escuchamos el canal de respuesta esperando al Proceso Principal
-          ipcRenderer.on('respuesta', (event, arg)=&gt{ //esperamos respuesta y recibimos la variable en arg
-
-          //imprimirmos la respuesta en el div con id respuesta
-           document.getElementById('respuesta').innerHTML=arg;
-
-         })
-
-       &lt/script&gt
-
-               </code></pre>
-
-               <p>
-                 <strong>Proceso Principal</strong>
-
-
-                 <pre class="language-javascript"><code>
-      //se recibe en el arg la variable enviada por renderder a través del canal ping
-       ipcMain.on('ping', (event, arg)=>{
-         //enviamos por el canal respuesta, la respuesta del Proceso Principal
-         event.sender.send('respuesta', 'Soy el Proceso Principal y como respuesta a tu mensaje, te envío hola');
-
-       })
-
-                 </code></pre>
-
-               </p>
-              <p>
-               El resultado lo vemos en la siguiente imagen:
-
-               <center><img src="../img/apiElectron/comunication.png"></center>
-
-
-            </p>
-            </div>
-            <hr>
-
-
-
-
-
-
-
-            <div  id="jugando">
-                <h3><br>Ejercicio</h3>
-                <p>
-                  El ejercicio consiste en implementar otro botón para llamar a otra ventana en la que añadimos información acerca de nosotros mismos o de lo que queramos.
-
-                  <p>También deseamos enviar un mensaje al Proceso Principal y que nos respuesta devolviéndonos una variable cuyo contenido imprimiermos en la Ventana correspondiente al Proceso de Renderizado que ha
-                enviado el mensaje.
-              </p>
-                  <blockquote><i>Nota: con el procedimiento <strong>remote</strong> podemos invocar funciones propias de main en nuestro propio Proceso de Renderizado como el método <strong>BrowserWindow </strong></i></blockquote>
-
-                <p>
-                  <br>La solución en nuestro en <a href="https://github.com/a52hepof/electron">Github Tutorial Electron</a>
-                </p>
-            </div>
-              <hr>
 
             <div class="referencias" id="referencias">
               <h3><br>Referencias</h3>
                 <ul>
-                  <li> <a href="https://electronjs.org/docs/api/remote">Módulo remote</a></li>
-                  <li> <a href="https://electronjs.org/docs/api/ipc-main">Módulo ipcMain</a></li>
-                  <li> <a href="https://electronjs.org/docs/api/ipc-renderer">Módulo ipcRenderer</a></li>
-                  <li> <a href="https://www.tutorialspoint.com/electron/electron_menus.htm">tutorialspoint.com - menus</a></li>
-                  <li><a href="https://www.youtube.com/watch?v=v2qGQMe2fzM"><cite>ipc </cite></a></li>
+                  <li> <a href="https://electronjs.org/docs/api/notification">electronjs.org - Módulo notification</a></li>
                   <li><a href="https://www.youtube.com/watch?v=rX3axskesDw"><cite>dialogue & ipc </cite></a></li>
-                  <li><a href="https://www.youtube.com/watch?v=YOmolDMMvvE"><cite>ipc </cite></a></li>
-
                 </ul>
             </div>
-
         </div>
       </div>
 
