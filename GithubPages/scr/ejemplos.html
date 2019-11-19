@@ -162,217 +162,36 @@
 
 
           <div class="right" style="background-color:white;">
-            <h1>Creación de menús personalizados</h1>
+            <h1>Ejemplos Aplicaciones Electron</h1>
             <div >
-              <p>Por defecto, nuestro Proceso Principal crea un menú básico como el que se recoge en la siguiente imagen:</p>
 
-              <center><img src="../img/apiElectron/defaultMenu.png"></center>
-              <p>En este apartado veremos cómo crear un Menú personalizado. En el apartado de Comunicación entre procesos veremos cómo crear Menús de Contexto para cada uno de
-              nuestros procesos de Randerizado</p>
+              <p></p>
             </div>
-            <div class="indiceContenido">
 
-              <ul>
-                <li><a href="menuApp.html#menu">Menús personalizados</a></li>
-                <li><a href="menuApp.html#roleshor">Roles</a></li>
-                <li> <a href="menuApp.html#jugando">Ejercicio</a></li>
-                <li><a href="menuApp.html#referencias">Referencias</a></li>
-              </ul>
+            <hr>
+
+            <div id="editorCodigo">
+              <h3><br>Editor Código</h3>
 
             </div>
             <hr>
 
-            <div id="menu">
-              <p>Para la creación de Menús personalizados ElectronJs provee una funcionalidad definida en la clase Menu <a href="https://electronjs.org/docs/api/menu">Módulo Menu</a>
-              <br><br>Con el método <i>Menu.buildFromTemplate(template)</i> podremos crear nuestro menú personalizado.
-              <br><br>
-
-              <p>Para poder usarlo hay que integrarlo en aquel proceso en el que lo estemos usando
-                <pre class="language-javascript"><code>
-
-        const {remote} = require('electron')
-
-        const {Menu, MenuItem} = remote
-
-        /* otra alternativa para invocarlo desde un Proceso de Renderizado
-        const { Menu, MenuItem } = require('electron').remote
-        */
-                </code></pre>
-
-
-                <br><br>
-                <p>Para usarlo en el proceso principal
-                  <pre class="language-javascript"><code>
-
-        const electron=require ('electron')
-
-        //Cargamos los módulos necesarios de la Api de electron, app, BrowserWindow y Menu
-        /*
-        const app=electron.app
-        const BrowserWindow=electron.BrowserWindow
-        const Menu=electron.Menu
-        const shell =require('electron').shell
-
-        */
-
-        const { app, BrowserWindow, Menu ,menuItem, shell, dialog, ipcMain} = electron
-                  </code></pre>
-
-
-
-              <div class="codigo">
-                <code>var menu = new Menu.buildFromTemplate(template)</code>
-              </div>
-              </p>
-              <p>
-              <br>En primer lugar tenemos que crear nuestra plantilla que incluirá los distintos elementos del menú:
-
-              <pre class="language-javascript"><code>
-        const template=[
-          {
-            label:'Menu',
-            submenu:[
-              {label:'Usuarios',
-                click(){
-                  openWindowUsers()
-                },
-                accelerator: 'CmdOrCtrl+Shift+U'
-
-              },
-
-              {type:'separator'},
-              {label:'Exit',
-                click(){
-                  app.quit();
-                },
-                accelerator: 'CmdOrCtrl+Shift+C'
-              }
-            ]
-          },
-          {
-            label:'info',
-            submenu:[
-              {label:'Autores'}
-            ]
-          }
-        ]
-
-
-              </code></pre>
-
-              <p>En la plantilla definimos los siguientes elementos: <br>
-              <br> <strong>label</strong>: nombre del elemento del menú. Observamos que a cada elemento del menú podemos asignarle una funcionalidad. En nuestro caso
-                a Exit, le hemos añadido la función de salir:
-
-                <pre class="language-javascript"><code>
-
-        {label:'Exit',
-          click(){
-            app.quit();
-          },
-          accelerator: 'CmdOrCtrl+Shift+C'
-
-                </code></pre>
-                <p>
-                <br>  <strong>submenu</strong>: Para cada elemento del menú podemos indexar otro menú.
-                  <br><strong>accelerator</strong>: Para añadir teclas de acceso rápido.
-                  <br><strong>type</strong>: Para añadir elementos especiales, como separadores de elementos.
-                </p>
-<br>
-                <p>Seguidamente, instanciamos nuestro objeto Menu
-                  <div class="codigo">
-                   <code>var menu = new Menu.buildFromTemplate(template)</code>
-                  </div>
-                </p>
-
-                <p>y concluimos, indicándole a nuestra Proceso Principal que cargue nuestro menú con el método <i>setApplicationMenu</i> </p>
-
-                <div class="codigo">
-                  <code>  Menu.setApplicationMenu(menu)</code>
-                </div>
-
-                <p>En nuestro <strong>main.js</strong> hemos incluido este código en cuando cargamos la ventana una vez se ha iniciado la Aplicación. El código quedaría de la siguiente manera:
-                  <pre class="language-javascript"><code>
-          app.on('ready', function(){
-            createWindow()
-
-              const template=[
-                {
-                  label:'Menu',
-                  submenu:[
-                    {label:'Usuarios',
-                      click(){
-                        openWindowUsers()
-                      },
-                      accelerator: 'CmdOrCtrl+Shift+U'
-                    },
-                    {type:'separator'},
-                    {label:'Exit',
-                      click(){
-                        app.quit();
-                      },
-                      accelerator: 'CmdOrCtrl+Shift+C'
-                    }
-                  ]
-                },
-                //Añadimos un nuevo item con un submenú
-                {
-                  label:'info',
-                  submenu:[
-                    {label:'Autores'}
-                  ]
-                }
-
-              ]
-
-            var menu =Menu.buildFromTemplate(template)
-            Menu.setApplicationMenu(menu)
-
-          })
-
-
-                </code></pre>
-              </p>
-              <p>
-                Con todo ello, hemos sido capaces de crear un Menú personalizado para nuestra la Aplicición de escritorio ElectronJs.
-                <center><img src="../img/apiElectron/Menu.png"></center>
-
-              </p>
-
-
+            <div id="ISS">
+              <h3><br>ISS</h3>
 
             </div>
             <hr>
-            <div id="roleshor">
-
-            </div>
-            <hr>
-
-
-
-            <div  id="jugando">
-                <h3><br>Ejercicio</h3>
-                <p>
-                  En el siguiente ejercicio te proponemos crear tu propio menú personalizado con al menos 3 elementos principales y que alguno de ellos tenga un submenú. También queremos que
-                  en uno de los elementos llame a una paǵina web externa.
-                  <blockquote><i>Nota: investiga acerca del módulo <strong>shell</strong> </i></blockquote>
-                </p>
-                <p>
-                  <br>La solución en nuestro en <a href="https://github.com/a52hepof/electron">Github Tutorial Electron</a>
-                </p>
-            </div>
-              <hr>
 
             <div class="referencias" id="referencias">
               <h3><br>Referencias</h3>
                 <ul>
-                  <li> <a href="https://electronjs.org/docs/api/menu">Módulo Menu</a></li>
-                  <li> <a href="  https://www.youtube.com/watch?v=MGC2W-dJtYM">Creación de Menús personalizados</a></li>
-                  <li><a href="https://coursetro.com/posts/code/119/Working-with-Electron-Menus---Tutorial"><cite>coursetro-menus </cite></a></li>
+                  <li> <a href="https://electronjs.org/docs/api/dialog">electronjs.org - Módulo dialog</a></li>
+                  <li><a href="  https://www.youtube.com/watch?v=ihcsKfIN6YU"><cite>notificaciones </cite></a></li>
+                  <li><a href="  https://www.youtube.com/watch?v=uxf0--uiX0I"><cite>Api ISS </cite></a></li>
+
 
                 </ul>
             </div>
-
         </div>
       </div>
 
