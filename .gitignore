@@ -1,4 +1,6 @@
 /electronApp/node_modules
+/shopping-app/electron-products-test/node-modules
+/monaco/monaco-editor-samples/node-modules
 /app-monaco/node_modules
 /electron-api-demos-master
 /photon-0.1.2-alpha

@@ -4,14 +4,14 @@
 var mysql = require("mysql");
 
 
-var sql = mysql.createConnection({
+var connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "vn9rn7rz",
     database: "ISS"
 });
 
-sql.connect(function (err) {
+connection.connect(function (err) {
     if(err){
         console.log("error");
     }else{
@@ -21,3 +21,11 @@ sql.connect(function (err) {
 
 var sql = 'SELECT *, FROM `consultaISS`';
 console.log(sql)
+
+connection.query(sql, function (error, results, fields) {
+ if (error) console.log(error.code);
+ else {
+     console.log(results);
+     //$('#resultDiv').text(results[0].emp_name); //emp_name is column name in your database
+ }
+});
