@@ -8,7 +8,7 @@ const Menu=electron.Menu
 const shell =require('electron').shell
 
 */
-const { app, BrowserWindow, Menu , shell, dialog, ipcMain} = electron
+const { app, BrowserWindow, Menu , shell, dialog, ipcMain,webContents} = electron
 
 // Mantén una referencia global del objeto window, si no lo haces, la ventana
 // se cerrará automáticamente cuando el objeto JavaScript sea eliminado por el recolector de basura.
@@ -26,7 +26,7 @@ function createWindow () {
   })
 
   // y carga el index.html de la aplicación.
-win.loadFile('./src/index2.html')
+  win.loadFile('./src/index2.html')
   /*
   Se ha encontrado esta forma de cargar los procesos de randerizado pero a nosotros no nos ha funcionado
   const path =require('path')
@@ -39,6 +39,8 @@ win.loadFile('./src/index2.html')
   */
   // Abre las herramientas de desarrollo (DevTools).
   win.webContents.openDevTools()
+
+
 
   // Emitido cuando la ventana es cerrada.
   win.on('closed', () => {
@@ -53,11 +55,14 @@ win.loadFile('./src/index2.html')
 }
 
 
+
+
 // Este método será llamado cuando Electron haya terminado
 // la inicialización y esté listo para crear ventanas del navegador.
 // Algunas APIs pueden usarse sólo después de que este evento ocurra.
 app.on('ready', function(){
   createWindow()
+
 
     const template=[
       {
@@ -184,8 +189,8 @@ function openWindowUsers () {
   winIss.on('closed', () => {
     winIss = null
   })
-
 }
+
 
 
 //creamos otra instancia de ventana para abrirla desde el proceso de randerizado
@@ -239,20 +244,24 @@ ipcMain.on('open-error-dialog', (event)=>{
   event.sender.send('opened-error', 'recibo mensaje y abierto el cuadro de dialogo')
 })
 
-let options  = {
-
-}
+let datosIssToSend
 
 ipcMain.on('alertaIss', (event, arg)=>{
-  dialog.showMessageBox({
+  datosIssToSend=arg
+  dialog.showErrorBox('an error message', arg[0])
+  event.sender.send('envioDatosISS', arg[0])// se envía al mismo proceso desde el que se ha recibido el mensaje. El canal está abierto entre esos procesos
+  win.webContents.send('envioDatosIssOP', arg[0])
 
-    title:"información para Alerta",
-    buttons: ["Yes","No","Cancel"],
+  win.webContents.send('prueba2', 'Velocidad '+ arg[0])//se imprime únicamente en el index2 electronScript2
+  //probar con webContents
+  //win.webContents.send('envioDatosISS', arg[0])
 
-    message: "Esta es la velocidad" + ": "+arg[0]
 
 
-  })
-  //dialog.showErrorBox('an error message', arg[0])
-  event.sender.send('opened-error', 'recibo mensaje y abierto el cuadro de dialogo')
+})
+
+ipcMain.on('solicitud', (event, arg)=>{
+  //dialog.showErrorBox('an error message', arg)
+
+  event.sender.send('respuestaSolicitud', datosIssToSend)
 })

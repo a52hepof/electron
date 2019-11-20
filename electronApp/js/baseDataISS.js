@@ -18,3 +18,6 @@ sql.connect(function (err) {
         console.log("connected");
     }
 });
+
+var sql = 'SELECT *, FROM `consultaISS`';
+console.log(sql)

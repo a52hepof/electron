@@ -35,7 +35,7 @@ function openISS(){
   win.on('closed', () => {
     win = null
   })
-  //win.webContents.openDevTools()
+  win.webContents.openDevTools()
 
 }
 
@@ -129,4 +129,17 @@ errorBtn.addEventListener('click', function(){
 ipcRenderer.on('opened-error', (event,arg)=>{
   document.getElementById('mensajeRecibidoError').innerHTML=arg;
   console.log(arg)
+})
+
+
+ipcRenderer.on('envioDatosIssOP', (event,arg)=>{
+  document.getElementById('alerta').innerHTML=arg;
+  console.log(arg)
+})
+
+
+
+ipcRenderer.on('prueba2', (event,arg)=>{
+  console.log(arg)
+  document.getElementById('prueba').innerHTML=arg;
 })

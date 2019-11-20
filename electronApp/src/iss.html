@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <meta name="viewport" content="initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!--https://leafletjs.com/examples/quick-start/ -->
@@ -15,6 +15,8 @@
     crossorigin=""></script>
 
     <link rel="stylesheet" href="../css/iss.css">
+    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="../css/index2.css">
 
 
     <title>Test - Estación Espacial Internacional</title>
@@ -33,18 +35,28 @@
 
     </div>
 
+    <div id="alerta"></div>
+    <div id="prueba"></div>
+    <br><br>
+
+
     <div id="EstacionInternacional"></div>
 
-    <!--<button type="button" name="button" onclick="doNotify()">Notifica</button>-->
-    <button type="button" name="button" onclick="gestionarAlertas()">gestionarAlertas</button>
+    <br><br>
 
+
+    <!--<button type="button" name="button" onclick="doNotify()">Notifica</button>-->
+    <button type="button" name="button" onclick="gestionarAlertas()" class="boton_personalizado">gestionarAlertas</button>
     <script>
 
 
 
     </script>
 
+
+
     <script src="../js/iss.js" charset="utf-8"></script>
+    <script src="../js/issListen.js" charset="utf-8"></script>
     <script src="../js/baseDataISS.js" charset="utf-8"></script>
     <script src="../js/menuAlerts.js" charset="utf-8"></script>
     <!--<script src="../js/dataBase.js" charset="utf-8"></script>-->

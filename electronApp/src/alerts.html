@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Formulario de gestión de alertas</title>
+    <link rel="stylesheet" href="../css/index2.css">
+
   </head>
   <body>
 <form accept-charset="UTF-8" action="action_page.php" autocomplete="off" method="GET" target="_blank">
@@ -11,7 +13,17 @@
   <label for="name">Latitud </label><input name="Latitud" type="text" id="latitud"/>
 </form>
 <br>
-<button type="button" name="button" onclick="obtenerDatos()"></button>
+<!--<button type="button" name="button" onclick="obtenerDatos()" class="boton_personalizado">Enviar Datos</button>-->
+<button type="button" name="button" id="close-btn" class="boton_personalizado">Enviar alertas</button>
+
+<div id="alertas">
+
+</div>
+
+<div id='prueba'>
+
+</div>
+
 <script src="../js/alerts.js" charset="utf-8"></script>
 
 
