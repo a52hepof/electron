@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/a52hepof/electron#readme",
   "dependencies": {
+    "electron-reload": "^1.5.0",
     "mysql": "^2.17.1"
   }
 }

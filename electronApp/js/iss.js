@@ -1,16 +1,37 @@
 const { BrowserWindow } = require('electron').remote
 const {ipcRenderer} =require('electron')
+var mysql = require("mysql");
 
 let latitudAlerta=40.46
 let longitudAlerta=-3.74
 let velocidadAlerta=30000
+let sqlInsert
 
-  ipcRenderer.on('respuestaSolicitud', (event,arg)=>{
-    console.log(arg[0])
-    document.getElementById('prueba').innerHTML=arg;
-    velocidadAlerta=arg[0]
-  })
 
+//esperamos un mensaje por el canal respuestaSolicitud e imprimimos el mensaje en el div prueba. Guardamos el mensaje en las variables de control de alertas
+ipcRenderer.on('respuestaSolicitud', (event,arg)=>{
+  console.log(arg[0])
+  document.getElementById('prueba').innerHTML=arg;
+  velocidadAlerta=arg[0]
+  laongitudAlerta=arg[1]
+  latitudAlerta=arg[2]
+})
+
+//nos conectamos a la base de datos
+var connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "vn9rn7rz",
+    database: "ISS"
+});
+
+connection.connect(function (err) {
+    if(err){
+        console.log("error");
+    }else{
+        console.log("connected");
+    }
+});
 
 //https://leafletjs.com/examples/quick-start/
 // Making a map and tiles
@@ -33,6 +54,8 @@ const issIcon = L.icon({
 let marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);
 
 
+
+//conectamos con la API
 const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
 
 let firstTime = true;
@@ -49,22 +72,19 @@ async function getISS() {
     mymap.setView([latitude, longitude], 2);
     firstTime = false;
   }
-
+  //imprimimros en iss.html los valores recogidos de la api
   document.getElementById('lat').textContent = latitude.toFixed(2);
   document.getElementById('lon').textContent = longitude.toFixed(2);
   document.getElementById('altitude').textContent = altitude.toFixed(2);
   document.getElementById('velocidad').textContent = velocity.toFixed(2);
   document.getElementById('visibilidad').textContent = visibility;
 
-
-
-
+  //notificamos cuando se cumplen las condiciones de la alerta
   let condicion=(latitude >latitudAlerta-5 && latitude<latitudAlerta+5)&&(longitude >longitudAlerta-5 && longitude<longitudAlerta+5)
+
   if(condicion){
     console.log(condicion)
     doNotify2(velocity.toFixed(2), longitude.toFixed(2), latitude.toFixed(2));
-
-
   }
   console.log(velocidadAlerta)
   if (velocity> velocidadAlerta) {
@@ -74,7 +94,19 @@ async function getISS() {
   }
 
 
+//insertamos valores en la base de datos
+  //sqlInsert="INSERT INTO consultaISS (longitud, latitud, velocidad, fecha) VALUES ('3','2','2','2019-11-01')"
+  //var sqlInsert = "INSERT INTO `consultaISS` (`longitud`, `latitud`, `velocidad`, `fecha`) VALUES ('" + longitude.toFixed(2) + "', '" + latitude.toFixed(2) + "', '" + velocity.toFixed(2) + "',  'now()')"
+  var sqlInsert = "INSERT INTO `consultaISS` (`longitud`, `latitud`, `velocidad`, `fecha`) VALUES ('" + longitude.toFixed(2) + "', '" + latitude.toFixed(2) + "', '" + velocity.toFixed(2) + "',  now())"
+//'" + longitude.toFixed(2) + "'
+  connection.query(sqlInsert, function (error, result, fields) {
 
+   if (error) console.log(error.code);
+   else {
+       //console.log(result);
+       //$('#resultDiv').text(results[0].emp_name); //emp_name is column name in your database
+   }
+  });
 
 
 }
@@ -82,7 +114,18 @@ async function getISS() {
 getISS();
 setInterval(getISS, 2000);
 
+var sql = "SELECT * FROM consultaISS";
+//console.log(sql)
 
+connection.query(sql, function (error, result, fields) {
+
+  //mostramos por consola los resultados de la base de datos
+ if (error) console.log(error.code);
+ else {
+     console.log(result);
+     //$('#resultDiv').text(results[0].emp_name); //emp_name is column name in your database
+ }
+});
 
 function doNotify(v, lon, la){
 
@@ -91,8 +134,6 @@ function doNotify(v, lon, la){
       'body':v+"  Km/h  'La velocidad es superior a la indicada'  Longitud: ("+lon+') *** Latitud: ('+la+')'
     })
   })
-
-
 }
 
 
@@ -103,12 +144,10 @@ function doNotify2(v, lon, la){
       'body':v+"La ISS está cerca de españa: ("+lon+') *** Latitud: ('+la+')'
     })
   })
-
-
 }
 
 
-
+//abre la ventana de alertas. Se puede llamar a BrowserWindow porque tenemos remote
 function gestionarAlertas(){
 
   win = new BrowserWindow({
@@ -129,6 +168,4 @@ function gestionarAlertas(){
   //para cerrar ventana actual después de abrir alerts.html
   var window = remote.getCurrentWindow();
   window.close();
-
-
 }

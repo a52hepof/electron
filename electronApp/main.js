@@ -9,6 +9,7 @@ const shell =require('electron').shell
 
 */
 const { app, BrowserWindow, Menu , shell, dialog, ipcMain,webContents} = electron
+const path=require('path')
 
 // Mantén una referencia global del objeto window, si no lo haces, la ventana
 // se cerrará automáticamente cuando el objeto JavaScript sea eliminado por el recolector de basura.
@@ -221,11 +222,6 @@ exports.openWindow=()=>{
 
 }
 
-
-
-
-
-
 //IPC paso de variables
 var counter=1;
 var recibido;
@@ -262,6 +258,12 @@ ipcMain.on('alertaIss', (event, arg)=>{
 
 ipcMain.on('solicitud', (event, arg)=>{
   //dialog.showErrorBox('an error message', arg)
-
   event.sender.send('respuestaSolicitud', datosIssToSend)
 })
+
+
+if(process.env.NODE_ENV !== 'production') {
+  require('electron-reload')(__dirname, {
+    electron: path.join(__dirname, './node_modules', '.bin', 'electron')
+  });
+}

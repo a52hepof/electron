@@ -1,0 +1,90 @@
+https://github.com/FaztWeb/electron-products-test
+
+node -v or node --version
+
+Ir a Documentación de Electron.https://electronjs.org
+
+
+npm init --yes
+
+Electron es un módulo de nodejs.
+
+En el package json debemos de indicarle en el "main" el archivo que vamos a ejecutar
+para la app. 
+
+npm install electron
+
+---------------------------------------
+vistas:
+index.html
+newproduct.html
+----------------------------------------
+
+Antes de empezar a editar los htmls, debemos de llamar a electron en el fichero
+index.js. (Dentro de NodeModules, nosotros podemos instalar paquetes dependiendo
+de lo que busquemos, es decir, podemos instalar bootstrap, angular, es decir
+cualquier framework que queramos).
+
+Dentro del index.js:
+Vamos a decirle require('electron') y para ello de electron necesitamos dos cosas:
+1. Una aplicación que poder arrancar
+2. Una ventana o una manera de poder crear ventanas.
+
+Para ello vamos a importar desde eletron usando el strcuture de JavaScript
+(decir que electron al estar en continua actualización, posee las versiones
+más actualizadas de Js, es decir que podemos hacer uso de aquellas funciones
+más notorias para nuestro proyecto)
+
+-Vamos a importar app (que será la aplicación) y BrowserWindow (la manera en que vamos
+a poder crear ventanas
+--------------------------------
+let mainWindow;			(Estos son variables globales)
+let newProductWindow;
+
+app.on('ready', () => {
+
+  // The Main Window
+  mainWindow = new BrowserWindow({width: 720, height: 600});
+
+  mainWindow.loadURL(url.format({
+    pathname: path.join(__dirname, 'views/index.html'),
+    protocol: 'file',
+    slashes: true
+  }))
+
+Descripción: Creamos la variable global main window, a la que posteriormente llamaremos con 
+la función app.on('ready')... Como hemos dicho antes, mainwindow será la que nos permita crear 
+ventanas... procecedmos a crearla con new BrowserWindow y le podremos añadir el tamaño.
+Luego habrá que decirle que carguemos esa ventana... Usamos loadURL (tenemos que añadir 
+otro paquete de nodejs que se llama url.)Con load URL nos permite decir dónde está el archivo
+el protocolo con el que va a cargarlo, etc.
+-Usamos url.format y le pasaremos los parametros que nosotros veamos necesarios...
+el primero será el path(que es para decirle dónde está el archivo index.html), que de nuevo tendremos que añadir el paquete de node-modules al inicio
+.pathname: path.join(ya podremos usar el path join que nos sirve para decir dónde está
+el index...con __dirname, le estamos diciendo que se va a ubicar dentro de src, pero luego
+lo voy a concatenar con la carpeta views y con el archivo index.html.
+FOTO
+
+Es un poco tostón que cada vez que queramos ver los cambios, tengamos que cerrar la app
+y ejecutarla de nuevo, para eso usaremos otro paquete de nodejs.
+npm install electron-reload
+NOTA:Reinicia las ventanas html, no las ventanas del código principal.
+electron: path.join(__dirname, '../node_modules', '.bin', 'electron')
+con esto, estamos diciendo que cada vez que modifiquemos el código principal, que también
+haga un reload sin tener que ejecutarlo de nuevo. Se puede ver en la documentación de electron
+FOTO
+
+Por defecto, Electron trae una navegación predefinida...Usaremos otro módulo que es Menu
+para cambiarla.
+FOTO
+
+Editamos el menú a nuestra elección.
+aceleration es un atajo de teclado.
+
+Cuando demos click a newproduct window, nos creará otra ventana pero con la misma barra
+de menú que la anterior, para desactivarla escribiremos: newProductWindow.setMenu(null);
+
+
+
+
+
