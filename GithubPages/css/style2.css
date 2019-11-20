@@ -253,6 +253,13 @@ h1{
     margin-right: 4rem;
   }
 
+  .row .right #VentajasInconvenientes #pros-contras{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left:4rem;
+    margin-right: 4rem;
+  }
+
   /* Main content */
   .main {
     margin-left: 200px; /* Same as the width of the sidenav */
