@@ -13,8 +13,10 @@ ipcRenderer.on('respuestaSolicitud', (event,arg)=>{
   console.log(arg[0])
   document.getElementById('prueba').innerHTML=arg;
   velocidadAlerta=arg[0]
-  laongitudAlerta=arg[1]
-  latitudAlerta=arg[2]
+  longitudAlerta=arg[2]
+  latitudAlerta=arg[1]
+
+  console.log(velocidadAlerta+''+longitudAlerta+''+latitudAlerta)
 })
 
 //nos conectamos a la base de datos
@@ -79,12 +81,18 @@ async function getISS() {
   document.getElementById('velocidad').textContent = velocity.toFixed(2);
   document.getElementById('visibilidad').textContent = visibility;
 
+
+  /*Para comparar hay que pasar todo a float con parseFloat*/
+
+  console.log(latitudAlerta + ' '+ longitudAlerta+'-'+velocidadAlerta)
   //notificamos cuando se cumplen las condiciones de la alerta
   let condicion=(latitude >latitudAlerta-5 && latitude<latitudAlerta+5)&&(longitude >longitudAlerta-5 && longitude<longitudAlerta+5)
+  console.log(latitudAlerta + ' -' + condicion + '-'+(latitudAlerta)-5+'-'+(latitudAlerta)+5 +'-'+latitude)
 
   if(condicion){
-    console.log(condicion)
+
     doNotify2(velocity.toFixed(2), longitude.toFixed(2), latitude.toFixed(2));
+
   }
   console.log(velocidadAlerta)
   if (velocity> velocidadAlerta) {
@@ -97,9 +105,9 @@ async function getISS() {
 //insertamos valores en la base de datos
   //sqlInsert="INSERT INTO consultaISS (longitud, latitud, velocidad, fecha) VALUES ('3','2','2','2019-11-01')"
   //var sqlInsert = "INSERT INTO `consultaISS` (`longitud`, `latitud`, `velocidad`, `fecha`) VALUES ('" + longitude.toFixed(2) + "', '" + latitude.toFixed(2) + "', '" + velocity.toFixed(2) + "',  'now()')"
-  var sqlInsert = "INSERT INTO `consultaISS` (`longitud`, `latitud`, `velocidad`, `fecha`) VALUES ('" + longitude.toFixed(2) + "', '" + latitude.toFixed(2) + "', '" + velocity.toFixed(2) + "',  now())"
+  sqlInsert = "INSERT INTO `consultaISS` (`longitud`, `latitud`, `velocidad`, `fecha`) VALUES ('" + longitude.toFixed(2) + "', '" + latitude.toFixed(2) + "', '" + velocity.toFixed(2) + "',  now())"
 //'" + longitude.toFixed(2) + "'
-  connection.query(sqlInsert, function (error, result, fields) {
+/*  connection.query(sqlInsert, function (error, result, fields) {
 
    if (error) console.log(error.code);
    else {
@@ -107,12 +115,12 @@ async function getISS() {
        //$('#resultDiv').text(results[0].emp_name); //emp_name is column name in your database
    }
   });
-
+*/
 
 }
 
 getISS();
-setInterval(getISS, 2000);
+setInterval(getISS, 7000);
 
 var sql = "SELECT * FROM consultaISS";
 //console.log(sql)
@@ -134,6 +142,15 @@ function doNotify(v, lon, la){
       'body':v+"  Km/h  'La velocidad es superior a la indicada'  Longitud: ("+lon+') *** Latitud: ('+la+')'
     })
   })
+  connection.query(sqlInsert, function (error, result, fields) {
+
+   if (error) console.log(error.code);
+   else {
+       //console.log(result);
+       //$('#resultDiv').text(results[0].emp_name); //emp_name is column name in your database
+   }
+  });
+
 }
 
 
@@ -144,6 +161,18 @@ function doNotify2(v, lon, la){
       'body':v+"La ISS está cerca de españa: ("+lon+') *** Latitud: ('+la+')'
     })
   })
+
+  connection.query(sqlInsert, function (error, result, fields) {
+
+   if (error) console.log(error.code);
+   else {
+       //console.log(result);
+       //$('#resultDiv').text(results[0].emp_name); //emp_name is column name in your database
+   }
+  });
+
+
+
 }
 
 

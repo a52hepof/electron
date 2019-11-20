@@ -11,14 +11,10 @@ function obtenerDatos(){
     console.log(datosIss)
     //return datosIss;
     ipcRenderer.send('alertaIss', datosIss)
-
-
-
 }
 
 
-
-console.log(datosIss)
+//console.log(datosIss)
 
 ipcRenderer.on('envioDatosISS', (event,arg)=>{
   document.getElementById('alertas').innerHTML=arg;
