@@ -1,11 +1,19 @@
 const { BrowserWindow } = require('electron').remote
 const {ipcRenderer} =require('electron')
+
+var nodemailer = require('nodemailer'); // email sender function
+var smtpTransport = require('nodemailer-smtp-transport');
+
 var mysql = require("mysql");
 
 var latitudAlerta
 var longitudAlerta
 var velocidadAlerta
 var sqlInsert
+
+var vel
+var lon
+var lat
 
 ipcRenderer.send('solicitud', 'hola quiero los datos')
 
@@ -76,6 +84,11 @@ async function getISS() {
   const data = await response.json();
   console.log(data);
   const { latitude, longitude, altitude , velocity, visibility} = data;
+
+  lat=latitude
+  lon=longitude
+  vel=velocity
+
 
   marker.setLatLng([latitude, longitude]);
 
@@ -170,6 +183,8 @@ function doNotify(v, lon, la){
    }
   });
 
+  sendMail()
+
 }
 
 
@@ -188,6 +203,51 @@ function doNotify2(v, lon, la){
        //console.log(result);
        //$('#resultDiv').text(results[0].emp_name); //emp_name is column name in your database
    }
+  });
+
+  sendMail()
+
+
+}
+
+function sendMail(){
+
+  var transporter = nodemailer.createTransport(smtpTransport({
+
+    //https://codeburst.io/sending-an-email-using-nodemailer-gmail-7cfa0712a799
+    //configuración mail, permitir acceso desde aplicaciones no seguras
+    service: 'Gmail',
+    //host: 'smtp.gmail.com',
+    //secureConnection:false,
+    //port: 465,
+    //port: 587,
+    //secure:true,
+    //requiresAuth:true,
+    //domains: ["gmail.com", "googlemail.com"],
+
+    auth: {
+      user: 'herrerapoch@gmail.com',
+      pass: '*Gra33tiS*'
+    },
+    tls: {
+      rejectUnauthorized: false
+  }
+  }));
+
+  var mailOptions = {
+    from: 'electronApp@gmail.com',
+    to: 'jinxcod9@gmail.com;a52hepof@uco.es',
+    subject: 'electronApp-Notification:'  + lat + ' - '+lon+' La estación está cerca',
+    text: 'Este es un mensaje desde electronJs!. Actualmente la posición de la Iss es latitud '+lat+', longitud: '+lon+' ,velocidad: '+vel
+  };
+
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      //console.log(error);
+      console.log('hola');
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
   });
 
 
