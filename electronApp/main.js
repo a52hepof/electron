@@ -257,7 +257,7 @@ ipcMain.on('alertaIss', (event, arg)=>{
 })
 
 ipcMain.on('solicitud', (event, arg)=>{
-  //dialog.showErrorBox('an error message', arg)
+  dialog.showErrorBox('an error message', arg)
   event.sender.send('respuestaSolicitud', datosIssToSend)
 })
 

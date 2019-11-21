@@ -2,22 +2,31 @@ const { BrowserWindow } = require('electron').remote
 const {ipcRenderer} =require('electron')
 var mysql = require("mysql");
 
-let latitudAlerta=40.46
-let longitudAlerta=-3.74
-let velocidadAlerta=30000
-let sqlInsert
+var latitudAlerta
+var longitudAlerta
+var velocidadAlerta
+var sqlInsert
+
+ipcRenderer.send('solicitud', 'hola quiero los datos')
 
 
 //esperamos un mensaje por el canal respuestaSolicitud e imprimimos el mensaje en el div prueba. Guardamos el mensaje en las variables de control de alertas
 ipcRenderer.on('respuestaSolicitud', (event,arg)=>{
   console.log(arg[0])
-  document.getElementById('prueba').innerHTML=arg;
+  document.getElementById('prueba').innerHTML="velocidad :"+ arg[0]+" longitud: "+ arg[1]+" latitud: "+ arg[2];
   velocidadAlerta=arg[0]
-  longitudAlerta=arg[2]
-  latitudAlerta=arg[1]
+  longitudAlerta=arg[1]
+  latitudAlerta=arg[2]
 
-  console.log(velocidadAlerta+''+longitudAlerta+''+latitudAlerta)
+  //console.log('VelocidadAlerta: '+velocidadAlerta+'******LongitudAlerta: '+longitudAlerta+'******LatitudAlerta: '+latitudAlerta)
 })
+/*
+console.log('VelocidadAlerta: '+velocidadAlerta+'******LongitudAlerta: '+longitudAlerta+'******LatitudAlerta: '+latitudAlerta)
+
+var numVelocidadAlerta=parseFloat(velocidadAlerta, 10)
+var numLongitudAlerta=parseFloat(longitudAlerta, 10)
+console.log(numLongitudAlerta)
+*/
 
 //nos conectamos a la base de datos
 var connection = mysql.createConnection({
@@ -84,14 +93,24 @@ async function getISS() {
 
   /*Para comparar hay que pasar todo a float con parseFloat*/
 
-  console.log(latitudAlerta + ' '+ longitudAlerta+'-'+velocidadAlerta)
+  //console.log(latitudAlerta + ' - '+ longitudAlerta+' - '+velocidadAlerta+' - '+condicion+' - '+latitude)
   //notificamos cuando se cumplen las condiciones de la alerta
-  let condicion=(latitude >latitudAlerta-5 && latitude<latitudAlerta+5)&&(longitude >longitudAlerta-5 && longitude<longitudAlerta+5)
-  console.log(latitudAlerta + ' -' + condicion + '-'+(latitudAlerta)-5+'-'+(latitudAlerta)+5 +'-'+latitude)
+
+  var numvelocidadAlerta=parseFloat(velocidadAlerta, 10)
+  var numlongitudAlerta=parseFloat(longitudAlerta, 10)
+  var numlatitudAlerta=parseFloat(latitudAlerta, 10)
+
+  let condicion=(latitude >numlatitudAlerta-5 && latitude<numlatitudAlerta+5)&&(longitude >numlongitudAlerta-5 && longitude<numlongitudAlerta+5)
+  console.log(numlatitudAlerta + ' - '+ numlongitudAlerta+' - '+numvelocidadAlerta+' - '+condicion+' - '+latitude)
+
+  //console.log(numLongitudAlerta+2000)
+
+
 
   if(condicion){
 
     doNotify2(velocity.toFixed(2), longitude.toFixed(2), latitude.toFixed(2));
+    sqlInsert = "INSERT INTO `consultaISS` (`longitud`, `latitud`, `velocidad`, `fecha`) VALUES ('" + longitude.toFixed(2) + "', '" + latitude.toFixed(2) + "', '" + velocity.toFixed(2) + "',  now())"
 
   }
   console.log(velocidadAlerta)
@@ -158,7 +177,7 @@ function doNotify2(v, lon, la){
 
   Notification.requestPermission().then(function(result){
     var myNotification=new Notification('electronNotification',{
-      'body':v+"La ISS está cerca de españa: ("+lon+') *** Latitud: ('+la+')'
+      'body':v+"La ISS está cerca de la ubicación indicada: ("+lon+') *** Latitud: ('+la+')'
     })
   })
 

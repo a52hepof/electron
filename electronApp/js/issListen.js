@@ -1,4 +1,4 @@
 
 
 
-ipcRenderer.send('solicitud', 'hola quiero los datos')
+//ipcRenderer.send('solicitud', 'hola quiero los datos')
