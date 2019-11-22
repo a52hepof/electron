@@ -1,4 +1,5 @@
 /electronApp/node_modules
+/electronApp/release-builds
 /shopping-app/electron-products-test/node_modules
 /monaco/monaco-editor-samples/node_modules
 /app-monaco/node_modules

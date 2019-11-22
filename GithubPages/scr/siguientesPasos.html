@@ -2,9 +2,11 @@
 <html lang="en" dir="ltr">
   <head>
 
-    <!--
-      https://developer.mozilla.org/es/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout
-     -->
+    <!-
+
+    https://developer.mozilla.org/es/docs/Web/CSS/CSS_Grid_Layout/Box_Alignment_in_CSS_Grid_Layout
+
+  -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" initial-scale=1 >
@@ -56,7 +58,6 @@
             <h2>Menu</h2>
             <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
             <ul id="myMenu">
-
               <li class="dropdown-btn">
                 <div  >
                   <i class="fa fa-caret-down fa-2x" id="flecha"></i>
@@ -169,149 +170,26 @@
             </ul>
           </div>
 
+
           <div class="right" style="background-color:white;">
-            <h1>Funciones principales de la Api Electron</h1>
+            <h1>Siguientes Pasos</h1>
+            <div >
+              <h3><br>ElectronJs</h3>
+              <p>
 
-            <div>
-              <p>Cabe recordar en este punto las algunas de las funcionalidades que afectan al Proceso Principal, a los Procesos de Randerizado o a ambos.</p>
+              <br><br></p>
 
-                <center>
-                  <table>
-                    <thead>
-                        <tr>
-                          <th>Proceso Principal</th>
-                          <th>Proceso de Randerizado</th>
-                          <th>Ambos procesos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                          <td>
-                            <ul>
-                              <li><strong>app</strong></li>
-                              <li>autoUpdater</li>
-                              <li><strong> BrowserWindow</strong></li>
-                              <li>ContentTracing</li>
-                              <li><strong>Dialog</strong></li>
-                              <li><strong> ipcMain</strong></li>
-                              <li>net</li>
-                              <li>powerSaverBlocker</li>
-                              <li>systemPreferences</li>
-                              <li>webContents</li>
-                              <li>Try</li>
-                            </ul>
-                          </td>
-                          <td>
-                            <ul>
-                              <li>desktopCapturer</li>
-                              <li>File object</li>
-                              <li><strong>ipcRenderer</strong></li>
-                              <li><strong>remote</strong> </li>
-                              <li>webFrame</li>
-                            </ul>
-
-                          </td>
-                          <td>
-                            <ul>
-                              <li>clipboard</li>
-                              <li>crashReporter</li>
-                              <li><strong>Process</strong></li>
-                              <li><strong>shell</strong></li>
-                            </ul>
-
-                          </td>
-
-                        </tr>
-                    </tbody>
-                </table>
-              </center>
-
-              <p>Aquellas indicadas en negrita van a formar parte del contenido de este tutorial <br>
-              <p>Sin embargo, vamos a prestar especial atención a las funcionalidades que nos van a permitir empezar a utilizar la Api de ElectronJs a un
-              nivel suficiente que nos permita seguir investivando para desarrollar aplicaciones más complejas.</p>
+              <p></p>
             </div>
 
-
-            <div class="iconos">
-              <div >
-                <p> <a href="winAdminApp.html"> <i class="desvanecer fa fa-window-restore fa-5x" ></i></a></p>
-                <p><b>Ventanas</b></p>
-
-              </div>
-              <div >
-                <p> <a href="menuApp.html"> <i class="desvanecer fa fa-navicon fa-5x" ></i></a></p>
-                <p><b>Menús</b></p>
-
-              </div>
-              <div >
-                <p> <a href="ipcApp.html"> <i class="desvanecer fa fa-exclamation-triangle fa-5x" ></i></a></p>
-                <p><b>Dialogue</b></p>
-
-              </div>
-              <div >
-                <p> <a href="dialogueApp.html"> <i class="desvanecer fa fa-exchange fa-5x" ></i></a></p>
-
-                <p><b>IPC</b></p>
-
-
-              </div>
-              <div class="icons">
-
-
-                <p> <a href="notificationApp.html"> <i class="desvanecer fa fa-flag fa-5x" ></i></a></p>
-                <p><b>Notificaciones</b></p>
-
-
-              </div>
-            </div>
+            <hr>
 
             <div class="referencias" id="referencias">
               <h3><br>Referencias</h3>
                 <ul>
-                  <li><a href="https://electronjs.org/docs"><cite>Documentación de ElectronJS</cite></a></li>
-                  <li><a href="https://electronjs.org/docs/api"><cite>Api electron</cite></a></li>
-                  <li><a href="https://www.youtube.com/watch?v=iyjM39a0MWE"><cite>ElectronJS: Beginner To Pro</cite></a></li>
-                  <li><a href="https://jlord.us/essential-electron/"><cite>jlord.us - essential-electron</cite></a></li>
-                  <!--
-                  <li><a href="https://electronjs.org/blog/simple-samples"><cite>Ejemplos ElectronJs</cite></a></li>
-                  <li><a href="https://github.com/crilleengvall/electron-tutorial-app"><cite>Aplicacion Escritorio ElectronJs</cite></a></li>
-                  <li><a href="https://www.christianengvall.se/electron-showopendialog-tutorial/"><cite>Tutorial ElectronJs</cite></a></li>
-
-                  <li><a href="https://www.youtube.com/watch?v=iyjM39a0MWE"><cite>ElectronJS: Beginner To Pro</cite></a></li>
-                  <li><a href="https://electronjs.org/docs/tutorial/native-file-drag-drop"><cite>Electronjs.org</cite></a></li>
-
-                  <li><a href="https://www.youtube.com/watch?v=8YP_nOCO-4Q"><cite>What is Electron: The Hard Parts Made Easy</cite></a></li>
-                  <li><a href="https://www.youtube.com/watch?v=tqBi_Tou6wQ&list=PLC3y8-rFHvwiCJD3WrAFUrIMkGVDE0uqW"><cite>Electron js Tutorials</cite></a></li>
-                  <li><a href="https://www.youtube.com/watch?v=c76FTxLRwAw"><cite>Developing ElectronJS applications with SQLite3</cite></a></li>
-                  <li><a href="https://www.youtube.com/watch?v=mr9Mtm_TRpw"><cite>An Intro To Electron - Desktop Apps with JavaScript // System Information</cite></a></li>
-                  <li><a href="https://www.youtube.com/watch?v=ZHeP0ugMoqo"><cite>First Steps with Electron // Person list sql DB</cite></a></li>
-
-
-
-
-                  <li><a href="https://www.youtube.com/watch?v=b-p3MDXJkrw"><cite>Electron Tutorial - Connect to MySQL Database</cite></a></li>
-
-                  <li><a href="https://www.youtube.com/watch?v=29jYoFD8p2k&list=PLLnpHn493BHF80zEg29SrpRvjubn7kt9g&index=6"><cite>Electron | abrir ficheros</cite></a></li>
-                  <li><a href="https://coursetro.com/courses/22/Creating-Desktop-Apps-with-Electron-Tutorial/lessons/4"><cite>coursetro-windows</cite></a></li>
-
-                  https://code-examples.net/es/docs/electron/api/browser-window
-                  https://openwebinars.net/blog/tutorial-de-electron-recibiendo-los-nuevos-mensajes-mediante-notificaciones/
-                  https://tutoriales.online/blog/electron-js-desde-cero
-                  -->
-
+                  <li> <a href="https://www.electronjs.org">electronjs.org </a></li>
                 </ul>
             </div>
-
-
-
-
-
-
-
-
-
-
-          </div>
         </div>
       </div>
 

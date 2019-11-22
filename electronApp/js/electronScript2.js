@@ -1,11 +1,14 @@
-console.log(process.platform + " "+"hola")
+//console.log(process.platform + " "+"hola")
 
-const { BrowserWindow } = require('electron').remote
 const {ipcRenderer} =require('electron')
+//PARA USAR FUNCIONES EXCLUSIVAS DE MAIN.JS USAMOS REMOTE
+const { BrowserWindow } = require('electron').remote
 
 /*
 
-//abrir ventana usando función exportada del proceso principal y remote
+/*********************************************************************
+abrir ventana usando función exportada del proceso principal y remote
+**********************************************************************
 const remote = require('electron').remote
 //creamos esta variable para comunicarnos con el Proceso Principal
 const main = remote.require('./main.js')
@@ -20,7 +23,10 @@ button.addEventListener('click', ()=>{main.openWindow()})
 
 
 
-//Abrir ventana ISS usando método BrowserWindow en Randerizado
+
+/*********************************************************************
+Abrir ventana ISS usando método BrowserWindow en Randerizado.
+**********************************************************************/
 function openISS(){
 
   let win = new BrowserWindow({
@@ -63,26 +69,22 @@ function openTestC(){
 }
 
 
-
+/****************************
+creamos botón para abrir ventana
+***************************/
 
 const content=document.getElementById("contenido2");
-
-
 let button = document.createElement('button')
 button.className='boton_personalizado'
 button.setAttribute("id","b1")
-
-
-
 button.textContent='ISS'
 content.appendChild(button)
-
-
 button.addEventListener('click', ()=>{openISS()})
 
 
-
-//Abrir ventana Info usando método BrowserWindow en Randerizado
+/*********************************************************************
+Abrir ventana info usando método BrowserWindow en Randerizado.
+**********************************************************************/
 function openInfo(){
 
   let win = new BrowserWindow({ width: 1200, height: 900 })
@@ -92,6 +94,9 @@ function openInfo(){
   })
 }
 
+/****************************
+creamos botón para abrir ventana
+***************************/
 let button2 = document.createElement('button')
 button2.className='boton_personalizado'
 button2.setAttribute("id","b2")
@@ -140,6 +145,12 @@ ipcRenderer.on('envioDatosIssOP', (event,arg)=>{
 
 
 ipcRenderer.on('prueba2', (event,arg)=>{
+  console.log(arg)
+  document.getElementById('prueba').innerHTML=arg;
+})
+
+
+ipcRenderer.on('test', (event,arg)=>{
   console.log(arg)
   document.getElementById('prueba').innerHTML=arg;
 })

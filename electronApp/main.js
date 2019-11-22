@@ -6,14 +6,18 @@ const app=electron.app
 const BrowserWindow=electron.BrowserWindow
 const Menu=electron.Menu
 const shell =require('electron').shell
-
 */
+
 const { app, BrowserWindow, Menu , shell, dialog, ipcMain,webContents} = electron
 const path=require('path')
 
 // Mantén una referencia global del objeto window, si no lo haces, la ventana
 // se cerrará automáticamente cuando el objeto JavaScript sea eliminado por el recolector de basura.
 
+
+/***********************************************
+CARGA DE LA VENTANA PRINCIPAL DE LA APLICACIÓN
+************************************************/
 let win
 
 function createWindow () {
@@ -38,10 +42,9 @@ function createWindow () {
     slashes:true
   }))
   */
+
   // Abre las herramientas de desarrollo (DevTools).
   win.webContents.openDevTools()
-
-
 
   // Emitido cuando la ventana es cerrada.
   win.on('closed', () => {
@@ -51,19 +54,14 @@ function createWindow () {
     win = null
   })
 
-
-
 }
-
-
-
 
 // Este método será llamado cuando Electron haya terminado
 // la inicialización y esté listo para crear ventanas del navegador.
 // Algunas APIs pueden usarse sólo después de que este evento ocurra.
 app.on('ready', function(){
-  createWindow()
 
+  createWindow()
 
     const template=[
       {
@@ -96,7 +94,14 @@ app.on('ready', function(){
       {
         label:'info',
         submenu:[
-          {label:'Autores'}
+          {label:'Autores',
+          click(){
+
+
+              openWindowAutores()
+
+
+          }}
         ]
       }
 
@@ -133,12 +138,18 @@ app.on('ready', function(){
       {
         label:'info',
         submenu:[
-          {label:'Autores'}
+          {label:'Autores',
+          click(){
+            openWindowAutores()
+          }}
         ]
       }
 
     ]
 
+    /******************************************************
+    EN FUNCIÓN DEL SISTEMA OPERATIVO CARGAMOS UN MENÚ U OTRO
+    *******************************************************/
     var menu
     if (process.platform !== 'darwin') {
       menu=Menu.buildFromTemplate(template)
@@ -153,6 +164,10 @@ app.on('ready', function(){
 
 })
 
+
+/***********************************************
+CONTROLAMOS EL CIERRE DE LA APLICACIÓN Y DE LAS VENTANAS
+************************************************/
 app.on('activate', () => {
   // En macOS es común volver a crear una ventana en la aplicación cuando el
   // icono del dock es clicado y no hay otras ventanas abiertas.
@@ -170,7 +185,10 @@ app.on('window-all-closed', () => {
   }
 })
 
-
+/***********************************************
+CREAMOS OTRA INSTANCIA DE VENTANA(PROCESO DE RENDERIZADO)
+PARA ABRIRLA DESDE EL MENÚ DE LA APLICACIÓN
+************************************************/
 
 
 //creamos una nueva instanacia de ventana para abrirla desde nuestro menú de la aplicación
@@ -193,7 +211,28 @@ function openWindowUsers () {
 }
 
 
+let inforUser
+function openWindowAutores () {
 
+  inforUser = new BrowserWindow({
+    width: 1600,
+    height: 900,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
+
+  inforUser.loadFile('./src/info.html')
+
+  inforUser.on('closed', () => {
+    inforUser = null
+  })
+}
+
+/***********************************************
+CREAMOS OTRA INSTANCIA DE VENTANA(PROCESO DE RENDERIZADO)
+PARA ABRIRLA DESDE OTRO PROCESO DE RANDERIZADO. HAY QUE EXPORTAR LA FUNCIÓN
+************************************************/
 //creamos otra instancia de ventana para abrirla desde el proceso de randerizado
 exports.openWindow=()=>{
   let newWin =new BrowserWindow({
@@ -222,7 +261,11 @@ exports.openWindow=()=>{
 
 }
 
-//IPC paso de variables
+
+/***********************************************
+PROCESO DE COMUNICACIÓN DEL PROCESO PRINCIPAL
+************************************************/
+//IPC paso de variables y mensajes
 var counter=1;
 var recibido;
 ipcMain.on('ping', (event, arg)=>{ //se recibe en el arg la variable enviada por renderder a través del canal ping
@@ -249,16 +292,18 @@ ipcMain.on('alertaIss', (event, arg)=>{
   win.webContents.send('envioDatosIssOP', arg[0])
 
   win.webContents.send('prueba2', 'Velocidad '+ arg[0])//se imprime únicamente en el index2 electronScript2
+  win.webContents.send('test', 'testFinal')//prueba canal de comunicación.
+
   //probar con webContents
   //win.webContents.send('envioDatosISS', arg[0])
-
-
 
 })
 
 ipcMain.on('solicitud', (event, arg)=>{
   dialog.showErrorBox('an error message', arg)
   event.sender.send('respuestaSolicitud', datosIssToSend)
+  win.webContents.send('test', 'testFinal')
+
 })
 
 

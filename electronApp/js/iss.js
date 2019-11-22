@@ -1,11 +1,13 @@
 const { BrowserWindow } = require('electron').remote
 const {ipcRenderer} =require('electron')
 
+//MODULO NODEJS PARA ENVÍO DE CORREOS
 var nodemailer = require('nodemailer'); // email sender function
 var smtpTransport = require('nodemailer-smtp-transport');
-
+//MÓDULO NODEJS PARA CONEXIÓN CON BASE DE DATOS
 var mysql = require("mysql");
 
+//VARIABLES GLOBALES
 var latitudAlerta
 var longitudAlerta
 var velocidadAlerta
@@ -15,8 +17,12 @@ var vel
 var lon
 var lat
 
-ipcRenderer.send('solicitud', 'hola quiero los datos')
 
+/*********************
+COMUNICACIÓN CON PROCESO PRINCIPAL
+**********************/
+//PETICIÓN AL PROCESO PRINCIPAL PARA PEDIRLE LOS DATOS
+ipcRenderer.send('solicitud', 'hola quiero los datos')
 
 //esperamos un mensaje por el canal respuestaSolicitud e imprimimos el mensaje en el div prueba. Guardamos el mensaje en las variables de control de alertas
 ipcRenderer.on('respuestaSolicitud', (event,arg)=>{
@@ -25,16 +31,14 @@ ipcRenderer.on('respuestaSolicitud', (event,arg)=>{
   velocidadAlerta=arg[0]
   longitudAlerta=arg[1]
   latitudAlerta=arg[2]
-
   //console.log('VelocidadAlerta: '+velocidadAlerta+'******LongitudAlerta: '+longitudAlerta+'******LatitudAlerta: '+latitudAlerta)
 })
-/*
-console.log('VelocidadAlerta: '+velocidadAlerta+'******LongitudAlerta: '+longitudAlerta+'******LatitudAlerta: '+latitudAlerta)
 
-var numVelocidadAlerta=parseFloat(velocidadAlerta, 10)
-var numLongitudAlerta=parseFloat(longitudAlerta, 10)
-console.log(numLongitudAlerta)
-*/
+ipcRenderer.on('test', (event,arg)=>{
+  console.log(arg)
+  document.getElementById('prueba').innerHTML=arg;
+})
+
 
 //nos conectamos a la base de datos
 var connection = mysql.createConnection({
@@ -255,7 +259,10 @@ function sendMail(){
 }
 
 
-//abre la ventana de alertas. Se puede llamar a BrowserWindow porque tenemos remote
+/**********************************
+abre la ventana de alertas. Se puede llamar a BrowserWindow porque tenemos remote
+********************************************/
+
 function gestionarAlertas(){
 
   win = new BrowserWindow({
