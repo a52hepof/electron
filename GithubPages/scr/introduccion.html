@@ -56,7 +56,7 @@
             <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
             <ul id="myMenu">
 
-              <li class="dropdown-btn">
+              <li class=" active dropdown-btn">
                 <div  >
                   <i class="fa fa-caret-down fa-2x" id="flecha"></i>
                 </div>
@@ -144,7 +144,7 @@
 
               </div>
 
-              <li class="active dropdown-btn" >
+              <li class=" dropdown-btn" >
                 <div  >
                   <i class="fa fa-caret-down fa-2x" id="flecha"></i>
                 </div>
@@ -508,16 +508,17 @@
                           <li type="circle">Electron utiliza node.js. Así que puedes importar muchos módulos dependiendo del proyecto que estés realizando.</li>
                           <li type="circle">Compañías como Microsoft, Facebook, Slack, Docker entre otras están utilizando este framework como su parte de su stack de desarrollo para aplicaciones cross platform.</li>
                           <li type="circle">Se pueden crear interfaces de usuario mucho más elegantes, responsivas e interactivas con otros frameworks de javascript, tales como:
-                            <li type="square">  AngularJS</li>
-                            <li type="square">  Emberjs</li>
-                            <li type="square">  Backbone</li>
-                            <li type="square">  Y otros frameworks</li>
+                            <li type="square" class="square">  AngularJS</li>
+                            <li type="square" class="square">  Emberjs</li>
+                            <li type="square" class="square">  Backbone</li>
+                            <li type="square" class="square">  Y otros frameworks</li>
                             </li>
                           <li type="circle">No necesita dependencias nativas de un SO, para hacer los deployment.</li>
+                          <li type="circle">Herramientas de depuración.</li>
                   </div>
                   <div id="pros-java">
                       <h4><strong>Desventajas de Electron</strong></h4>
-                      <li type="circle">Ejecuta cromo en segundo plano, que consume muchos recursos.</li>
+                      <li type="circle">Ejecuta Chromium en segundo plano, que consume muchos recursos. Una simple aplicación 'hola mundo' puede ocupar 50 mb</li>
                       <li type="circle">Es probable que las aplicaciones hechas con Electron tengan problemas de memoria a menos que diseñe específicamente la aplicación con una codificación eficiente.</li>
                       <li type="circle">Depender del HTML + CSS + JavaScript</li>
                       <li type="circle">Principalmente el desarrollo principal se debe hacer con JavaScript.</li>

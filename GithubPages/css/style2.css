@@ -31,7 +31,6 @@ h1{
 }
 
 
-
 .header{
   background: #2B2D3A;
   color:#595959;
@@ -127,6 +126,12 @@ h1{
     cursor: pointer;
     outline: none;
     margin-left:-5px;
+  }
+
+
+  .square{
+    margin-left: 10px;
+
   }
 
 
