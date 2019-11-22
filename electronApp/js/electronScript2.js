@@ -41,7 +41,7 @@ function openISS(){
   win.on('closed', () => {
     win = null
   })
-  win.webContents.openDevTools()
+  //win.webContents.openDevTools()
 
 }
 
@@ -100,13 +100,11 @@ creamos botón para abrir ventana
 let button2 = document.createElement('button')
 button2.className='boton_personalizado'
 button2.setAttribute("id","b2")
-
-
 button2.textContent='NuestroEquipo'
 content.appendChild(button2)
-
-
 button2.addEventListener('click', ()=>{openInfo()})
+
+
 
 
 //Proceso Ipc de comunicación con el Proceso principal
