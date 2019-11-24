@@ -176,12 +176,24 @@
             <div >
               <h3><br>npm-reload</h3>
               <p>
-
-              <br><br></p>
-
-              <p></p>
+                Este módulo nos permite cargar contenido de todos los BrowserWindows activos dentro de electron cuando se cambian los archivos fuente, es decir, cuando se produzca un cambio en algunos de los ficheros html o css, no se tendrá que cerrar la aplicación, ya que hará un reload con la aplicación activa.
+              </p>
+              <p>
+                Haremos una explicación de cómo se instala y cómo debe usarse este módulo:
+              </p>
+              <div class="codigo"><code> $ npm install electron-reload</code></div>
+              <br>
+              <center><img src="../img/bonus.png" width="600px" height="350px"></center>
+              <br>
+              <h4><strong>Inclusión en el código para el main process</strong></h4>
+              <div class="codigo"><code>if(process.env.NODE_ENV !== 'production') {<br>
+                require('electron-reload')(__dirname, {<br>
+                  electron: path.join(__dirname, '../node_modules', '.bin', 'electron')<br>
+                });<br>
+              } </code></div>
+              <p>Lo que estamos diciendo en este código es que cuando estemos en el proceso de producción (y entendemos producción  cuando estamos configurando los html de la aplicación), que electron haga uso(es decir que requiera) del módulo electron-reload que se encuentra en la carpeta <strong>../node-modules/bin/electron</strong></p>
+              
             </div>
-
             <hr>
 
             <div class="referencias" id="referencias">
