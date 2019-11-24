@@ -1,6 +1,8 @@
 /electronApp/node_modules
 /electronApp/release-builds
 /shopping-app/electron-products-test/node_modules
+/electron-products-test-master/node_modules
+/electron-products-test-master/release-builds
 /monaco/monaco-editor-samples/node_modules
 /app-monaco/node_modules
 /electron-course-master/node_modules
