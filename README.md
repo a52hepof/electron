@@ -11,10 +11,11 @@ A continuacón haremos una lista de los contenidos de este repositorio acompaña
 - **Github Pages**: *En esta sección es donde tenemos alojada nuestra documentación sobre electron con sus respectivos arrchivos html,css, js y las imágenes usadas.*
 
 - **Aplicaciones**: *Aquí estarán las distintas aplicaciones básicas que hemos realizado con electron y sus respectivas referencias están en la documentación.*
-    1. electron-course-master
-    2. electron-products-test-master
-    3. electronApp
-    4. shoppingApp
+
+    1. electronApp
+    2. shoppingApp
+    
+    Las otras aplicaciones, son ejemplos descargados de la Comunidad de electron o de la propia página web de electronjs.org
 
 - **.gitignore**: *Puesto que al instalar electron en nuestra computadora nos descarga el paquete de módulos y es bastante pesado, hemos creado este fichero para no tener que subir la carpeta de los módulos por cada aplicación que teníamos.*
 
