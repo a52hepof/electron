@@ -113,6 +113,9 @@ function clickThing(){
   ipcRenderer.send('ping', a); //enviamos por el canal 'ping' la variable a
 }
 
+
+
+
 ipcRenderer.on('respuesta', (event, arg)=>{ //esperamos respuesta y recibimos la variable en arg
   document.getElementById('respuesta').innerHTML=arg;
 

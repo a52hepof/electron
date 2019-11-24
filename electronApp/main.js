@@ -272,7 +272,7 @@ ipcMain.on('ping', (event, arg)=>{ //se recibe en el arg la variable enviada por
   recibido=arg;
   //event.sender.send('count', arg+counter);
   //event.sender.send('count', ++count);
-  event.sender.send('respuesta', 'Soy el Proceso Principal y como respuesta a tu mensaje, te envío hola');
+  event.sender.send('respuesta', recibido+60 + ' - Soy el Proceso Principal y como respuesta a tu mensaje, te envío hola');
 })
 
 
@@ -280,7 +280,7 @@ ipcMain.on('ping', (event, arg)=>{ //se recibe en el arg la variable enviada por
 
 ipcMain.on('open-error-dialog', (event)=>{
   dialog.showErrorBox('an error message', 'demo of an error message')
-  event.sender.send('opened-error', 'recibo mensaje y abierto el cuadro de dialogo')
+  event.sender.send('opened-error', 'recibo mensaje y abierto el cuadro de dialogo. todo ok')
 })
 
 let datosIssToSend
