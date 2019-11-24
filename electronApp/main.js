@@ -299,8 +299,18 @@ ipcMain.on('alertaIss', (event, arg)=>{
 
 })
 
+
+
 ipcMain.on('solicitud', (event, arg)=>{
-  dialog.showErrorBox('an error message', arg)
+  let optionsDialog={
+
+    type:'warning',
+    title:'Información Alerta',
+    message:'solicitud Información Alerta',
+    buttons: ['aceptar']
+  }
+  dialog.showMessageBoxSync(optionsDialog)
+  //dialog.showErrorBox('an error message', arg)
   event.sender.send('respuestaSolicitud', datosIssToSend)
   win.webContents.send('test', 'testFinal')
 

@@ -11,6 +11,7 @@ var mysql = require("mysql");
 var latitudAlerta
 var longitudAlerta
 var velocidadAlerta
+var mailAlerta
 var sqlInsert
 
 var vel
@@ -31,6 +32,7 @@ ipcRenderer.on('respuestaSolicitud', (event,arg)=>{
   velocidadAlerta=arg[0]
   longitudAlerta=arg[1]
   latitudAlerta=arg[2]
+  mailAlerta=arg[3]
   //console.log('VelocidadAlerta: '+velocidadAlerta+'******LongitudAlerta: '+longitudAlerta+'******LatitudAlerta: '+latitudAlerta)
 })
 
@@ -240,8 +242,8 @@ function sendMail(){
 
   var mailOptions = {
     from: 'electronApp@gmail.com',
-    to: 'jinxcod9@gmail.com;a52hepof@uco.es',
-    subject: 'electronApp-Notification:'  + lat + ' - '+lon+' La estación está cerca',
+    to: 'a52hepof@uco.es;'+mailAlerta+'',
+    subject: 'electronApp-Notification:'  + lat + ' - '+lon+'',
     text: 'Este es un mensaje desde electronJs!. Actualmente la posición de la Iss es latitud '+lat+', longitud: '+lon+' ,velocidad: '+vel
   };
 
