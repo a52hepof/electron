@@ -3,9 +3,9 @@ Tutorial electronJs elaborado por Fernando Herrera Poch y Antonio Moscoso
 https://a52hepof.github.io/electron/
 
 
-##Contenido
+## Contenido
 
-###Secciones
+### Secciones
 A continuacón haremos una lista de los contenidos de este repositorio acompañados de una breve descripción:
 
 - Github Pages: En esta sección es donde tenemos alojada nuestra documentación sobre electron con sus respectivos arrchivos html,css, js y las imágenes usadas.
@@ -18,7 +18,7 @@ A continuacón haremos una lista de los contenidos de este repositorio acompaña
 
 - .gitignore: Puesto que al instalar electron en nuestra computadora nos descarga el paquete de módulos y es bastante pesado, hemos creado este fichero para no tener que subir la carpeta de los módulos por cada aplicación que teníamos.
 
-###Comandos para ejecutar las aplicaciones
+### Comandos para ejecutar las aplicaciones
 
 - Solo hay que seguir una serie de pasos muy sencillos:
     1. El primero es hacer un gitclone o descargar en zip nuestro repositorio.
